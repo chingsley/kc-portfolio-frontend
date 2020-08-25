@@ -27,14 +27,10 @@ const AuthForm = styled.form`
     width: 100%;
   }
 `;
-class SignupForm extends React.Component {
+class PasswordChangeForm extends React.Component {
   render() {
     return (
       <AuthForm>
-        <input type="file" />
-        <input className="form-control" type="text" placeholder="first name" />
-        <input className="form-control" type="text" placeholder="last name" />
-        <input className="form-control" type="text" placeholder="username" />
         <input className="form-control" type="email" placeholder="email" />
         <input
           className="form-control"
@@ -46,10 +42,10 @@ class SignupForm extends React.Component {
           type="new-password"
           placeholder="confirm-password"
         />
-        <button className="auth-btn">Singn Up</button>
+        <button className="auth-btn">Change Password</button>
       </AuthForm>
     );
   }
 }
 
-export default SignupForm;
+export default PasswordChangeForm;
