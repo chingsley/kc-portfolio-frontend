@@ -3,11 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AuthForm = styled.form`
-  // border: 1px solid salmon;
-  /* width: 30vw; */
   text-align: center;
   width: 18rem;
   padding: 1em;
+  // border: 1px solid red;
   * {
     box-sizing: border-box;
     height: 2.2rem;
@@ -27,29 +26,20 @@ const AuthForm = styled.form`
     width: 100%;
   }
 `;
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
   render() {
     return (
       <AuthForm>
-        <input type="file" />
-        <input className="form-control" type="text" placeholder="first name" />
-        <input className="form-control" type="text" placeholder="last name" />
-        <input className="form-control" type="text" placeholder="username" />
         <input className="form-control" type="email" placeholder="email" />
         <input
           className="form-control"
           type="new-password"
           placeholder="password"
         />
-        <input
-          className="form-control"
-          type="new-password"
-          placeholder="confirm-password"
-        />
-        <button className="auth-btn">Singn Up</button>
+        <button className="auth-btn">Login</button>
       </AuthForm>
     );
   }
 }
 
-export default SignupForm;
+export default LoginForm;
