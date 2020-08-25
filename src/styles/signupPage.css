@@ -1,0 +1,43 @@
+.signup-page {
+  border: 1px solid salmon;
+  height: 100vh;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-content {
+  display: flex;
+  /* margin: 4rem; */
+  /* border: 1px solid black; */
+  height: 33.617rem;
+  width: 80%;
+}
+
+.page-content > * {
+  height: 100%;
+}
+
+.content-left {
+  /* border: 1px solid yellowgreen; */
+  height: auto;
+  width: 40%;
+}
+.content-left > img {
+  /* border: 1px solid blue; */
+  display: block;
+  height: 100%;
+  width: 100%;
+  size: 200;
+}
+
+.content-right {
+  width: 60%;
+  /* border: 1px solid yellow; */
+  background-color: white;
+  padding-left: 2rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}

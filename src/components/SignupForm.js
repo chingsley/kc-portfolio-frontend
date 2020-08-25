@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AuthForm = styled.form`
-  border: 1px solid salmon;
+  // border: 1px solid salmon;
   /* width: 30vw; */
   text-align: center;
   width: 18rem;
@@ -32,6 +32,7 @@ class SignupForm extends React.Component {
     return (
       <AuthForm>
         <p>CREATE YOUR ACCOUNT</p>
+        <input type="file" />
         <input className="form-control" type="text" placeholder="first name" />
         <input className="form-control" type="text" placeholder="last name" />
         <input className="form-control" type="text" placeholder="username" />
@@ -46,7 +47,6 @@ class SignupForm extends React.Component {
           type="new-password"
           placeholder="confirm-password"
         />
-        <input type="file" />
         <button className="auth-btn">Singn up</button>
         <p>
           Already a member? Login <a href="http://www.here.com">here</a>
