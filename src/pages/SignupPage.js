@@ -1,5 +1,6 @@
 import React from 'react';
 import loginImage from '../assets/loginImage.png';
+import Logo from '../components/Logo';
 import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
 import PasswordResetForm from '../components/PasswordResetForm';
@@ -38,7 +39,7 @@ class SignupPage extends React.Component {
             <img src={loginImage} alt="person-reading" width="235" />
           </div>
           <div className="content-right">
-            <p>KC PORTFOLIO WEB</p>
+            <Logo />
             {this.state.signup && (
               <>
                 <SignupForm />

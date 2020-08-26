@@ -7,7 +7,7 @@ const AuthForm = styled.form`
   /* width: 30vw; */
   text-align: center;
   width: 18rem;
-  padding: 1em;
+  // padding: 1em;
   * {
     box-sizing: border-box;
     height: 2.2rem;

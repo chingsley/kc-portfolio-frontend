@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const AuthForm = styled.form`
   text-align: center;
   width: 18rem;
-  padding: 1em;
+  // padding: 1em;
   // border: 1px solid red;
   * {
     box-sizing: border-box;
