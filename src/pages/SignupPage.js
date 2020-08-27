@@ -7,7 +7,6 @@ import PasswordResetForm from '../components/PasswordResetForm';
 import PasswordChangeForm from '../components/PasswordChangeForm';
 
 import '../styles/signupPage.css';
-import ImageUpload from '../components/ImageUpload';
 
 class SignupPage extends React.Component {
   state = {
@@ -87,8 +86,6 @@ class SignupPage extends React.Component {
               </>
             )}
             {this.state.passwordChange && <PasswordChangeForm />}
-            {/* </div> */}
-            {/* <ImageUpload /> */}
           </div>
         </div>
       </div>
