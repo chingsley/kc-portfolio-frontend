@@ -5,12 +5,13 @@ import styled from 'styled-components';
 const AuthForm = styled.form`
   text-align: center;
   width: 18rem;
-  // padding: 1em;
-  // border: 1px solid red;
-  * {
+
+  .form-control,
+  .auth-btn {
     box-sizing: border-box;
     height: 2.2rem;
     margin: 0.5rem 0;
+    font-size: 14px;
   }
 
   .form-control {
@@ -24,6 +25,7 @@ const AuthForm = styled.form`
     /* width: 16rem; */
     cursor: pointer;
     width: 100%;
+    margin-bottom: 2rem;
   }
 `;
 class PasswordResetForm extends React.Component {
