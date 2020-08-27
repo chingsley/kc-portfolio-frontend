@@ -5,7 +5,6 @@ const Logo = styled.div`
   width: 18rem;
   height: 25px;
   display: flex;
-  margin-top: 2rem;
   margin-bottom: 2rem;
 
   .logo-title {

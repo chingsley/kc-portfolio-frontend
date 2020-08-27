@@ -24,6 +24,7 @@
   /* border: 1px solid yellowgreen; */
   height: auto;
   width: 40%;
+  overflow: hidden;
 }
 .content-left > img {
   /* border: 1px solid blue; */
@@ -34,44 +35,14 @@
 }
 
 .content-right {
-  width: 60%;
   /* border: 1px solid yellow; */
+  width: 60%;
   background-color: white;
   padding-left: 2rem;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  padding-top: 3rem;
 }
-
-/* .logo-container {
-  width: 18rem;
-  height: 25px;
-  display: flex;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.logo-title {
-  height: 100%;
-  font-weight: 700;
-  font-size: 1.8rem;
-  box-sizing: border-box;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  padding-left: 0.5rem;
-  padding-top: 0;
-}
-
-.logo {
-  width: 25px;
-  height: 100%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  overflow: hidden;
-  background-image: url('../assets/logo_2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-} */
 
 .auth-nav {
   cursor: pointer;

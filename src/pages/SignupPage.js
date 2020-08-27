@@ -7,6 +7,7 @@ import PasswordResetForm from '../components/PasswordResetForm';
 import PasswordChangeForm from '../components/PasswordChangeForm';
 
 import '../styles/signupPage.css';
+import ImageUpload from '../components/ImageUpload';
 
 class SignupPage extends React.Component {
   state = {
@@ -39,6 +40,7 @@ class SignupPage extends React.Component {
             <img src={loginImage} alt="person-reading" width="235" />
           </div>
           <div className="content-right">
+            {/* <div className="content-right-right"> */}
             <Logo />
             {this.state.signup && (
               <>
@@ -85,6 +87,8 @@ class SignupPage extends React.Component {
               </>
             )}
             {this.state.passwordChange && <PasswordChangeForm />}
+            {/* </div> */}
+            {/* <ImageUpload /> */}
           </div>
         </div>
       </div>

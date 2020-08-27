@@ -3,15 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AuthForm = styled.form`
-  // border: 1px solid salmon;
-  /* width: 30vw; */
   text-align: center;
   width: 18rem;
-  // padding: 1em;
-  * {
+
+  .form-control,
+  .auth-btn {
     box-sizing: border-box;
     height: 2.2rem;
     margin: 0.5rem 0;
+    font-size: 14px;
   }
 
   .form-control {
@@ -25,6 +25,7 @@ const AuthForm = styled.form`
     /* width: 16rem; */
     cursor: pointer;
     width: 100%;
+    margin-bottom: 2rem;
   }
 `;
 class PasswordChangeForm extends React.Component {
