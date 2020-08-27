@@ -11,6 +11,7 @@ const Logo = styled.div`
     height: 100%;
     font-weight: 700;
     font-size: 1.8rem;
+    text-shadow: 2px 2px #e0e0e0;
     box-sizing: border-box;
     display: flex;
     justify-items: center;
