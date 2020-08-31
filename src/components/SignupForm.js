@@ -1,7 +1,9 @@
 import React from 'react';
 // import './styles/signupForm.css';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import ImageUpload from './ImageUpload';
+import { createNewUserAccount } from '../store/actions';
 
 export const AuthForm = styled.form`
   // border: 1px solid salmon;
@@ -45,39 +47,129 @@ export const AuthForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
 `;
 class SignupForm extends React.Component {
+  state = {
+    error: '',
+    form: {
+      firstName: 'kc',
+      lastName: 'eneja',
+      email: 'eneja.kc2@gmail.com',
+      username: 'chingsley',
+      password: 'chinonxo',
+      confirmPassword: 'chinonxo',
+      image: null,
+    },
+  };
+
+  handleInputChange = (e) => {
+    e.persist();
+    this.setState((prevState) => ({
+      ...prevState,
+      form: {
+        ...prevState.form,
+        [e.target.name]: e.target.value,
+      },
+    }));
+  };
+
+  handleImageChange = (e) => {
+    // e.persist();
+    const [pictureFile] = e.target.files;
+    this.setState((prevState) => ({
+      ...prevState,
+      form: {
+        ...prevState.form,
+        image: pictureFile,
+      },
+    }));
+  };
+
+  submitForm = (e) => {
+    e.preventDefault();
+
+    const { confirmPassword, ...form } = this.state.form;
+    if (confirmPassword !== form.password) {
+      this.setState({ error: 'the two passwords do not match' });
+      console.log('ERROR: the two passwords do not match');
+      return;
+    }
+
+    const formData = new FormData();
+    Object.entries(form).map(([key, value]) => {
+      if (key === 'image' && value instanceof Blob) {
+        formData.append(key, value, value.name);
+      }
+      if (key !== 'image') {
+        formData.append(key, value);
+      }
+    });
+
+    this.props.createNewUserAccount(formData);
+  };
+
   render() {
     return (
-      <AuthForm>
+      <AuthForm onSubmit={this.submitForm}>
         <div className="left-inputs-in-form">
           <input
             className="form-control"
             type="text"
             placeholder="First Name"
+            name="firstName"
+            value={this.state.form.firstName}
+            onChange={this.handleInputChange}
           />
-          <input className="form-control" type="text" placeholder="Last Name" />
-          <input className="form-control" type="text" placeholder="Username" />
-          <input className="form-control" type="email" placeholder="Email" />
           <input
             className="form-control"
-            type="new-password"
+            type="text"
+            placeholder="Last Name"
+            name="lastName"
+            value={this.state.form.lastName}
+            onChange={this.handleInputChange}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Username"
+            name="username"
+            value={this.state.form.username}
+            onChange={this.handleInputChange}
+          />
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={this.state.form.email}
+            onChange={this.handleInputChange}
+          />
+          <input
+            className="form-control"
+            type="password"
             placeholder="Password"
+            name="password"
+            value={this.state.form.password}
+            onChange={this.handleInputChange}
           />
           <input
             className="form-control"
-            type="new-password"
+            type="password"
             placeholder="Confirm Password"
+            name="confirmPassword"
+            value={this.state.form.confirmPassword}
+            onChange={this.handleInputChange}
           />
           <button className="auth-btn">Sign Up</button>
         </div>
         <div className="right-content-in-form">
-          <ImageUpload />
+          <ImageUpload handleImageChange={this.handleImageChange} />
         </div>
       </AuthForm>
     );
   }
 }
 
-export default SignupForm;
+export default connect(null, { createNewUserAccount })(SignupForm);

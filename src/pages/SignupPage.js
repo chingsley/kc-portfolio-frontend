@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import loginImage from '../assets/loginImage.png';
 import Logo from '../components/Logo';
 import SignupForm from '../components/SignupForm';
@@ -31,9 +32,9 @@ class SignupPage extends React.Component {
     });
   };
   render() {
-    // console.log(this.state);
     return (
       <div className="signup-page">
+        <div className="error">{this.props.error}</div>
         <div className="page-content">
           <div className="content-left">
             <img src={loginImage} alt="person-reading" width="235" />
@@ -93,4 +94,8 @@ class SignupPage extends React.Component {
   }
 }
 
-export default SignupPage;
+const mapStateToProps = (state) => ({
+  error: state.error,
+});
+
+export default connect(mapStateToProps, {})(SignupPage);

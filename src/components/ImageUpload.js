@@ -11,10 +11,11 @@ class ImageUpload extends React.Component {
     this.setState({
       file: URL.createObjectURL(e.target.files[0]),
     });
+    this.props.handleImageChange(e);
   };
   render() {
     return (
-      <div className="container">
+      <div className="img-upload-container">
         <div className="avatar-upload">
           <div className="avatar-edit">
             <input
