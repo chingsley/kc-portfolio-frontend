@@ -1,13 +1,13 @@
-.container {
-  /* max-width: 960px; */
+.img-upload-container {
+  /* border: 1px solid blue; */
   margin: 0;
   padding: 0;
-  /* border: 1px solid salmon; */
   width: 150px;
   height: 150px;
 }
 
 .avatar-upload {
+  /* border: 1px solid tan; */
   position: relative;
   max-width: 205px;
 }
