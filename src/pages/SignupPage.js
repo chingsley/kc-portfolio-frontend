@@ -11,16 +11,22 @@ import '../styles/signupPage.css';
 
 class SignupPage extends React.Component {
   state = {
-    login: false,
-    signup: true,
-    passwordReset: false,
-    passwordChange: false,
+    login: this.props.login,
+    signup: this.props.signup,
+    passwordReset: this.props.passwordReset,
+    passwordChange: this.props.passwordChange,
+    form: this.props.form,
   };
 
   changeForm = (e) => {
     e.persist();
 
     this.setState((prevState) => {
+      if (e.target.dataset.name === 'signup') {
+        this.props.history.push('/signup');
+      } else {
+        this.props.history.push('/account');
+      }
       const newState = Object.keys(prevState).reduce((obj, key) => {
         if (key !== e.target.dataset.name) {
           return { ...obj, [key]: false };
@@ -32,6 +38,7 @@ class SignupPage extends React.Component {
     });
   };
   render() {
+    console.log(this.props, this.state);
     return (
       <div className="signup-page">
         <div className="error">{this.props.error}</div>
