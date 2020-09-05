@@ -10,7 +10,7 @@ function App() {
         <NavBar />
         <div className="app-main">
           <Route
-            path="/account"
+            path="/login"
             render={(props) => (
               <SignupPage {...props} form={'login'} login={true} />
             )}
@@ -19,6 +19,12 @@ function App() {
             path="/signup"
             render={(props) => (
               <SignupPage {...props} form={'signup'} signup={true} />
+            )}
+          />
+          <Route
+            path="/passwordReset"
+            render={(props) => (
+              <SignupPage {...props} form={'signup'} passwordReset={true} />
             )}
           />
         </div>

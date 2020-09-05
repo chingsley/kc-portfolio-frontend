@@ -55,7 +55,7 @@ function NavBar() {
         <li>
           <KcLink
             text="Sign In"
-            to="/account"
+            to="/login"
             color="#34495e"
             bgColorOnHover="#d63031"
             colorOnHover="#f5f6fa"
