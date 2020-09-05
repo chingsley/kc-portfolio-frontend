@@ -22,11 +22,12 @@ class SignupPage extends React.Component {
     e.persist();
 
     this.setState((prevState) => {
-      if (e.target.dataset.name === 'signup') {
-        this.props.history.push('/signup');
-      } else {
-        this.props.history.push('/account');
-      }
+      // if (e.target.dataset.name === 'signup') {
+      //   this.props.history.push('/signup');
+      // } else {
+      //   this.props.history.push('/account');
+      // }
+      this.props.history.push(`/${e.target.dataset.name}`);
       const newState = Object.keys(prevState).reduce((obj, key) => {
         if (key !== e.target.dataset.name) {
           return { ...obj, [key]: false };
@@ -84,6 +85,13 @@ class SignupPage extends React.Component {
             {this.state.passwordReset && (
               <>
                 <PasswordResetForm />
+                <p
+                  data-name="login"
+                  className="auth-nav"
+                  onClick={this.changeForm}
+                >
+                  Or click here to login if you remember your password.
+                </p>
                 <p
                   data-name="signup"
                   className="auth-nav"
