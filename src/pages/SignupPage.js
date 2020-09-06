@@ -15,18 +15,12 @@ class SignupPage extends React.Component {
     signup: this.props.signup,
     passwordReset: this.props.passwordReset,
     passwordChange: this.props.passwordChange,
-    form: this.props.form,
   };
 
   changeForm = (e) => {
     e.persist();
 
     this.setState((prevState) => {
-      // if (e.target.dataset.name === 'signup') {
-      //   this.props.history.push('/signup');
-      // } else {
-      //   this.props.history.push('/account');
-      // }
       this.props.history.push(`/${e.target.dataset.name}`);
       const newState = Object.keys(prevState).reduce((obj, key) => {
         if (key !== e.target.dataset.name) {
@@ -39,16 +33,13 @@ class SignupPage extends React.Component {
     });
   };
   render() {
-    console.log(this.props, this.state);
     return (
       <div className="signup-page">
-        <div className="error">{this.props.error}</div>
         <div className="page-content">
           <div className="content-left">
             <img src={loginImage} alt="person-reading" width="235" />
           </div>
           <div className="content-right">
-            {/* <div className="content-right-right"> */}
             <Logo />
             {this.state.signup && (
               <>
@@ -109,8 +100,4 @@ class SignupPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  error: state.error,
-});
-
-export default connect(mapStateToProps, {})(SignupPage);
+export default connect(null, {})(SignupPage);

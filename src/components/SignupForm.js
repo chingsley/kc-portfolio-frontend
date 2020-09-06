@@ -2,8 +2,10 @@ import React from 'react';
 // import './styles/signupForm.css';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 import ImageUpload from './ImageUpload';
-import { createNewUserAccount } from '../store/actions';
+import { registerUser } from '../store/actions';
+import customToast from '../utils/customToast';
 
 export const AuthForm = styled.form`
   // border: 1px solid salmon;
@@ -41,6 +43,7 @@ export const AuthForm = styled.form`
       border: none;
     }
   }
+
   .right-content-in-form {
     // border: 1px solid red;
     width: 45%;
@@ -50,19 +53,25 @@ export const AuthForm = styled.form`
     padding: 0;
   }
 `;
+
 class SignupForm extends React.Component {
   state = {
-    error: '',
     form: {
       firstName: 'kc',
       lastName: 'eneja',
       email: 'eneja.kc2@gmail.com',
       username: 'chingsley',
-      password: 'chinonxo',
-      confirmPassword: 'chinonxo',
+      password: 'Chinonxo*123',
+      confirmPassword: 'Chinonxo*123',
       image: null,
     },
   };
+
+  // componentDidMount() {
+  //   if (this.props.user) {
+  //     this.props.history.push('/home');
+  //   }
+  // }
 
   handleInputChange = (e) => {
     e.persist();
@@ -92,8 +101,7 @@ class SignupForm extends React.Component {
 
     const { confirmPassword, ...form } = this.state.form;
     if (confirmPassword !== form.password) {
-      this.setState({ error: 'the two passwords do not match' });
-      console.log('ERROR: the two passwords do not match');
+      customToast.error('the two passwords do not match');
       return;
     }
 
@@ -107,7 +115,7 @@ class SignupForm extends React.Component {
       }
     });
 
-    this.props.createNewUserAccount(formData);
+    this.props.registerUser(formData, this.props.history);
   };
 
   render() {
@@ -172,4 +180,10 @@ class SignupForm extends React.Component {
   }
 }
 
-export default connect(null, { createNewUserAccount })(SignupForm);
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps, { registerUser })(
+  withRouter(SignupForm)
+);
