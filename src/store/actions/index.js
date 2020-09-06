@@ -1,4 +1,6 @@
 import { Request } from '../../utils';
+import { toast } from 'react-toastify';
+import customToast from '../../utils/customToast';
 
 export const REGISTRATION_STARTED = 'REGISTRATION_STARTED';
 export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
@@ -20,5 +22,8 @@ export const createNewUserAccount = (formData) => async (dispatch) => {
       payload: error.response.data.error,
     });
     console.log(error.response);
+    // toast.success('something went wrong');
+    // customToast.success('operation successful');
+    customToast.error('something went wrong');
   }
 };

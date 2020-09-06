@@ -1,33 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
-import SignupPage from './pages/SignupPage';
+import 'react-toastify/dist/ReactToastify.css';
+
 import NavBar from './components/NavBar';
+import AppRoutes from './components/AppRoutes';
 function App() {
+  const wrapper = React.createRef();
   return (
     <Router>
       <div className="App">
+        {/* <ToastContainer ref={wrapper} hideProgressBar /> */}
+        <ToastContainer
+          ref={wrapper}
+          autoClose={4000}
+          position="bottom-right"
+          className="toast-container"
+          toastClassName="dark-toast"
+          hideProgressBar
+        />
         <NavBar />
-        <div className="app-main">
-          <Route
-            path="/login"
-            render={(props) => (
-              <SignupPage {...props} form={'login'} login={true} />
-            )}
-          />
-          <Route
-            path="/signup"
-            render={(props) => (
-              <SignupPage {...props} form={'signup'} signup={true} />
-            )}
-          />
-          <Route
-            path="/passwordReset"
-            render={(props) => (
-              <SignupPage {...props} form={'signup'} passwordReset={true} />
-            )}
-          />
-        </div>
+        <AppRoutes />
       </div>
     </Router>
   );
