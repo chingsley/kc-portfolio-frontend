@@ -67,12 +67,6 @@ class SignupForm extends React.Component {
     },
   };
 
-  // componentDidMount() {
-  //   if (this.props.user) {
-  //     this.props.history.push('/home');
-  //   }
-  // }
-
   handleInputChange = (e) => {
     e.persist();
     this.setState((prevState) => ({

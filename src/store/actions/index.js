@@ -1,6 +1,7 @@
 import { Request } from '../../utils';
 import { toast } from 'react-toastify';
 import customToast from '../../utils/customToast';
+import { saveToken } from '../../utils/localStorage';
 
 export const REGISTRATION_STARTED = 'REGISTRATION_STARTED';
 export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
@@ -13,13 +14,19 @@ export const registerUser = (formData, history) => async (dispatch) => {
       data: formData,
       contentType: 'multipart/form-data',
     };
-    const response = await Request.post('/users', options);
-    console.log(response);
-    customToast.success(response.data.message);
-    dispatch({ type: REGISTRATION_SUCCESS, payload: response.data });
+    const { data } = await Request.post('/users', options);
+    console.log(data);
+    customToast.success(data.message);
+    saveToken(data.data.token);
+    dispatch({ type: REGISTRATION_SUCCESS, payload: data.data });
     history.push('/home');
   } catch (error) {
-    const errorMsg = error.response?.data?.error || error.response.statusText;
+    const errorMsg =
+      error.response?.data?.error ||
+      `Server ${
+        error.response?.statusText || 'error. Please try again shortly'
+      }`;
+    customToast.error(errorMsg);
     dispatch({
       type: REGISTRATION_FAILURE,
       payload: errorMsg,
