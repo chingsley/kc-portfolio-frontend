@@ -21,11 +21,13 @@ const reducer = (state = initialState, action) => {
         isLoading: true,
       };
     case REGISTRATION_SUCCESS:
+      console.log(action.payload);
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.user,
         isLoading: false,
         error: '',
+        token: action.payload.token,
       };
     case REGISTRATION_FAILURE:
       return {

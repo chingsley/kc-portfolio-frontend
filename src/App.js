@@ -7,13 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './components/NavBar';
 import AppRoutes from './components/AppRoutes';
 function App() {
-  const wrapper = React.createRef();
+  // const wrapper = React.createRef();
   return (
     <Router>
       <div className="App">
-        {/* <ToastContainer ref={wrapper} hideProgressBar /> */}
         <ToastContainer
-          ref={wrapper}
+          // ref={wrapper}
           autoClose={8000}
           position="bottom-right"
           className="toast-container"
