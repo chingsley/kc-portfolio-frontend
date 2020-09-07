@@ -8,6 +8,7 @@ import PasswordResetForm from '../components/PasswordResetForm';
 import PasswordChangeForm from '../components/PasswordChangeForm';
 
 import '../styles/signupPage.css';
+import AppLoader from '../components/AppLoader';
 
 class SignupPage extends React.Component {
   state = {
@@ -40,6 +41,7 @@ class SignupPage extends React.Component {
             <img src={loginImage} alt="person-reading" width="235" />
           </div>
           <div className="content-right">
+            <AppLoader isLoading={this.props.isLoading} />
             <Logo />
             {this.state.signup && (
               <>
@@ -100,4 +102,8 @@ class SignupPage extends React.Component {
   }
 }
 
-export default connect(null, {})(SignupPage);
+const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
+});
+
+export default connect(mapStateToProps, {})(SignupPage);
