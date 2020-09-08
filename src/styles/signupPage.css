@@ -1,3 +1,5 @@
+/* For Desktop */
+
 .signup-page {
   /* border: 1px solid salmon; */
   height: 88vh;
@@ -47,4 +49,65 @@
 
 .auth-nav {
   cursor: pointer;
+}
+
+.fa-user {
+  /* border: 1px solid blue; */
+  color: #eb2f06;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-title {
+  color: black;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For tablets: */
+  .page-content {
+    /* border: 1px solid rgb(166, 165, 165);
+    width: 95%;
+    height: 40rem; */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+
+  .page-content {
+    /* border: 1px solid red; */
+    width: 90%;
+    /* margin: 0 auto; */
+  }
+
+  .content-left {
+    display: none;
+  }
+
+  .fa-user {
+    display: none;
+  }
+
+  .content-right {
+    /* border: 1px solid green; */
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .auth-nav {
+    /* border: 1px solid yellow; */
+    cursor: pointer;
+    text-align: center;
+    /* margin-bottom: 0.5rem; */
+  }
 }

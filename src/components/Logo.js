@@ -34,13 +34,15 @@ const Logo = styled.div`
 
     /* border: 1px solid red; */
   }
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 export default () => (
   <Logo>
-    {/* <div className="logo-container"> */}
     <div className="logo" />
     <div className="logo-title">Ching</div>
-    {/* </div> */}
   </Logo>
 );

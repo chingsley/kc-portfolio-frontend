@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import ImageUpload from './ImageUpload';
 import { registerUser } from '../store/actions';
 import customToast from '../utils/customToast';
+import ImageUploadMobile from './ImageUploadMobile';
 
 export const AuthForm = styled.form`
   // border: 1px solid salmon;
@@ -51,6 +52,21 @@ export const AuthForm = styled.form`
     flex-direction: column;
     align-items: center;
     padding: 0;
+  }
+  @media only screen and (max-width: 600px) {
+    // border: 1px solid blue;
+    flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .left-inputs-in-form {
+      // border: 1px solid red;
+      width: 80%;
+    }
+    .right-content-in-form {
+      display: none;
+    }
   }
 `;
 
@@ -116,6 +132,7 @@ class SignupForm extends React.Component {
     return (
       <AuthForm onSubmit={this.submitForm}>
         <div className="left-inputs-in-form">
+          <ImageUploadMobile className="image-upload-mobile" />
           <input
             className="form-control"
             type="text"

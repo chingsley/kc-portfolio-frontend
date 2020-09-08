@@ -42,7 +42,11 @@ class SignupPage extends React.Component {
           </div>
           <div className="content-right">
             <AppLoader isLoading={this.props.isLoading} />
-            <Logo />
+            {/* <Logo /> */}
+            <i className="fas fa-user">
+              <span className="form-title">Login</span>
+            </i>
+
             {this.state.signup && (
               <>
                 <SignupForm />
