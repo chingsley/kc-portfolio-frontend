@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const FormIcon = styled.div`
+const FormTitle = styled.div`
   ${(props) => {
     const { signup } = props.props.form;
     return css`
@@ -31,10 +31,21 @@ const FormIcon = styled.div`
   }}
 `;
 
-export default (props) => (
-  <FormIcon props={props}>
-    <i className="fas fa-user">
-      <span className="form-title">Login</span>
-    </i>
-  </FormIcon>
-);
+export default (props) => {
+  const { form } = props;
+  return (
+    <FormTitle props={props}>
+      <i className="fas fa-user">
+        <span className="form-title">
+          {form.login
+            ? 'Login'
+            : form.signup
+            ? 'Sign up'
+            : form.passwordReset
+            ? 'Password reset'
+            : 'Change password'}
+        </span>
+      </i>
+    </FormTitle>
+  );
+};

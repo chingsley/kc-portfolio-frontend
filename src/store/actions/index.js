@@ -23,8 +23,9 @@ export const registerUser = (formData, history) => async (dispatch) => {
   } catch (error) {
     const errorMsg =
       error.response?.data?.error ||
-      `Server ${
-        error.response?.statusText || 'error. Please try again shortly'
+      `${
+        error.response?.statusText ||
+        'Server not reachable. Please check your internet connection or try again shortly'
       }`;
     customToast.error(errorMsg);
     dispatch({
