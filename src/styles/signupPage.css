@@ -70,9 +70,9 @@
 @media only screen and (max-width: 768px) {
   /* For tablets: */
   .page-content {
-    /* border: 1px solid rgb(166, 165, 165);
+    /* border: 1px solid rgb(166, 165, 165); */
     width: 95%;
-    height: 40rem; */
+    /* height: 40rem; */
   }
 }
 
@@ -89,9 +89,9 @@
     display: none;
   }
 
-  .fa-user {
+  /* .fa-user {
     display: none;
-  }
+  } */
 
   .content-right {
     /* border: 1px solid green; */

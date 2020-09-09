@@ -9,6 +9,7 @@ import PasswordChangeForm from '../components/PasswordChangeForm';
 
 import '../styles/signupPage.css';
 import AppLoader from '../components/AppLoader';
+import FormIcon from '../components/FormIcon';
 
 class SignupPage extends React.Component {
   state = {
@@ -42,10 +43,10 @@ class SignupPage extends React.Component {
           </div>
           <div className="content-right">
             <AppLoader isLoading={this.props.isLoading} />
-            {/* <Logo /> */}
-            <i className="fas fa-user">
+            <FormIcon form={this.state} />
+            {/* <i className="fas fa-user">
               <span className="form-title">Login</span>
-            </i>
+            </i> */}
 
             {this.state.signup && (
               <>
