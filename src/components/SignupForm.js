@@ -95,7 +95,6 @@ class SignupForm extends React.Component {
   };
 
   handleImageChange = (e) => {
-    // e.persist();
     const [pictureFile] = e.target.files;
     this.setState((prevState) => ({
       ...prevState,
@@ -132,7 +131,7 @@ class SignupForm extends React.Component {
     return (
       <AuthForm onSubmit={this.submitForm}>
         <div className="left-inputs-in-form">
-          <ImageUploadMobile className="image-upload-mobile" />
+          <ImageUploadMobile handleImageChange={this.handleImageChange} />
           <input
             className="form-control"
             type="text"
