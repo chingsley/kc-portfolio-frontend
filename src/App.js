@@ -4,7 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBarResponsive';
+// import NavBar from './components/NavBar';
 import AppRoutes from './components/AppRoutes';
 function App() {
   // const wrapper = React.createRef();

@@ -23,7 +23,7 @@ export const AuthForm = styled.form`
       box-sizing: border-box;
       height: 2.5rem;
       margin: 0.3rem 0;
-      font-size: 12px;
+      font-size: 1em;
     }
 
     .form-control {

@@ -6,8 +6,11 @@ const Parent = styled.div`
   ${({ props }) => {
     return css`
       // border: 1px solid blue;
+      height: 2.2rem;
+      line-height: 2.2rem;
       display: inline-block;
       position: relative;
+      z-index: 100;
 
       &:hover {
         cursor: pointer;
@@ -38,14 +41,13 @@ const Parent = styled.div`
       .link {
         // border: 1px solid red;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 1em;
         color: ${props.color || 'black'};
         display: inline-block;
         width: 100%;
         height: 100%;
         line-height: 100%;
-        padding: 0.7rem 1.3rem;
-        // padding: 0.8rem 1rem;
+        padding: 0 1.3rem;
         z-index: 1000;
         transition-duration: 0.5s;
       }

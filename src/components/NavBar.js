@@ -25,6 +25,7 @@ const Nav = styled.div`
     list-style-type: none;
 
     li {
+      // border: 1px solid red;
       margin-right: 1.3rem;
     }
   }
@@ -37,7 +38,7 @@ function NavBar() {
         <li>
           <KcLink
             text="Home"
-            to="/home"
+            to="/"
             color="#34495e"
             bgColorOnHover="#d63031"
             colorOnHover="#f5f6fa"
