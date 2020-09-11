@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const Parent = styled.div`
-  ${({ props }) => {
+  ${(props) => {
     return css`
       // border: 1px solid blue;
       height: 2.2rem;
@@ -57,7 +57,7 @@ const Parent = styled.div`
 
 const KcLink = (props) => {
   return (
-    <Parent props={props}>
+    <Parent {...props}>
       <div className="sibling"></div>
       <Link to={props.to} className="link">
         {props.text}

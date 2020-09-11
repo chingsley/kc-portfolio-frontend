@@ -4,10 +4,15 @@ import KcLink from './KcLink';
 import Logo from './Logo';
 
 const Nav = styled.nav`
+  // border: 1px solid red;
   font-family: montserrat;
   height: 12vh;
   width: 100%;
   background-color: #fafbfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
 
   position: fixed;
   top: 0;
@@ -22,9 +27,7 @@ const Nav = styled.nav`
   .checkbtn {
     font-size: 30px;
     color: black;
-    float: right;
     line-height: 12vh;
-    margin-right: 2rem;
     cursor: pointer;
     display: none;
   }
@@ -36,14 +39,13 @@ const Nav = styled.nav`
     text-shadow: 2px 2px #e0e0e0;
     font-size: 2rem;
     line-height: 12vh;
-    padding: 0 100px;
+    // padding: 0 100px;
     font-weight: bold;
     // background-color: #eb2f06;
   }
   .topnav-ul {
     // border: 1px solid blue;
-    float: right;
-    margin-right: 20px;
+    display: inline-block;
 
     .topnav-ul-li {
       // border: 1px solid red;
@@ -53,11 +55,13 @@ const Nav = styled.nav`
     }
   }
   @media only screen and (max-width: 768px) {
-    z-index: 1;
+    // border: 1px solid green;
+    z-index: 2;
+    padding: 0 1em;
     .logo {
       border: 1px solid red;
       font-size: 1.5rem;
-      padding-left: 50px;
+      // padding-left: 50px;
     }
     .checkbtn {
       display: block;
@@ -68,7 +72,6 @@ const Nav = styled.nav`
       top: 12vh;
       // left: -100%;
       right: -100%;
-      float: right;
       margin: 0;
       height: 88vh;
       width: 50%;
@@ -97,14 +100,14 @@ const Nav = styled.nav`
 function NavBar() {
   return (
     <Nav>
+      <Logo width="150px" />
       <input type="checkbox" name="mobile-nav-trigger" id="check" />
       <label htmlFor="check" className="checkbtn">
         <i className="fas fa-bars"></i>
       </label>
-      <label htmlFor="" className="logo">
+      {/* <label htmlFor="" className="logo">
         KeneJA
-      </label>
-      {/* <Logo /> */}
+      </label> */}
       <ul className="topnav-ul">
         <li className="topnav-ul-li">
           <KcLink
