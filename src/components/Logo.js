@@ -12,11 +12,14 @@ const Logo = styled.div`
       // height: 50px;
 
       .logo-img {
-        width: ${props.width};
+        width: ${props.width || '150px'};
       }
 
       @media only screen and (max-width: 600px) {
         // margin-bottom: 0.5rem;
+        .logo-img {
+          width: ${props.mobile_width || '100px'};
+        }
       }
     `;
   }}

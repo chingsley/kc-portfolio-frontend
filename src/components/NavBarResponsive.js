@@ -34,15 +34,6 @@ const Nav = styled.nav`
   #check {
     display: none;
   }
-  .logo {
-    color: black;
-    text-shadow: 2px 2px #e0e0e0;
-    font-size: 2rem;
-    line-height: 12vh;
-    // padding: 0 100px;
-    font-weight: bold;
-    // background-color: #eb2f06;
-  }
   .topnav-ul {
     // border: 1px solid blue;
     display: inline-block;
@@ -80,10 +71,9 @@ const Nav = styled.nav`
       transition: all 0.5s;
 
       .topnav-ul-li {
+        // border: 1px solid white;
         display: block;
         margin: 0;
-        // border: 1px solid white;
-        // border-bottom: 0.5px solid grey;
 
         & * {
           color: white !important;
@@ -100,7 +90,7 @@ const Nav = styled.nav`
 function NavBar() {
   return (
     <Nav>
-      <Logo width="150px" />
+      <Logo width="150px" mobile_width="120px" />
       <input type="checkbox" name="mobile-nav-trigger" id="check" />
       <label htmlFor="check" className="checkbtn">
         <i className="fas fa-bars"></i>
