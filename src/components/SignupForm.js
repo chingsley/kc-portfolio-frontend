@@ -53,6 +53,18 @@ export const AuthForm = styled.form`
     align-items: center;
     padding: 0;
   }
+
+  @media only screen and (max-width: 1049px) {
+    // border: 1px solid red;
+
+    .left-inputs-in-form {
+      width: 80%;
+    }
+    .right-content-in-form {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     // border: 1px solid blue;
     flex-direction: column-reverse;
