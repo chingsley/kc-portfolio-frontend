@@ -3,7 +3,6 @@
 .signup-page {
   /* border: 1px solid salmon; */
   height: 88vh;
-  /* background-color: #e0e0e0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +12,7 @@
 .page-content {
   /* border: 1px solid black; */
   display: flex;
-  height: 33.617rem;
+  height: 31rem;
   width: 80%;
 }
 
@@ -32,7 +31,6 @@
   display: block;
   height: 100%;
   width: 100%;
-  size: 200;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -41,10 +39,13 @@
   /* border: 1px solid yellow; */
   width: 60%;
   background-color: #fafbfc;
-  padding-left: 4rem;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 4rem;
+  /* padding-top: 3rem; */
 }
 
 .auth-nav {
@@ -97,7 +98,7 @@
     width: 100%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 0;
+    padding: 2em 0;
     margin: 0;
     display: flex;
     flex-direction: column;

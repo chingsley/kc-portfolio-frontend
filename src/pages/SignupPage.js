@@ -39,7 +39,7 @@ class SignupPage extends React.Component {
       <div className="signup-page">
         <div className="page-content">
           <div className="content-left">
-            <img src={loginImage} alt="person-reading" width="235" />
+            <img src={loginImage} alt="person-reading" />
           </div>
           <div className="content-right">
             <AppLoader isLoading={this.props.isLoading} />
