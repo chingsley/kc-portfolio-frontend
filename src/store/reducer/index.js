@@ -2,6 +2,9 @@ import {
   REGISTRATION_STARTED,
   REGISTRATION_FAILURE,
   REGISTRATION_SUCCESS,
+  LOGIN_STARTED,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
 } from '../actions';
 
 const initialState = {
@@ -30,6 +33,27 @@ const reducer = (state = initialState, action) => {
         token: action.payload.token,
       };
     case REGISTRATION_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false,
+      };
+    case LOGIN_STARTED:
+      return {
+        ...state,
+        error: '',
+        isLoading: true,
+      };
+    case LOGIN_SUCCESS:
+      console.log(action.payload);
+      return {
+        ...state,
+        user: action.payload.user,
+        isLoading: false,
+        error: '',
+        token: action.payload.token,
+      };
+    case LOGIN_FAILURE:
       return {
         ...state,
         error: action.payload,
