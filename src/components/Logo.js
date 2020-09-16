@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import logo from '../assets/L12.png';
+import logo from '../assets/L1.png';
 
 const Logo = styled.div`
   ${(props) => {

@@ -90,7 +90,7 @@ const Nav = styled.nav`
 function NavBar() {
   return (
     <Nav>
-      <Logo width="150px" mobile_width="120px" />
+      <Logo width="80px" mobile_width="120px" />
       <input type="checkbox" name="mobile-nav-trigger" id="check" />
       <label htmlFor="check" className="checkbtn">
         <i className="fas fa-bars"></i>

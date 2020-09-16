@@ -49,7 +49,15 @@
 }
 
 .auth-nav {
+  /* border: 1px solid grey; */
   cursor: pointer;
+  transition: color 0.5s;
+}
+/* .auth-nav:first-child {
+  margin-bottom: 5rem;
+} */
+.auth-nav:hover {
+  color: #eb2f06;
 }
 
 .fa-user {
