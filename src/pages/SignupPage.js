@@ -4,8 +4,8 @@ import loginImage from '../assets/loginImage.png';
 import Logo from '../components/Logo';
 import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
+import ForgotPasswordForm from '../components/ForgotPasswordForm';
 import PasswordResetForm from '../components/PasswordResetForm';
-import PasswordChangeForm from '../components/PasswordChangeForm';
 
 import '../styles/signupPage.css';
 import AppLoader from '../components/AppLoader';
@@ -15,15 +15,19 @@ class SignupPage extends React.Component {
   state = {
     login: this.props.login,
     signup: this.props.signup,
+    forgotPassword: this.props.forgotPassword,
     passwordReset: this.props.passwordReset,
-    passwordChange: this.props.passwordChange,
   };
 
   changeForm = (e) => {
     e.persist();
 
     this.setState((prevState) => {
-      this.props.history.push(`/${e.target.dataset.name}`);
+      if (e.target.dataset.name === 'forgotPassword') {
+        this.props.history.push('/password/forgot');
+      } else {
+        this.props.history.push(`/${e.target.dataset.name}`);
+      }
       const newState = Object.keys(prevState).reduce((obj, key) => {
         if (key !== e.target.dataset.name) {
           return { ...obj, [key]: false };
@@ -65,7 +69,7 @@ class SignupPage extends React.Component {
               <>
                 <LoginForm />
                 <p
-                  data-name="passwordReset"
+                  data-name="forgotPassword"
                   className="auth-nav"
                   onClick={this.changeForm}
                 >
@@ -80,15 +84,15 @@ class SignupPage extends React.Component {
                 </p>
               </>
             )}
-            {this.state.passwordReset && (
+            {this.state.forgotPassword && (
               <>
-                <PasswordResetForm />
+                <ForgotPasswordForm />
                 <p
                   data-name="login"
                   className="auth-nav"
                   onClick={this.changeForm}
                 >
-                  Or click here to login if you remember your password.
+                  click here to login if you remember your password.
                 </p>
                 <p
                   data-name="signup"
@@ -99,7 +103,7 @@ class SignupPage extends React.Component {
                 </p>
               </>
             )}
-            {this.state.passwordChange && <PasswordChangeForm />}
+            {this.state.passwordReset && <PasswordResetForm {...this.props} />}
           </div>
         </div>
       </div>
