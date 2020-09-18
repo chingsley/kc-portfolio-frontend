@@ -5,26 +5,13 @@ import HomePage from '../pages/HomePage';
 
 const AppRoutes = () => (
   <div className="app-main">
-    {/* <Switch> */}
-    <Route exact path="/" component={HomePage} />
-    <Route
-      path="/login"
-      render={(props) => <SignupPage {...props} login={true} />}
-    />
-    <Route
-      path="/signup"
-      render={(props) => <SignupPage {...props} signup={true} />}
-    />
-    <Route
-      exact
-      path="/password/forgot"
-      render={(props) => <SignupPage {...props} forgotPassword={true} />}
-    />
-    <Route
-      path="/password/reset/:resetToken"
-      component={(props) => <SignupPage {...props} passwordReset={true} />}
-    />
-    {/* </Switch> */}
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/login" component={SignupPage} />
+      <Route path="/signup" component={SignupPage} />
+      <Route exact path="/password/forgot" component={SignupPage} />
+      <Route path="/password/reset/:resetToken" component={SignupPage} />
+    </Switch>
   </div>
 );
 

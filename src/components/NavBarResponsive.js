@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import KcLink from './KcLink';
-import Logo from './Logo';
 
 const Nav = styled.nav`
   // border: 1px solid red;
@@ -90,14 +89,12 @@ const Nav = styled.nav`
 function NavBar() {
   return (
     <Nav>
-      <Logo width="80px" mobile_width="120px" />
+      {/* <Logo width="80px" mobile_width="120px" /> */}
+      <p>logo</p>
       <input type="checkbox" name="mobile-nav-trigger" id="check" />
       <label htmlFor="check" className="checkbtn">
         <i className="fas fa-bars"></i>
       </label>
-      {/* <label htmlFor="" className="logo">
-        KeneJA
-      </label> */}
       <ul className="topnav-ul">
         <li className="topnav-ul-li">
           <KcLink

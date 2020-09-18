@@ -1,6 +1,10 @@
 import React from 'react';
 import { AuthForm } from './SignupForm';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { requestPasswordReset } from '../store/actions/user';
+import Message from './Message';
 
 const Label = styled.label`
   margin-top: 0.5rem;
@@ -10,19 +14,24 @@ const Label = styled.label`
 `;
 
 class ForgotPasswordForm extends React.Component {
-  state = { email: '' };
+  state = { email: 'enejak.kc@gmail.com' };
 
   handleInputChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleFormSubmit = (e) => {
+  handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log('this.state = ', this.state);
+    const { email } = this.state;
+    this.props.requestPasswordReset({ email }, this.props.history);
+    this.setState({ email: '' });
   };
+
   render() {
     return (
       <AuthForm onSubmit={this.handleFormSubmit}>
+        <Message message={this.props.message} />
         <div className="left-inputs-in-form">
           <Label htmlFor="email">Enter the email you used to signup</Label>
           <input
@@ -33,6 +42,7 @@ class ForgotPasswordForm extends React.Component {
             id="email"
             type="email"
             placeholder="Email"
+            required
           />
           <button className="auth-btn">Initiate Request</button>
         </div>
@@ -41,4 +51,10 @@ class ForgotPasswordForm extends React.Component {
   }
 }
 
-export default ForgotPasswordForm;
+const mapStateToProps = (state) => ({
+  message: state.message,
+});
+
+export default connect(mapStateToProps, { requestPasswordReset })(
+  withRouter(ForgotPasswordForm)
+);
