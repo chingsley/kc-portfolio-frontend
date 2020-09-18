@@ -5,6 +5,9 @@ import {
   LOGIN_STARTED,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  REQUEST_PASSWORD_RESET_STARTED,
+  REQUEST_PASSWORD_RESET_SUCCESS,
+  REQUEST_PASSWORD_RESET_FAILURE,
 } from '../actions';
 
 const initialState = {
@@ -13,6 +16,7 @@ const initialState = {
   isLoading: false,
   error: '',
   projects: [],
+  message: '',
 };
 
 const reducer = (state = initialState, action) => {
@@ -58,6 +62,24 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         isLoading: false,
+      };
+    case REQUEST_PASSWORD_RESET_STARTED:
+      return {
+        ...state,
+        error: action.payload,
+        isLoding: true,
+      };
+    case REQUEST_PASSWORD_RESET_SUCCESS:
+      return {
+        ...state,
+        message: action.payload,
+        isLoding: false,
+      };
+    case REQUEST_PASSWORD_RESET_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isLoding: false,
       };
     default:
       return state;

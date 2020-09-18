@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const FormTitle = styled.div`
   ${(props) => {
-    const { signup } = props.props.form;
+    const signup = props.location.pathname.match(/^\/signup$/);
     return css`
       // border: 1px solid blue;
       .fa-user {
@@ -32,16 +32,18 @@ const FormTitle = styled.div`
 `;
 
 export default (props) => {
-  const { form } = props;
+  // const { form } = props;
+  console.log(props);
+  const { pathname } = props.location;
   return (
-    <FormTitle props={props}>
+    <FormTitle {...props}>
       <i className="fas fa-user">
         <span className="form-title">
-          {form.login
+          {pathname.match(/^\/login$/)
             ? 'Login'
-            : form.signup
+            : pathname.match(/^\/signup$/)
             ? 'Sign up'
-            : form.forgotPassword
+            : pathname.match(/^\/password\/forgot$/)
             ? 'Password reset'
             : 'Reset password'}
         </span>

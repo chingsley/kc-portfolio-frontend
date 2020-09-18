@@ -1,9 +1,17 @@
 import axios from 'axios';
-// export const BASE_URL = 'http://localhost:3000/api/v1';
-export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
+export const BASE_URL = 'http://localhost:3000/api/v1';
+// export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
 
 class Request {
   static async post(path, { data, contentType }) {
+    console.log({
+      url: BASE_URL + path,
+      method: 'POST',
+      data,
+      headers: {
+        'Content-type': contentType || 'application/json',
+      },
+    });
     const result = await axios({
       url: BASE_URL + path,
       method: 'POST',

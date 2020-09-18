@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import loginImage from '../assets/loginImage.png';
-import Logo from '../components/Logo';
 import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
 import ForgotPasswordForm from '../components/ForgotPasswordForm';
@@ -22,23 +21,16 @@ class SignupPage extends React.Component {
   changeForm = (e) => {
     e.persist();
 
-    this.setState((prevState) => {
-      if (e.target.dataset.name === 'forgotPassword') {
-        this.props.history.push('/password/forgot');
-      } else {
-        this.props.history.push(`/${e.target.dataset.name}`);
-      }
-      const newState = Object.keys(prevState).reduce((obj, key) => {
-        if (key !== e.target.dataset.name) {
-          return { ...obj, [key]: false };
-        }
-
-        return { ...obj, [e.target.dataset.name]: true };
-      }, {});
-      return { ...prevState, ...newState };
-    });
+    if (e.target.dataset.name === 'forgotPassword') {
+      this.props.history.push('/password/forgot');
+    } else {
+      this.props.history.push(`/${e.target.dataset.name}`);
+    }
   };
+
   render() {
+    const { pathname } = this.props.location;
+    console.log(this.props, this.state);
     return (
       <div className="signup-page">
         <div className="page-content">
@@ -47,16 +39,12 @@ class SignupPage extends React.Component {
           </div>
           <div className="content-right">
             <AppLoader isLoading={this.props.isLoading} />
-            <FormTitle form={this.state} />
-            {/* <i className="fas fa-user">
-              <span className="form-title">Login</span>
-            </i> */}
+            <FormTitle {...this.props} />
 
-            {this.state.signup && (
+            {pathname.match(/\/signup/i) && (
               <>
                 <SignupForm />
                 <p
-                  // data-name="login"
                   data-name="login"
                   className="auth-nav"
                   onClick={this.changeForm}
@@ -65,7 +53,7 @@ class SignupPage extends React.Component {
                 </p>
               </>
             )}
-            {this.state.login && (
+            {pathname.match(/\/login/) && (
               <>
                 <LoginForm />
                 <p
@@ -84,16 +72,9 @@ class SignupPage extends React.Component {
                 </p>
               </>
             )}
-            {this.state.forgotPassword && (
+            {pathname.match(/\/password\/forgot/i) && (
               <>
                 <ForgotPasswordForm />
-                <p
-                  data-name="login"
-                  className="auth-nav"
-                  onClick={this.changeForm}
-                >
-                  click here to login if you remember your password.
-                </p>
                 <p
                   data-name="signup"
                   className="auth-nav"
@@ -103,7 +84,11 @@ class SignupPage extends React.Component {
                 </p>
               </>
             )}
-            {this.state.passwordReset && <PasswordResetForm {...this.props} />}
+            {pathname.match(/^\/password\/reset\/*/) && (
+              <>
+                <PasswordResetForm {...this.props} />
+              </>
+            )}
           </div>
         </div>
       </div>
