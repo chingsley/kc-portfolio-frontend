@@ -41,9 +41,9 @@ export default (props) => {
             ? 'Login'
             : form.signup
             ? 'Sign up'
-            : form.passwordReset
+            : form.forgotPassword
             ? 'Password reset'
-            : 'Change password'}
+            : 'Reset password'}
         </span>
       </i>
     </FormTitle>
