@@ -20,7 +20,7 @@ class ForgotPasswordForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleFormSubmit = async (e) => {
+  handleFormSubmit = (e) => {
     e.preventDefault();
     console.log('this.state = ', this.state);
     const { email } = this.state;

@@ -6,12 +6,12 @@ class ImageUpload extends React.Component {
   state = { file: null };
 
   handleChange = (e) => {
-    console.log(e.target.files);
-    console.log(URL.createObjectURL(e.target.files[0]));
-    this.setState({
-      file: URL.createObjectURL(e.target.files[0]),
-    });
-    this.props.handleImageChange(e);
+    if (e.target.files[0]) {
+      this.setState({
+        file: URL.createObjectURL(e.target.files[0]),
+      });
+      this.props.handleImageChange(e);
+    }
   };
   render() {
     return (

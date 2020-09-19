@@ -93,11 +93,13 @@ class ImageUploadMobile extends React.Component {
   };
 
   handleChange = (e) => {
-    this.setState({ file: URL.createObjectURL(e.target.files[0]) });
-    this.props.handleImageChange(e);
-    setTimeout(() => {
-      console.log(this.state);
-    }, 3000);
+    if (e.target.files[0]) {
+      this.setState({ file: URL.createObjectURL(e.target.files[0]) });
+      this.props.handleImageChange(e);
+    }
+    // setTimeout(() => {
+    //   console.log(this.state);
+    // }, 3000);
   };
   render() {
     return (
@@ -109,6 +111,7 @@ class ImageUploadMobile extends React.Component {
           type="file"
           name="images"
           id="images"
+          accept=".png, .jpg, .jpeg"
           onChange={this.handleChange}
         />
         <div className="file-dummy">

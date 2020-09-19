@@ -134,6 +134,7 @@ class SignupForm extends React.Component {
       if (key !== 'image') {
         formData.append(key, value);
       }
+      return true;
     });
 
     this.props.registerUser(formData, this.props.history);
