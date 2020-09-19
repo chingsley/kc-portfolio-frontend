@@ -32,8 +32,6 @@ const FormTitle = styled.div`
 `;
 
 export default (props) => {
-  // const { form } = props;
-  console.log(props);
   const { pathname } = props.location;
   return (
     <FormTitle {...props}>

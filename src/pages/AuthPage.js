@@ -19,19 +19,8 @@ class AuthPage extends React.Component {
     passwordReset: this.props.passwordReset,
   };
 
-  changeForm = (e) => {
-    e.persist();
-
-    if (e.target.dataset.name === 'forgotPassword') {
-      this.props.history.push('/password/forgot');
-    } else {
-      this.props.history.push(`/${e.target.dataset.name}`);
-    }
-  };
-
   render() {
     const { pathname } = this.props.location;
-    console.log(this.props, this.state);
     return (
       <div className="auth-page">
         <div className="page-content">

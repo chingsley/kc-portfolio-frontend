@@ -1,4 +1,4 @@
-import { Request } from '../../utils';
+import { Request, handleError } from '../../utils';
 import customToast from '../../utils/customToast';
 import { saveToken } from '../../utils/localStorage';
 
@@ -19,13 +19,7 @@ export const registerUser = (formData, history) => async (dispatch) => {
     dispatch({ type: REGISTRATION_SUCCESS, payload: data.data });
     history.push('/home');
   } catch (error) {
-    const errorMsg =
-      error.response?.data?.error ||
-      `${
-        error.response?.statusText ||
-        'Server not reachable. Please check your internet connection or try again shortly'
-      }`;
-    customToast.error(errorMsg);
+    const errorMsg = handleError(error);
     dispatch({
       type: REGISTRATION_FAILURE,
       payload: errorMsg,
@@ -49,13 +43,7 @@ export const loginUser = (form, history) => async (dispatch) => {
     dispatch({ type: LOGIN_SUCCESS, payload: data.data });
     history.push('/home');
   } catch (error) {
-    const errorMsg =
-      error.response?.data?.error ||
-      `${
-        error.response?.statusText ||
-        'Server not reachable. Please check your internet connection or try again shortly'
-      }`;
-    customToast.error(errorMsg);
+    const errorMsg = handleError(error);
     dispatch({
       type: LOGIN_FAILURE,
       payload: errorMsg,
@@ -75,12 +63,9 @@ export const requestPasswordReset = (form, history) => async (dispatch) => {
     const { data } = response;
     customToast.success(data.message);
     dispatch({ type: REQUEST_PASSWORD_RESET_SUCCESS, payload: data.message });
-    // history.push('/home');
+    history.push('/login');
   } catch (error) {
-    const errorMsg =
-      error.response?.data?.error ||
-      `${error.response?.statusText || error.messge}`;
-    customToast.error(errorMsg);
+    const errorMsg = handleError(error);
     dispatch({
       type: REQUEST_PASSWORD_RESET_FAILURE,
       payload: errorMsg,
