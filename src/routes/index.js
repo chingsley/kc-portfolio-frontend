@@ -1,5 +1,5 @@
 import React from 'react';
-import SignupPage from '../pages/SignupPage';
+import AuthPage from '../pages/AuthPage';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 
@@ -7,10 +7,10 @@ const AppRoutes = () => (
   <div className="app-main">
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route path="/login" component={SignupPage} />
-      <Route path="/signup" component={SignupPage} />
-      <Route exact path="/password/forgot" component={SignupPage} />
-      <Route path="/password/reset/:resetToken" component={SignupPage} />
+      <Route path="/login" component={AuthPage} />
+      <Route path="/signup" component={AuthPage} />
+      <Route exact path="/password/forgot" component={AuthPage} />
+      <Route path="/password/reset/:resetToken" component={AuthPage} />
     </Switch>
   </div>
 );
