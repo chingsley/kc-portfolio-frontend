@@ -4,7 +4,7 @@ import logo from '../assets/L11.png';
 
 const Logo = styled.div`
   ${(props) => {
-    console.log(props.width);
+    // console.log(props.width);
     return css`
       // border: 1px solid black;
       display: inline-block;
