@@ -130,6 +130,7 @@ function NavBar() {
             color="#34495e"
             bgColorOnHover="#d63031"
             colorOnHover="#f5f6fa"
+            data-testid="signup-nav-link"
           />
         </li>
       </ul>

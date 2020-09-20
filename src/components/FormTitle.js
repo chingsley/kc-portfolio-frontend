@@ -36,7 +36,7 @@ export default (props) => {
   return (
     <FormTitle {...props}>
       <i className="fas fa-user">
-        <span className="form-title">
+        <span className="form-title" data-testid="form-title">
           {pathname.match(/^\/login$/)
             ? 'Login'
             : pathname.match(/^\/signup$/)
