@@ -73,3 +73,8 @@ code {
   display: inline-block;
   background-color: #000;
 }
+
+.inline-display {
+  /* border: 1px solid red; */
+  display: inline;
+}

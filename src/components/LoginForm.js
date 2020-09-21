@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { AuthForm } from './SignupForm';
 import { loginUser } from '../store/actions';
+import Loader from 'react-loader-spinner';
 
 class LoginForm extends React.Component {
   state = {
@@ -32,7 +33,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <AuthForm onSubmit={this.handleFormSubmit}>
+      <AuthForm {...this.props} onSubmit={this.handleFormSubmit}>
         <div className="left-inputs-in-form">
           <input
             className="form-control"
@@ -50,11 +51,30 @@ class LoginForm extends React.Component {
             value={this.state.password}
             onChange={this.handleInputChange}
           />
-          <button className="auth-btn">Sign In</button>
+          <button className="auth-btn">
+            {this.props.isLoading ? (
+              <>
+                {'Loading '}
+                <Loader
+                  className="inline-display"
+                  type="ThreeDots"
+                  color="#fff"
+                  height="20"
+                  width="20"
+                />
+              </>
+            ) : (
+              'Sign In'
+            )}
+          </button>
         </div>
       </AuthForm>
     );
   }
 }
 
-export default connect(null, { loginUser })(withRouter(LoginForm));
+const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
+});
+
+export default connect(mapStateToProps, { loginUser })(withRouter(LoginForm));
