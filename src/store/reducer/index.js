@@ -67,19 +67,19 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
-        isLoding: true,
+        isLoading: true,
       };
     case REQUEST_PASSWORD_RESET_SUCCESS:
       return {
         ...state,
         message: action.payload,
-        isLoding: false,
+        isLoading: false,
       };
     case REQUEST_PASSWORD_RESET_FAILURE:
       return {
         ...state,
         error: action.payload,
-        isLoding: false,
+        isLoading: false,
       };
     default:
       return state;

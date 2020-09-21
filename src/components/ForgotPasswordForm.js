@@ -1,8 +1,10 @@
 import React from 'react';
-import { AuthForm } from './SignupForm';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
+
+import { AuthForm } from './SignupForm';
 import { requestPasswordReset } from '../store/actions/user';
 import Message from './Message';
 
@@ -30,7 +32,7 @@ class ForgotPasswordForm extends React.Component {
 
   render() {
     return (
-      <AuthForm onSubmit={this.handleFormSubmit}>
+      <AuthForm {...this.props} onSubmit={this.handleFormSubmit}>
         <Message message={this.props.message} />
         <div className="left-inputs-in-form">
           <Label htmlFor="email">Enter the email you used to signup</Label>
@@ -44,7 +46,22 @@ class ForgotPasswordForm extends React.Component {
             placeholder="Email"
             required
           />
-          <button className="auth-btn">Initiate Request</button>
+          <button className="auth-btn">
+            {this.props.isLoading ? (
+              <>
+                {'Loading '}
+                <Loader
+                  className="inline-display"
+                  type="ThreeDots"
+                  color="#fff"
+                  height="20"
+                  width="20"
+                />
+              </>
+            ) : (
+              'Initiate Request'
+            )}
+          </button>
         </div>
       </AuthForm>
     );
@@ -53,6 +70,7 @@ class ForgotPasswordForm extends React.Component {
 
 const mapStateToProps = (state) => ({
   message: state.message,
+  isLoading: state.isLoading,
 });
 
 export default connect(mapStateToProps, { requestPasswordReset })(

@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 import { AuthForm } from './SignupForm';
+import { withRouter } from 'react-router-dom';
 
 class PasswordResetForm extends React.Component {
   handleFormSubmit = (e) => {
@@ -8,7 +11,7 @@ class PasswordResetForm extends React.Component {
   };
   render() {
     return (
-      <AuthForm onSubmit={this.handleFormSubmit}>
+      <AuthForm {...this.props} onSubmit={this.handleFormSubmit}>
         <div className="left-inputs-in-form">
           <input
             className="form-control"
@@ -20,11 +23,30 @@ class PasswordResetForm extends React.Component {
             type="password"
             placeholder="Confirm password"
           />
-          <button className="auth-btn">Reset</button>
+          <button className="auth-btn">
+            {this.props.isLoading ? (
+              <>
+                {'Loading '}
+                <Loader
+                  className="inline-display"
+                  type="ThreeDots"
+                  color="#fff"
+                  height="20"
+                  width="20"
+                />
+              </>
+            ) : (
+              'Reset'
+            )}
+          </button>
         </div>
       </AuthForm>
     );
   }
 }
 
-export default PasswordResetForm;
+const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
+});
+
+export default connect(mapStateToProps, {})(withRouter(PasswordResetForm));

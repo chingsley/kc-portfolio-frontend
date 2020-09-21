@@ -8,7 +8,7 @@ import ForgotPasswordForm from '../components/ForgotPasswordForm';
 import PasswordResetForm from '../components/PasswordResetForm';
 
 import '../styles/signupPage.css';
-import AppLoader from '../components/AppLoader';
+// import AppLoader from '../components/AppLoader';
 import FormTitle from '../components/FormTitle';
 
 class AuthPage extends React.Component {
@@ -28,7 +28,7 @@ class AuthPage extends React.Component {
             <img src={loginImage} alt="person-reading" />
           </div>
           <div className="content-right">
-            <AppLoader isLoading={this.props.isLoading} />
+            {/* <AppLoader isLoading={this.props.isLoading} /> */}
             <FormTitle {...this.props} />
 
             {pathname.match(/\/signup/i) && (
