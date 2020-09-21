@@ -63,7 +63,7 @@ export const requestPasswordReset = (form, history) => async (dispatch) => {
     const { data } = response;
     customToast.success(data.message);
     dispatch({ type: REQUEST_PASSWORD_RESET_SUCCESS, payload: data.message });
-    history.push('/login');
+    // history.push('/login');
   } catch (error) {
     const errorMsg = handleError(error);
     dispatch({
