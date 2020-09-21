@@ -12,7 +12,6 @@ import ImageUploadMobile from './ImageUploadMobile';
 
 export const AuthForm = styled.form`
   ${(props) => {
-    console.log('props in AuthForm = ', props);
     return css`
       // border: 1px solid salmon;
       text-align: center;
@@ -42,9 +41,7 @@ export const AuthForm = styled.form`
           cursor: pointer;
           width: 100%;
           margin-bottom: 2rem;
-          background-color: ${props.isLoading
-            ? 'rgba(0, 0, 0, 0.87)'
-            : 'black'};
+          background-color: black;
           color: white;
           font-weight: bold;
           border-radius: 0.25rem;
@@ -54,6 +51,7 @@ export const AuthForm = styled.form`
           ${(props) =>
             props.isLoading &&
             css`
+              background-color: rgba(0, 0, 0, 0.87);
               cursor: not-allowed;
               pointer-events: none;
             `}
