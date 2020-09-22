@@ -2,7 +2,7 @@ import React from 'react';
 import AuthPage from '../pages/AuthPage';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import NotFoundPage from '../components/NotFoundPage';
+import NotFoundPage from '../pages/NotFoundPage';
 import ProjectsPage from '../pages/ProjectsPage';
 
 const AppRoutes = () => (
@@ -15,7 +15,8 @@ const AppRoutes = () => (
       <Route path="/password/reset/:resetToken" component={AuthPage} />
       <Route path="/:username/projects" component={ProjectsPage} />
       <Route exact path="/notfound" component={NotFoundPage} />
-      <Redirect to="/notfound" />
+      <Route component={NotFoundPage} />
+      {/* <Redirect to="/notfound" /> */}
     </Switch>
   </div>
 );
