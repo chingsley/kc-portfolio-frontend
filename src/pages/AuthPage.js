@@ -6,16 +6,19 @@ import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
 import ForgotPasswordForm from '../components/ForgotPasswordForm';
 import PasswordResetForm from '../components/PasswordResetForm';
-import axios from 'axios';
+import { validatePasswordResetToken } from '../store/actions/auth';
+// import axios from 'axios';
 
 import '../styles/signupPage.css';
 import FormTitle from '../components/FormTitle';
-import customToast from '../utils/customToast';
+// import customToast from '../utils/customToast';
+// import { BASE_URL } from '../utils/Request';
+import PageLoader from '../components/PageLoader';
 
 class AuthPage extends React.Component {
-  state = {
-    isValidResetToken: false,
-  };
+  // state = {
+  //   isValidResetToken: false,
+  // };
 
   componentDidMount() {
     const {
@@ -26,40 +29,47 @@ class AuthPage extends React.Component {
     } = this.props;
     if (pathname.match(/password\/reset\/*/)) {
       console.log(this.props);
-      const headers = { token: resetToken };
-      axios
-        .get(
-          'http://localhost:3000/api/v1/auth/password/validate_reset_token',
-          {
-            headers,
-          }
-        )
-        .then((response) => {
-          this.setState({ isValidResetToken: true });
-        })
-        .catch((error) => {
-          console.log(error.response);
-          console.log('error.status = ', error.response.status);
-          if (error.response?.data?.errorCode === 'PRT003') {
-            customToast.error(
-              'your reset link has expired. Please re-initiate the request'
-            );
-            this.props.history.push('/password/forgot');
-          } else {
-            // update this to redirect to 404 page after designing 404 page
-            this.props.history.push('/');
-          }
-        });
+      this.props.validatePasswordResetToken(resetToken, this.props.history);
     }
+    // const {
+    //   location: { pathname },
+    //   match: {
+    //     params: { resetToken },
+    //   },
+    // } = this.props;
+    // if (pathname.match(/password\/reset\/*/)) {
+    //   console.log(this.props);
+    //   const headers = { token: resetToken };
+    //   axios
+    //     .get(`${BASE_URL}/auth/password/validate_reset_token`, {
+    //       headers,
+    //     })
+    //     .then((response) => {
+    //       this.setState({ isValidResetToken: true });
+    //     })
+    //     .catch((error) => {
+    //       console.log(error.response);
+    //       console.log('error.status = ', error.response.status);
+    //       if (error.response?.data?.errorCode === 'PRT003') {
+    //         customToast.error(
+    //           'your reset link has expired. Please re-initiate the request'
+    //         );
+    //         this.props.history.push('/password/forgot');
+    //       } else {
+    //         // update this to redirect to 404 page after designing 404 page
+    //         this.props.history.push('/');
+    //       }
+    //     });
+    // }
   }
 
   render() {
     const { pathname } = this.props.location;
     if (
       pathname.match(/^\/password\/reset\/*/) &&
-      !this.state.isValidResetToken
+      !this.props.isValidPasswordResetToken
     ) {
-      return null;
+      return <PageLoader />;
     }
     return (
       <div className="auth-page">
@@ -119,6 +129,9 @@ class AuthPage extends React.Component {
 
 const mapStateToProps = (state) => ({
   isLoading: state.isLoading,
+  isValidPasswordResetToken: state.isValidPasswordResetToken,
 });
 
-export default connect(mapStateToProps, {})(withRouter(AuthPage));
+export default connect(mapStateToProps, { validatePasswordResetToken })(
+  withRouter(AuthPage)
+);
