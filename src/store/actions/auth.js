@@ -34,7 +34,7 @@ export const validatePasswordResetToken = (resetToken, history) => async (
         history.push('/password/forgot');
       } else {
         // update this to redirect to 404 page after designing 404 page
-        history.push('/');
+        history.push('/notfound');
       }
     });
 };
