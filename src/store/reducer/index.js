@@ -8,15 +8,20 @@ import {
   REQUEST_PASSWORD_RESET_STARTED,
   REQUEST_PASSWORD_RESET_SUCCESS,
   REQUEST_PASSWORD_RESET_FAILURE,
+  VALIDATE_PASSWORD_RESET_TOKEN_STARTED,
+  VALIDATE_PASSWORD_RESET_TOKEN_SUCCESS,
+  VALIDATE_PASSWORD_RESET_TOKEN_FAILURE,
 } from '../actions';
 
 const initialState = {
   token: null,
   user: null,
   isLoading: false,
+  isLoadingPage: false,
   error: '',
   projects: [],
   message: '',
+  isValidPasswordResetToken: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,7 +33,6 @@ const reducer = (state = initialState, action) => {
         isLoading: true,
       };
     case REGISTRATION_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         user: action.payload.user,
@@ -80,6 +84,23 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         isLoading: false,
+      };
+    case VALIDATE_PASSWORD_RESET_TOKEN_STARTED:
+      return {
+        ...state,
+        isLoadingPage: true,
+      };
+    case VALIDATE_PASSWORD_RESET_TOKEN_SUCCESS:
+      return {
+        ...state,
+        isLoadingPage: false,
+        isValidPasswordResetToken: true,
+      };
+    case VALIDATE_PASSWORD_RESET_TOKEN_FAILURE:
+      return {
+        ...state,
+        isLoadingPage: false,
+        isValidPasswordResetToken: false,
       };
     default:
       return state;
