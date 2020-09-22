@@ -62,6 +62,12 @@ const NotFound = styled.div`
         font-weight: 400;
       }
     }
+
+    @media only screen and (max-width: 600px) {
+      .notfound-content__with-img__text {
+        margin: 1rem 0;
+      }
+    }
   }
 `;
 
