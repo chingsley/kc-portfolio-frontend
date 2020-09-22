@@ -72,8 +72,8 @@ const NotFoundPage = () => (
       <h1 className="notfound-content__with-img__404">404</h1>
       <h2 className="notfound-content__with-img__sub">Oops! Page Not Found</h2>
       <p className="notfound-content__with-img__text">
-        Looks like this page doesn't exist. Sorry, we couldn't find what you
-        were looking for.
+        Looks like the page doesn't exist. Sorry, we couldn't find what you were
+        looking for.
       </p>
     </div>
   </NotFound>
