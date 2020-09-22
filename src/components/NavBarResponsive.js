@@ -108,7 +108,7 @@ function NavBar() {
         <li className="topnav-ul-li">
           <KcLink
             text="Projects"
-            to="/projects"
+            to="/chingsley/projects"
             color="#34495e"
             bgColorOnHover="#d63031"
             colorOnHover="white"
