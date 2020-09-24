@@ -15,7 +15,7 @@ export const validatePasswordResetToken = (resetToken, history) => async (
 
   const headers = { token: resetToken };
   axios
-    .get(`${BASE_URL}/auth/password/validate_reset_token`, {
+    .get(`${BASE_URL}/auth/validate_password_reset_token`, {
       headers,
     })
     .then((response) => {
