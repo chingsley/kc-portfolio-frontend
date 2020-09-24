@@ -37,7 +37,7 @@ export const loginUser = (form, history) => async (dispatch) => {
       data: form,
       contentType: 'application/json',
     };
-    const { data } = await Request.post('/users/login', options);
+    const { data } = await Request.post('/auth/login', options);
     customToast.success(data.message);
     saveToken(data.data.token);
     dispatch({ type: LOGIN_SUCCESS, payload: data.data });
@@ -57,7 +57,7 @@ export const REQUEST_PASSWORD_RESET_FAILURE = 'REQUEST_PASSWORD_RESET_FAILED';
 export const requestPasswordReset = (form, history) => async (dispatch) => {
   try {
     dispatch({ type: REQUEST_PASSWORD_RESET_STARTED });
-    const response = await Request.post('/users/request_password_reset', {
+    const response = await Request.post('/auth/request_password_reset', {
       data: form,
     });
     const { data } = response;
