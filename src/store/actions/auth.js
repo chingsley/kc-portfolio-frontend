@@ -1,6 +1,5 @@
-import axios from 'axios';
 import customToast from '../../utils/customToast';
-import { BASE_URL } from '../../utils/Request';
+import Request from '../../utils/Request';
 
 export const VALIDATE_PASSWORD_RESET_TOKEN_STARTED =
   'VALIDATE_PASSWORD_RESET_TOKEN_STARTED';
@@ -14,10 +13,9 @@ export const validatePasswordResetToken = (resetToken, history) => async (
   dispatch({ type: VALIDATE_PASSWORD_RESET_TOKEN_STARTED });
 
   const headers = { token: resetToken };
-  axios
-    .get(`${BASE_URL}/auth/validate_password_reset_token`, {
-      headers,
-    })
+  Request.get('/auth/validate_password_reset_token', {
+    headers,
+  })
     .then((response) => {
       dispatch({
         type: VALIDATE_PASSWORD_RESET_TOKEN_SUCCESS,
@@ -32,9 +30,10 @@ export const validatePasswordResetToken = (resetToken, history) => async (
           'your reset link has expired. Please re-initiate the request'
         );
         history.push('/password/forgot');
-      } else {
-        // update this to redirect to 404 page after designing 404 page
+      } else if (error.response?.data?.errorCode.match(/^PRT001$|^PRT002$/)) {
         history.push('/notfound');
+      } else {
+        customToast.error('Operation failed. Network error');
       }
     });
 };

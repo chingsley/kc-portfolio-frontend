@@ -8,16 +8,15 @@ export const REGISTRATION_FAILURE = 'REGISTRATION_FAILURE';
 export const registerUser = (formData, history) => async (dispatch) => {
   try {
     dispatch({ type: REGISTRATION_STARTED });
-    const options = {
-      data: formData,
-      contentType: 'multipart/form-data',
-    };
-    const { data } = await Request.post('/users', options);
+    const { data } = await Request.post('/users', {
+      body: formData,
+      headers: { contentType: 'multipart/form-data' },
+    });
     console.log(data);
     customToast.success(data.message);
     saveToken(data.data.token);
     dispatch({ type: REGISTRATION_SUCCESS, payload: data.data });
-    history.push('/home');
+    history.push('/');
   } catch (error) {
     const errorMsg = handleError(error);
     dispatch({
@@ -33,15 +32,13 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const loginUser = (form, history) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_STARTED });
-    const options = {
-      data: form,
-      contentType: 'application/json',
-    };
-    const { data } = await Request.post('/auth/login', options);
+    const { data } = await Request.post('/auth/login', {
+      body: form,
+    });
     customToast.success(data.message);
     saveToken(data.data.token);
     dispatch({ type: LOGIN_SUCCESS, payload: data.data });
-    history.push('/home');
+    history.push('/');
   } catch (error) {
     const errorMsg = handleError(error);
     dispatch({
@@ -58,7 +55,7 @@ export const requestPasswordReset = (form, history) => async (dispatch) => {
   try {
     dispatch({ type: REQUEST_PASSWORD_RESET_STARTED });
     const response = await Request.post('/auth/request_password_reset', {
-      data: form,
+      body: form,
     });
     const { data } = response;
     customToast.success(data.message);
