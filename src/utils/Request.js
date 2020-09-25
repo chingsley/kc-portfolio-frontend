@@ -1,50 +1,54 @@
 import axios from 'axios';
-// export const BASE_URL = 'http://localhost:3000/api/v1';
-export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
+export const BASE_URL = 'http://localhost:3000/api/v1';
+// export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
 
 class Request {
-  static async post(path, { data, contentType }) {
+  static async post(path, { body, headers }) {
     const result = await axios({
       url: BASE_URL + path,
       method: 'POST',
-      data,
+      data: body,
       headers: {
-        'Content-type': contentType || 'application/json',
+        ...headers,
+        'Content-type': headers?.contentType || 'application/json',
       },
     });
     return result;
   }
 
-  static async get(path, { data, contentType }) {
+  static async get(path, { body, headers }) {
     const result = await axios({
       url: BASE_URL + path,
       method: 'GET',
-      data,
+      data: body,
       headers: {
-        'Content-type': contentType || 'application/json',
+        ...headers,
+        'Content-type': headers?.contentType || 'application/json',
       },
     });
     return result;
   }
 
-  static async patch(path, { data, contentType }) {
+  static async patch(path, { body, headers }) {
     const result = await axios({
       url: BASE_URL + path,
       method: 'PATCH',
-      data,
+      data: body,
       headers: {
-        'Content-type': contentType || 'application/json',
+        ...headers,
+        'Content-type': headers?.contentType || 'application/json',
       },
     });
     return result;
   }
 
-  static async delete(path, { contentType }) {
+  static async delete(path, { headers }) {
     const result = await axios({
       url: BASE_URL + path,
       method: 'DELETE',
       headers: {
-        'Content-type': contentType || 'application/json',
+        ...headers,
+        'Content-type': headers?.contentType || 'application/json',
       },
     });
     return result;

@@ -24,7 +24,6 @@ class ForgotPasswordForm extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('this.state = ', this.state);
     const { email } = this.state;
     this.props.requestPasswordReset({ email }, this.props.history);
     this.setState({ email: '' });
