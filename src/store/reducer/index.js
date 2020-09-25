@@ -11,6 +11,9 @@ import {
   VALIDATE_PASSWORD_RESET_TOKEN_STARTED,
   VALIDATE_PASSWORD_RESET_TOKEN_SUCCESS,
   VALIDATE_PASSWORD_RESET_TOKEN_FAILURE,
+  CHANGE_PASSWORD_START,
+  CHANGE_PASSWORD_SUCCESS,
+  CHANGE_PASSWORD_FAILURE,
 } from '../actions';
 
 const initialState = {
@@ -101,6 +104,22 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoadingPage: false,
         isValidPasswordResetToken: false,
+      };
+
+    case CHANGE_PASSWORD_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case CHANGE_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+      };
+    case CHANGE_PASSWORD_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
       };
     default:
       return state;

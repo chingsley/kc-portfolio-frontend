@@ -39,11 +39,12 @@ const NotFound = styled.div`
       }
       &__404 {
         font-family: 'Nunito', sans-serif;
-        font-size: 65px;
+        font-size: 6rem;
         font-weight: 700;
         margin-top: 0px;
         margin-bottom: 10px;
-        color: #151723;
+        // color: #151723;
+        color: #b20600;
         text-transform: uppercase;
       }
 
@@ -54,6 +55,7 @@ const NotFound = styled.div`
         margin: 0;
         text-transform: uppercase;
         color: #151723;
+        // color: #b20600;
       }
 
       &__text {
@@ -66,6 +68,9 @@ const NotFound = styled.div`
     @media only screen and (max-width: 600px) {
       .notfound-content__with-img__text {
         margin: 1rem 0;
+      }
+      .notfound-content__with-img__404 {
+        font-size: 5rem;
       }
     }
   }

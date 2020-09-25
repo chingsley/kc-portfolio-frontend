@@ -17,3 +17,8 @@ export { VALIDATE_PASSWORD_RESET_TOKEN_STARTED } from './auth';
 export { VALIDATE_PASSWORD_RESET_TOKEN_SUCCESS } from './auth';
 export { VALIDATE_PASSWORD_RESET_TOKEN_FAILURE } from './auth';
 export { validatePasswordResetToken } from './auth';
+
+export { CHANGE_PASSWORD_START } from './auth';
+export { CHANGE_PASSWORD_SUCCESS } from './auth';
+export { CHANGE_PASSWORD_FAILURE } from './auth';
+export { changePassword } from './auth';

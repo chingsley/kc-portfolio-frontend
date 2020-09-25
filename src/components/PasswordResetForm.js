@@ -3,11 +3,23 @@ import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 import { AuthForm } from './SignupForm';
 import { withRouter } from 'react-router-dom';
+import customToast from '../utils/customToast';
+import { changePassword } from '../store/actions/auth';
 
 class PasswordResetForm extends React.Component {
+  state = {
+    password: 'Testing**123',
+    confirmPassword: 'Testing**123',
+  };
   handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(this.props.match.params.resetToken);
+    const { password, confirmPassword } = this.state;
+    const resetToken = this.props.match.params.resetToken;
+    if (password !== confirmPassword) {
+      return customToast.error('The two passwords do not match');
+    }
+    this.props.changePassword({ password, resetToken }, this.props.history);
+    console.log(this.state, this.props.match.params.resetToken);
   };
   render() {
     return (
@@ -17,11 +29,19 @@ class PasswordResetForm extends React.Component {
             className="form-control"
             type="password"
             placeholder="Enter your new password"
+            required
+            name="password"
+            value={this.state.password}
+            onChange={(e) => this.setState({ password: e.target.value })}
           />
           <input
             className="form-control"
             type="password"
             placeholder="Confirm password"
+            name="confirmPassword"
+            value={this.state.confirmPassword}
+            onChange={(e) => this.setState({ confirmPassword: e.target.value })}
+            required
           />
           <button className="auth-btn">
             {this.props.isLoading ? (
@@ -49,4 +69,6 @@ const mapStateToProps = (state) => ({
   isLoading: state.isLoading,
 });
 
-export default connect(mapStateToProps, {})(withRouter(PasswordResetForm));
+export default connect(mapStateToProps, { changePassword })(
+  withRouter(PasswordResetForm)
+);
