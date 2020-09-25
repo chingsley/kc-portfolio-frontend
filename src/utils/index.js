@@ -15,3 +15,10 @@ export const handleError = (error) => {
   customToast.error(errorMsg);
   return errorMsg;
 };
+
+export const delayInSeconds = (time) =>
+  new Promise(function (res, rej) {
+    setTimeout(() => {
+      res(true);
+    }, time * 1000);
+  });
