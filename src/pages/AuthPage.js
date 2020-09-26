@@ -7,6 +7,11 @@ import LoginForm from '../components/LoginForm';
 import ForgotPasswordForm from '../components/ForgotPasswordForm';
 import PasswordResetForm from '../components/PasswordResetForm';
 import { validatePasswordResetToken } from '../store/actions/auth';
+import {
+  SuccessMessage,
+  ErrorMessage,
+  InfoMessage,
+} from '../components/Messages';
 
 import '../styles/signupPage.css';
 import FormTitle from '../components/FormTitle';
@@ -85,6 +90,9 @@ class AuthPage extends React.Component {
             )}
           </div>
         </div>
+        <SuccessMessage message={this.props.successMessage} />
+        <ErrorMessage message={this.props.errorMessage} />
+        <InfoMessage message={this.props.infoMessage} />
       </div>
     );
   }
@@ -93,6 +101,9 @@ class AuthPage extends React.Component {
 const mapStateToProps = (state) => ({
   isLoading: state.isLoading,
   isValidPasswordResetToken: state.isValidPasswordResetToken,
+  successMessage: state.messages.successMessage,
+  infoMessage: state.messages.infoMessage,
+  errorMessage: state.messages.errorMessage,
 });
 
 export default connect(mapStateToProps, { validatePasswordResetToken })(

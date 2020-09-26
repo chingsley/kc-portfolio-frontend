@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner';
 
 import { AuthForm } from './SignupForm';
 import { requestPasswordReset } from '../store/actions/user';
-import Message from './Message';
+// import Message from './Message';
 
 const Label = styled.label`
   margin-top: 0.5rem;
@@ -32,7 +32,7 @@ class ForgotPasswordForm extends React.Component {
   render() {
     return (
       <AuthForm {...this.props} onSubmit={this.handleFormSubmit}>
-        <Message message={this.props.message} />
+        {/* <Message message={this.props.message} /> */}
         <div className="left-inputs-in-form">
           <Label htmlFor="email">Enter the email you used to signup</Label>
           <input
@@ -68,7 +68,7 @@ class ForgotPasswordForm extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  message: state.message,
+  // message: state.message,
   isLoading: state.isLoading,
 });
 
