@@ -22,19 +22,23 @@ export const validatePasswordResetToken = (resetToken, history) => async (
       });
     })
     .catch((error) => {
-      dispatch({
-        type: VALIDATE_PASSWORD_RESET_TOKEN_FAILURE,
-      });
+      console.log(error.response);
+      let payload = '';
       let errorMsg;
       if (error.response?.data?.errorCode === 'PRT003') {
         errorMsg =
           'your reset link has expired. Please re-initiate the request';
+        payload = errorMsg;
         history.push('/password/forgot');
-      } else if (error.response?.data?.errorCode.match(/^PRT001$|^PRT002$/)) {
+      } else if (error.response?.data?.errorCode?.match(/^PRT001$|^PRT002$/)) {
         history.push('/notfound');
       } else {
         errorMsg = error.response?.data?.error || error.message;
       }
+      dispatch({
+        type: VALIDATE_PASSWORD_RESET_TOKEN_FAILURE,
+        payload,
+      });
       customToast.error(errorMsg);
     });
 };

@@ -21,9 +21,12 @@ const initialState = {
   user: null,
   isLoading: false,
   isLoadingPage: false,
-  error: '',
   projects: [],
-  message: '',
+  messages: {
+    successMessage: '',
+    infoMessage: '',
+    errorMessage: '',
+  },
   isValidPasswordResetToken: false,
 };
 
@@ -32,7 +35,10 @@ const reducer = (state = initialState, action) => {
     case REGISTRATION_STARTED:
       return {
         ...state,
-        error: '',
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: true,
       };
     case REGISTRATION_SUCCESS:
@@ -40,52 +46,72 @@ const reducer = (state = initialState, action) => {
         ...state,
         user: action.payload.user,
         isLoading: false,
-        error: '',
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         token: action.payload.token,
       };
     case REGISTRATION_FAILURE:
       return {
         ...state,
-        error: action.payload,
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: false,
       };
     case LOGIN_STARTED:
       return {
         ...state,
-        error: '',
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: true,
       };
     case LOGIN_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         user: action.payload.user,
         isLoading: false,
-        error: '',
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         token: action.payload.token,
       };
     case LOGIN_FAILURE:
       return {
         ...state,
-        error: action.payload,
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: false,
       };
     case REQUEST_PASSWORD_RESET_STARTED:
       return {
         ...state,
-        error: action.payload,
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: true,
       };
     case REQUEST_PASSWORD_RESET_SUCCESS:
       return {
         ...state,
-        message: action.payload,
+        messages: { ...state.messages, successMessage: action.payload },
         isLoading: false,
       };
     case REQUEST_PASSWORD_RESET_FAILURE:
       return {
         ...state,
-        error: action.payload,
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
         isLoading: false,
       };
     case VALIDATE_PASSWORD_RESET_TOKEN_STARTED:
@@ -104,6 +130,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoadingPage: false,
         isValidPasswordResetToken: false,
+        messages: {
+          ...state.messages,
+          errorMessage: action.payload,
+        },
       };
 
     case CHANGE_PASSWORD_START:
