@@ -77,7 +77,6 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         messages: {
           ...state.messages,
-          errorMessage: action.payload,
         },
         token: action.payload.token,
       };
