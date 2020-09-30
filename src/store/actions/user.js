@@ -37,6 +37,7 @@ export const loginUser = (form, history) => async (dispatch) => {
     });
     customToast.success(data.message);
     saveToken(data.data.token);
+    console.log(data.data);
     dispatch({ type: LOGIN_SUCCESS, payload: data.data });
     history.push('/');
   } catch (error) {

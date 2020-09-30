@@ -90,9 +90,9 @@ class AuthPage extends React.Component {
             )}
           </div>
         </div>
-        <SuccessMessage message={this.props.successMessage} />
+        {/* <SuccessMessage message={this.props.successMessage} /> */}
         <ErrorMessage message={this.props.errorMessage} />
-        <InfoMessage message={this.props.infoMessage} />
+        {/* <InfoMessage message={this.props.infoMessage} /> */}
       </div>
     );
   }
