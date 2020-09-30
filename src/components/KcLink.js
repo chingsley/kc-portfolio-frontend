@@ -6,18 +6,19 @@ const Parent = styled.div`
   ${(props) => {
     return css`
       // border: 1px solid blue;
-      height: 2.2rem;
-      line-height: 2.2rem;
+      height: 2rem;
+      line-height: 25px;
       display: inline-block;
       position: relative;
       z-index: 100;
+      // box-sizing: border-box;
 
       &:hover {
         cursor: pointer;
 
         .sibling {
           width: 100%;
-          background-color: ${props.bgColorOnHover || '#eb2f06'};
+          background-color: ${props.bgColorOnHover || '#f43544'};
           border-bottom: ${props.bottomBorderOnHover};
         }
 
@@ -28,10 +29,10 @@ const Parent = styled.div`
 
       .sibling {
         // border: 3px solid yellow;
-        border-radius: 2px;
+        border-radius: 3px;
         position: absolute;
-        top: 0;
-        left: 0;
+        // top: 0;
+        // left: 0;
         height: 100%;
         width: 0;
         z-index: -1;
@@ -47,7 +48,7 @@ const Parent = styled.div`
         width: 100%;
         height: 100%;
         // line-height: 100%;
-        padding: 0 1.3rem;
+        padding: 3px 30px;
         z-index: 1000;
         transition-duration: 0.5s;
       }
