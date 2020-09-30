@@ -101,7 +101,7 @@ function NavBar() {
             text="Home"
             to="/"
             color="#34495e"
-            bgColorOnHover="#d63031"
+            bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
           />
         </li>
@@ -110,25 +110,25 @@ function NavBar() {
             text="Projects"
             to="/chingsley/projects"
             color="#34495e"
-            bgColorOnHover="#d63031"
+            bgColorOnHover="#f43544"
             colorOnHover="white"
           />
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="Sign In"
+            text="Sign in"
             to="/login"
             color="#34495e"
-            bgColorOnHover="#d63031"
+            bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
           />
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="Sign Up"
+            text="Sign up"
             to="/signup"
             color="#34495e"
-            bgColorOnHover="#d63031"
+            bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
             data-testid="signup-nav-link"
           />
