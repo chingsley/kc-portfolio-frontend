@@ -1,13 +1,23 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import KcLink from './KcLink';
 
 const Nav = styled.nav`
+  ${(props) => {
+    console.log(props);
+    const {
+      history: {
+        location: { pathname },
+      },
+    } = props;
+    return `
   // border: 1px solid red;
   font-family: montserrat;
   height: 12vh;
   width: 100%;
-  background-color: #fafbfc;
+  background-color: ${pathname === '/' ? 'transparent' : '#fafbfc'};
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +86,7 @@ const Nav = styled.nav`
 
         & * {
           color: white !important;
+          
         }
       }
     }
@@ -84,11 +95,15 @@ const Nav = styled.nav`
       right: 0;
     }
   }
+  `;
+  }}
 `;
 
-function NavBar() {
+function NavBar(props) {
+  const linkTextColor =
+    props.history.location.pathname === '/' ? 'white' : '#34495e';
   return (
-    <Nav>
+    <Nav {...props}>
       {/* <Logo width="80px" mobile_width="120px" /> */}
       <p>logo</p>
       <input type="checkbox" name="mobile-nav-trigger" id="check" />
@@ -100,7 +115,7 @@ function NavBar() {
           <KcLink
             text="Home"
             to="/"
-            color="#34495e"
+            color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
           />
@@ -109,7 +124,7 @@ function NavBar() {
           <KcLink
             text="Projects"
             to="/chingsley/projects"
-            color="#34495e"
+            color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="white"
           />
@@ -118,7 +133,7 @@ function NavBar() {
           <KcLink
             text="Sign in"
             to="/login"
-            color="#34495e"
+            color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
           />
@@ -127,7 +142,7 @@ function NavBar() {
           <KcLink
             text="Sign up"
             to="/signup"
-            color="#34495e"
+            color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
             data-testid="signup-nav-link"
@@ -138,4 +153,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default withRouter(NavBar);
