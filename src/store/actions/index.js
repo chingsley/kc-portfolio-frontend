@@ -22,3 +22,9 @@ export { CHANGE_PASSWORD_START } from './auth';
 export { CHANGE_PASSWORD_SUCCESS } from './auth';
 export { CHANGE_PASSWORD_FAILURE } from './auth';
 export { changePassword } from './auth';
+
+export { TRANSPARENT_TOP_NAV } from './trigger';
+export { makeTopNavTransparent } from './trigger';
+
+export { OPAQUE_TOP_NAV } from './trigger';
+export { makeTopNavOpaque } from './trigger';

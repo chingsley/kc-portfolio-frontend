@@ -1,30 +1,42 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import KcLink from './KcLink';
 
 const Nav = styled.nav`
   ${(props) => {
     console.log(props);
+
     const {
       history: {
         location: { pathname },
       },
     } = props;
+    // console.log(props && !props.isTransparentTopNav && pathname === '/');
     return `
   // border: 1px solid red;
+  position: fixed;
+  top: 0;
   font-family: montserrat;
   height: 12vh;
   width: 100%;
-  background-color: ${pathname === '/' ? 'transparent' : '#fafbfc'};
-  backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2em;
+  background-color: #fafbfc;
+  ${
+    props &&
+    props.isTransparentTopNav &&
+    pathname === '/' &&
+    css`
+      background-color: transparent;
+      backdrop-filter: blur(5px);
+    `
+  }
 
-  position: fixed;
-  top: 0;
+
 
   & > * {
     padding: 0;
@@ -100,8 +112,7 @@ const Nav = styled.nav`
 `;
 
 function NavBar(props) {
-  const linkTextColor =
-    props.history.location.pathname === '/' ? 'white' : '#34495e';
+  const linkTextColor = props.isTransparentTopNav ? 'white' : '#34495e';
   return (
     <Nav {...props}>
       {/* <Logo width="80px" mobile_width="120px" /> */}
@@ -153,4 +164,8 @@ function NavBar(props) {
   );
 }
 
-export default withRouter(NavBar);
+const mapStateToProps = (state) => ({
+  isTransparentTopNav: state.isTransparentTopNav,
+});
+
+export default connect(mapStateToProps, {})(withRouter(NavBar));

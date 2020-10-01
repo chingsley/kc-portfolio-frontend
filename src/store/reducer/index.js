@@ -14,6 +14,8 @@ import {
   CHANGE_PASSWORD_START,
   CHANGE_PASSWORD_SUCCESS,
   CHANGE_PASSWORD_FAILURE,
+  TRANSPARENT_TOP_NAV,
+  OPAQUE_TOP_NAV,
 } from '../actions';
 
 const initialState = {
@@ -28,6 +30,7 @@ const initialState = {
     errorMessage: '',
   },
   isValidPasswordResetToken: false,
+  isTransparentTopNav: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -149,6 +152,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+      };
+    case TRANSPARENT_TOP_NAV:
+      return {
+        ...state,
+        isTransparentTopNav: true,
+      };
+    case OPAQUE_TOP_NAV:
+      return {
+        ...state,
+        isTransparentTopNav: false,
       };
     default:
       return state;

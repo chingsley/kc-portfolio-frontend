@@ -1,7 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import Logo from '../components/Logo';
-import PageLoader from '../components/PageLoader';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 
 const Home = styled.div`
   // overflow-y: scroll;
@@ -62,18 +62,19 @@ class HomePage extends React.Component {
     super();
     this.featuresRef = React.createRef();
     this.state = {
-      changeNav: false,
+      isTransparentNavBar: false,
     };
   }
 
   monitorNavBar = (e) => {
-    console.log(e);
     const pos = this.featuresRef.getBoundingClientRect().top;
     console.log(pos);
-    if (pos < 1 && !this.state.changeNav) {
-      this.setState({ changeNav: true });
-    } else {
-      this.state.changeNav && this.setState({ changeNav: false });
+    if (pos < 55 && this.state.isTransparentNavBar) {
+      this.setState({ isTransparentNavBar: false });
+      this.props.makeTopNavOpaque();
+    } else if (pos > 55 && !this.state.isTransparentNavBar) {
+      this.setState({ isTransparentNavBar: true });
+      this.props.makeTopNavTransparent();
     }
   };
 
@@ -83,7 +84,7 @@ class HomePage extends React.Component {
   };
 
   componentDidMount = () => {
-    // this.monitorNavBar();
+    this.monitorNavBar();
     window.addEventListener('scroll', this.monitorNavBar);
     // window.addEventListener('scroll', this.dummyFunction);
   };
@@ -93,7 +94,7 @@ class HomePage extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.changeNav);
+    // console.log(this.state.isTransparentNavBar);
   }
 
   render() {
@@ -120,4 +121,6 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default connect(null, { makeTopNavTransparent, makeTopNavOpaque })(
+  HomePage
+);
