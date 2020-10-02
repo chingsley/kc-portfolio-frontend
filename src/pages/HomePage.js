@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 
@@ -21,11 +22,13 @@ const Home = styled.div`
     background-image: linear-gradient(
         -270deg,
         rgba(0, 0, 0, 1) 0,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(0, 0, 0, 0.5) 100%
       ),
-      url(https://images.unsplash.com/photo-1549818771-cb569f554ac7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-    background-position: 0% 50%;
-    // background-position: center;
+      url(https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    // background-position: 0% 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .window-content {
       // border: 1px solid red;
@@ -60,15 +63,22 @@ const Home = styled.div`
 class HomePage extends React.Component {
   constructor() {
     super();
-    this.featuresRef = React.createRef();
+    // console.log('constructor:');
+    // console.log('constructor: ', this.featuresRef);
     this.state = {
       isTransparentNavBar: false,
     };
+    this.featuresRef = React.createRef();
+  }
+  static getDerivedStateFromProps(props, state) {
+    // console.log('getDerivedStateFromProps: ', state);
+    return null;
   }
 
-  monitorNavBar = (e) => {
-    const pos = this.featuresRef.getBoundingClientRect().top;
-    console.log(pos);
+  monitorNavBar = () => {
+    const pos = this.featuresRef?.getBoundingClientRect()?.top;
+    // console.log('monitorNavBar: ', this.featuresRef);
+    // console.log(pos);
     if (pos < 55 && this.state.isTransparentNavBar) {
       this.setState({ isTransparentNavBar: false });
       this.props.makeTopNavOpaque();
@@ -78,15 +88,10 @@ class HomePage extends React.Component {
     }
   };
 
-  dummyFunction = (e) => {
-    console.log(e);
-    this.monitorNavBar();
-  };
-
   componentDidMount = () => {
+    // console.log('componentDidMount:');
     this.monitorNavBar();
     window.addEventListener('scroll', this.monitorNavBar);
-    // window.addEventListener('scroll', this.dummyFunction);
   };
 
   componentWillUnmount() {
@@ -98,7 +103,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    // this.monitorNavbar(this.featureRef)
     return (
       <Home>
         <div className="main-window">
@@ -122,5 +126,5 @@ class HomePage extends React.Component {
 }
 
 export default connect(null, { makeTopNavTransparent, makeTopNavOpaque })(
-  HomePage
+  withRouter(HomePage)
 );
