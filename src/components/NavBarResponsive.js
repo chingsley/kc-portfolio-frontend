@@ -6,7 +6,7 @@ import KcLink from './KcLink';
 
 const Nav = styled.nav`
   ${(props) => {
-    console.log(props);
+    // console.log(props);
 
     const {
       history: {
@@ -32,7 +32,7 @@ const Nav = styled.nav`
     pathname === '/' &&
     css`
       background-color: transparent;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
     `
   }
 
@@ -112,7 +112,10 @@ const Nav = styled.nav`
 `;
 
 function NavBar(props) {
-  const linkTextColor = props.isTransparentTopNav ? 'white' : '#34495e';
+  const linkTextColor =
+    props.isTransparentTopNav && props.history.location.pathname === '/'
+      ? 'white'
+      : '#34495e';
   return (
     <Nav {...props}>
       {/* <Logo width="80px" mobile_width="120px" /> */}
