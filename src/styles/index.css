@@ -9,6 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: '#f5f6fa'; */
   background-color: white;
+
+  /* border: 1px solid cyan; */
+  /* width: 100vh; */
 }
 
 code {
