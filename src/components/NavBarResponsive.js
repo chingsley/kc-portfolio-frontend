@@ -32,7 +32,7 @@ const Nav = styled.nav`
     pathname === '/' &&
     css`
       background-color: transparent;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
     `
   }
 

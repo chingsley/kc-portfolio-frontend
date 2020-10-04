@@ -50,6 +50,7 @@ const Home = styled.div`
         color: white;
         padding: 3px 45px;
         border-radius: 3px;
+        margin: 0 auto;
       }
     }
   }
@@ -57,6 +58,28 @@ const Home = styled.div`
     border: 1px solid red;
     height: 150rem;
     width: 20rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    // border: 1px solid blue;
+
+    .main-window {
+      // border: 1px solid yellow;
+      align-items: center;
+      padding-left: 0;
+      height: 100vh;
+      background-position: 0% 50%;
+
+      .window-content {
+        // border: 1px solid red;
+        width: 85%;
+
+        &__primary-text {
+          // border: 1px solid green;
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 `;
 
