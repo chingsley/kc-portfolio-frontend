@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
@@ -67,7 +68,7 @@ const Nav = styled.nav`
     }
   }
   @media only screen and (max-width: 768px) {
-    // border: 1px solid green;
+    // border: 1px solid blue;
     z-index: 2;
     padding: 0 1em;
     .logo {
@@ -76,7 +77,19 @@ const Nav = styled.nav`
       // padding-left: 50px;
     }
     .checkbtn {
+      // border: 1px solid red;
       display: block;
+      &__hamburger-menu {
+        ${
+          props &&
+          props.isTransparentTopNav &&
+          pathname === '/' &&
+          css`
+            color: white;
+            color: #f43544;
+          `
+        }
+      }
     }
     .topnav-ul {
       // border: 1px solid red;
@@ -85,6 +98,7 @@ const Nav = styled.nav`
       // left: -100%;
       right: -100%;
       margin: 0;
+      padding: 0;
       height: 88vh;
       width: 50%;
       background: #2c3e50;
@@ -112,17 +126,28 @@ const Nav = styled.nav`
 `;
 
 function NavBar(props) {
+  // const [state, setState] = useState()
+  const [hamburgerCheckedState, toggleHamburger] = useState(false);
+
+  const handleHamburgerToggle = () => toggleHamburger(!hamburgerCheckedState);
   const linkTextColor =
     props.isTransparentTopNav && props.history.location.pathname === '/'
       ? 'white'
       : '#34495e';
   return (
-    <Nav {...props}>
+    <Nav {...props} hamburgerCheckedState={hamburgerCheckedState}>
       {/* <Logo width="80px" mobile_width="120px" /> */}
       <p>logo</p>
-      <input type="checkbox" name="mobile-nav-trigger" id="check" />
+      <input
+        type="checkbox"
+        name="mobile-nav-trigger"
+        id="check"
+        checked={hamburgerCheckedState}
+        onClick={handleHamburgerToggle}
+        readOnly
+      />
       <label htmlFor="check" className="checkbtn">
-        <i className="fas fa-bars"></i>
+        <i className="fas fa-bars checkbtn__hamburger-menu"></i>
       </label>
       <ul className="topnav-ul">
         <li className="topnav-ul-li">
@@ -132,6 +157,7 @@ function NavBar(props) {
             color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
+            onClick={handleHamburgerToggle}
           />
         </li>
         <li className="topnav-ul-li">
@@ -140,7 +166,8 @@ function NavBar(props) {
             to="/chingsley/projects"
             color={linkTextColor}
             bgColorOnHover="#f43544"
-            colorOnHover="white"
+            colorOnHover="#f5f6fa"
+            onClick={handleHamburgerToggle}
           />
         </li>
         <li className="topnav-ul-li">
@@ -150,6 +177,7 @@ function NavBar(props) {
             color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
+            onClick={handleHamburgerToggle}
           />
         </li>
         <li className="topnav-ul-li">
@@ -159,6 +187,7 @@ function NavBar(props) {
             color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
+            onClick={handleHamburgerToggle}
             data-testid="signup-nav-link"
           />
         </li>
