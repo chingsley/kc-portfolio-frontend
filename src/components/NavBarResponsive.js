@@ -178,6 +178,7 @@ function NavBar(props) {
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
             onClick={handleHamburgerToggle}
+            data-testid="signin-nav-link"
           />
         </li>
         <li className="topnav-ul-li">
