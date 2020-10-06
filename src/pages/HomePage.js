@@ -136,7 +136,12 @@ class HomePage extends React.Component {
             <p className="window-content__secondary-text">
               showing your abilities and potentials to prospective employers
             </p>
-            <button className="window-content__signup-button">Sign up</button>
+            <button
+              onClick={() => this.props.history.push('/signup')}
+              className="window-content__signup-button"
+            >
+              Sign up
+            </button>
           </div>
         </div>
         <div
