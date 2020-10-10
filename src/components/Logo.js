@@ -1,91 +1,109 @@
 import React from 'react';
+import { string } from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
-export default (props) => (
-  <svg width="125" height="50" xmlns="http://www.w3.org/2000/svg">
+const Logo = (props) => (
+  <svg
+    width="125"
+    height="50"
+    xmlns="http://www.w3.org/2000/svg"
+    onClick={() => props.history.push('/')}
+    style={{ cursor: 'pointer' }}
+  >
     <g>
       <title>background</title>
       <rect
-        fill="none"
-        id="canvas_background"
-        height="52"
-        width="127"
-        y="-1"
         x="-1"
+        y="-1"
+        width="127"
+        height="52"
+        id="canvas_background"
+        fill="none"
       />
     </g>
     <g>
       <title>Layer 1</title>
       <text
-        font-weight="bold"
-        stroke="#f43544"
-        transform="matrix(1.0575719910707448,0,0,1,-3.0711035486983747,0) "
-        font-style="italic"
-        xmlSpace="preserve"
-        text-anchor="start"
-        font-family="Arvo, sans-serif"
-        font-size="20"
+        fill={props.color}
+        strokeWidth="0"
+        strokeOpacity="null"
+        fillOpacity="null"
+        x="14.32662"
+        y="29"
         id="svg_1"
-        y="30"
-        x="6.76212"
-        fill-opacity="null"
-        stroke-opacity="null"
-        stroke-width="0"
-        fill="#f43544"
+        fontSize="20"
+        fontFamily="'Trebuchet MS', Gadget, sans-serif"
+        textAnchor="start"
+        xmlSpace="preserve"
+        fontStyle="italic"
+        transform="matrix(1.0575719910707448,0,0,1,-3.0711035486983747,0) "
+        stroke={props.color}
+        fontWeight="normal"
       >
         show ower
       </text>
       <line
-        stroke="#f43544"
-        stroke-linecap="null"
-        stroke-linejoin="null"
-        id="svg_2"
-        y2="9.45313"
-        x2="62.5"
-        y1="41.45313"
-        x1="62.5"
-        fill-opacity="null"
-        stroke-opacity="null"
-        stroke-width="1.5"
         fill="none"
+        strokeWidth="1.5"
+        strokeOpacity="null"
+        fillOpacity="null"
+        x1="62.5"
+        y1="41.45313"
+        x2="62.5"
+        y2="9.45313"
+        id="svg_2"
+        strokeLinejoin="null"
+        strokeLinecap="null"
+        stroke={props.color}
       />
       <line
-        stroke="#f43544"
-        stroke-linecap="null"
-        stroke-linejoin="null"
-        id="svg_4"
-        y2="12.45313"
-        x2="120.5"
-        y1="12.45313"
-        x1="39.5"
-        fill-opacity="null"
-        stroke-opacity="null"
-        stroke-width="1.5"
         fill="none"
+        strokeWidth="1.5"
+        strokeOpacity="null"
+        fillOpacity="null"
+        x1="39.5"
+        y1="12.45313"
+        x2="120.5"
+        y2="12.45313"
+        id="svg_4"
+        strokeLinejoin="null"
+        strokeLinecap="null"
+        stroke={props.color}
       />
       <path
-        id="svg_9"
-        d="m91,34.45313"
-        opacity="0.5"
-        fill-opacity="null"
-        stroke-opacity="null"
-        stroke-width="1.5"
-        stroke="#f43544"
         fill="none"
+        stroke={props.color}
+        strokeWidth="1.5"
+        strokeOpacity="null"
+        fillOpacity="null"
+        opacity="0.5"
+        d="m91,34.45313"
+        id="svg_9"
       />
       <line
-        stroke-linecap="null"
-        stroke-linejoin="null"
-        id="svg_14"
-        y2="31.45313"
-        x2="69"
-        y1="41.45313"
-        x1="62"
-        fill-opacity="null"
-        stroke-opacity="null"
-        stroke-width="1.5"
-        stroke="#f43544"
         fill="none"
+        stroke={props.color}
+        strokeWidth="1.5"
+        strokeOpacity="null"
+        fillOpacity="null"
+        x1="62"
+        y1="41.45313"
+        x2="69"
+        y2="31.45313"
+        id="svg_14"
+        strokeLinejoin="null"
+        strokeLinecap="null"
       />
     </g>
   </svg>
 );
+
+Logo.propTypes = {
+  color: string,
+};
+
+Logo.defaultProps = {
+  color: '#f43544',
+};
+
+export default withRouter(Logo);

@@ -6,7 +6,7 @@ class ProjectsPage extends React.Component {
     return (
       <div className="projects-page">
         <h1>Users projects</h1>
-        <Logo />
+        <Logo color="blue" />
       </div>
     );
   }
