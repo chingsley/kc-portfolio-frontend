@@ -56,7 +56,6 @@ const Home = styled.div`
   }
   .features-wrapper {
     // border: 1px solid red;
-    height: 150rem;
     width: 100%;
   }
 
