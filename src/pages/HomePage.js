@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import FeaturesSection from '../components/FeaturesSection';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 
 const Home = styled.div`
@@ -16,7 +17,7 @@ const Home = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 8rem;
+    padding-left: 6rem;
     color: white;
     // background-image: linear-gradient(226deg, #3e3e3e 0, #000 100%);
     background-image: linear-gradient(
@@ -32,7 +33,7 @@ const Home = styled.div`
 
     .window-content {
       // border: 1px solid red;
-      width: 40%;
+      width: 50%;
       color: fcfcfc;
 
       &__primary-text {
@@ -54,10 +55,10 @@ const Home = styled.div`
       }
     }
   }
-  .features {
+  .features-wrapper {
     border: 1px solid red;
     height: 150rem;
-    width: 20rem;
+    width: 100%;
   }
 
   @media only screen and (max-width: 768px) {
@@ -146,8 +147,10 @@ class HomePage extends React.Component {
         </div>
         <div
           ref={(element) => (this.featuresRef = element)}
-          className="features"
-        ></div>
+          className="features-wrapper"
+        >
+          <FeaturesSection />
+        </div>
       </Home>
     );
   }

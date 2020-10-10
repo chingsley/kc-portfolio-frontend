@@ -1,32 +1,91 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import logo from '../assets/L11.png';
-
-const Logo = styled.div`
-  ${(props) => {
-    // console.log(props.width);
-    return css`
-      // border: 1px solid black;
-      display: inline-block;
-      background-color: lightblue;
-      // height: 50px;
-
-      .logo-img {
-        width: ${props.width || '150px'};
-      }
-
-      @media only screen and (max-width: 600px) {
-        // margin-bottom: 0.5rem;
-        .logo-img {
-          width: ${props.mobile_width || '100px'};
-        }
-      }
-    `;
-  }}
-`;
 
 export default (props) => (
-  <Logo {...props}>
-    <img src={logo} alt="kc logo" className="logo-img" />
-  </Logo>
+  <svg width="125" height="50" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <title>background</title>
+      <rect
+        fill="none"
+        id="canvas_background"
+        height="52"
+        width="127"
+        y="-1"
+        x="-1"
+      />
+    </g>
+    <g>
+      <title>Layer 1</title>
+      <text
+        font-weight="bold"
+        stroke="#f43544"
+        transform="matrix(1.0575719910707448,0,0,1,-3.0711035486983747,0) "
+        font-style="italic"
+        xmlSpace="preserve"
+        text-anchor="start"
+        font-family="Arvo, sans-serif"
+        font-size="20"
+        id="svg_1"
+        y="30"
+        x="6.76212"
+        fill-opacity="null"
+        stroke-opacity="null"
+        stroke-width="0"
+        fill="#f43544"
+      >
+        show ower
+      </text>
+      <line
+        stroke="#f43544"
+        stroke-linecap="null"
+        stroke-linejoin="null"
+        id="svg_2"
+        y2="9.45313"
+        x2="62.5"
+        y1="41.45313"
+        x1="62.5"
+        fill-opacity="null"
+        stroke-opacity="null"
+        stroke-width="1.5"
+        fill="none"
+      />
+      <line
+        stroke="#f43544"
+        stroke-linecap="null"
+        stroke-linejoin="null"
+        id="svg_4"
+        y2="12.45313"
+        x2="120.5"
+        y1="12.45313"
+        x1="39.5"
+        fill-opacity="null"
+        stroke-opacity="null"
+        stroke-width="1.5"
+        fill="none"
+      />
+      <path
+        id="svg_9"
+        d="m91,34.45313"
+        opacity="0.5"
+        fill-opacity="null"
+        stroke-opacity="null"
+        stroke-width="1.5"
+        stroke="#f43544"
+        fill="none"
+      />
+      <line
+        stroke-linecap="null"
+        stroke-linejoin="null"
+        id="svg_14"
+        y2="31.45313"
+        x2="69"
+        y1="41.45313"
+        x1="62"
+        fill-opacity="null"
+        stroke-opacity="null"
+        stroke-width="1.5"
+        stroke="#f43544"
+        fill="none"
+      />
+    </g>
+  </svg>
 );
