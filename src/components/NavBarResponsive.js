@@ -18,6 +18,7 @@ const Nav = styled.nav`
     // console.log(props && !props.isTransparentTopNav && pathname === '/');
     return `
   // border: 1px solid red;
+  z-index: 1000;
   position: fixed;
   top: 0;
   font-family: montserrat;
@@ -70,7 +71,7 @@ const Nav = styled.nav`
   }
   @media only screen and (max-width: 768px) {
     // border: 1px solid blue;
-    z-index: 2;
+    z-index: 1000;
     padding: 0 1em;
     .logo {
       border: 1px solid red;

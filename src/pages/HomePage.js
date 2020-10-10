@@ -42,7 +42,6 @@ const Home = styled.div`
       }
       &__secondary-text {
         // border: 1px solid salmon;
-        font-weight: bold;
       }
       &__signup-button {
         border: none;
@@ -56,7 +55,7 @@ const Home = styled.div`
     }
   }
   .features-wrapper {
-    border: 1px solid red;
+    // border: 1px solid red;
     height: 150rem;
     width: 100%;
   }
