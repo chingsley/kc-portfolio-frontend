@@ -33,7 +33,6 @@ const Features = styled.div`
 
     &__card {
       // border: 1px solid lightblue;
-      // background-color: lightblue;
       width: 20rem;
       height: 20rem;
       background: #fafbfc;
@@ -48,7 +47,6 @@ const Features = styled.div`
         // border: 1px solid gray;
         font-size: 2rem;
         margin-bottom: 1rem;
-        // color: #f4505d;
         // color: #eb2f06;
         color: #f43544;
       }
@@ -70,16 +68,31 @@ const Features = styled.div`
         display: inline-block;
         width: 4rem;
         padding: 0.25rem 4rem;
-        // height: 4rem;
-        // line-height: 4rem;
-        // border-radius: 50%;
-        // text-align: center;
-        // border: 1px solid #f43544;
         border: 1px solid rgba(0, 0, 0, 0.5);
         border-radius: 3px;
         background: black;
         color: white;
-        // color: black;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .feature-title {
+      &__subtitle {
+        // border: 1px solid grey;
+        width: 80%;
+      }
+    }
+    .feature-cards {
+      // border: 1px solid red;
+      display: block;
+
+      &__card {
+        // border: 1px solid blue;
+        margin: 2rem auto;
+
+        &:nth-child(2) {
+          margin: 2rem auto;
+        }
       }
     }
   }
@@ -113,7 +126,7 @@ const FeaturesSection = () => {
             ratione voluptatibus quaerat fuga.
           </p>
           <Link to="/login" className="feature-cards__card__inpage-nav">
-            <i class="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
         <div className="feature-cards__card" data-aos="fade-up">
@@ -126,7 +139,7 @@ const FeaturesSection = () => {
             ratione voluptatibus quaerat fuga.
           </p>
           <Link to="/login" className="feature-cards__card__inpage-nav">
-            <i class="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
         <div
@@ -145,7 +158,7 @@ const FeaturesSection = () => {
             ratione voluptatibus quaerat fuga.
           </p>
           <Link to="/signup" className="feature-cards__card__inpage-nav">
-            <i class="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
       </div>
