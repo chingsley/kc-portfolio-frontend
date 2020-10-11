@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import KcLink from './KcLink';
 import Logo from './Logo';
+import LogoV2 from './LogoV2';
 
 const Nav = styled.nav`
   ${(props) => {
@@ -138,9 +139,8 @@ function NavBar(props) {
       : '#34495e';
   return (
     <Nav {...props} hamburgerCheckedState={hamburgerCheckedState}>
-      {/* <Logo width="80px" mobile_width="120px" /> */}
-      {/* <p>logo</p> */}
-      <Logo />
+      {/* <Logo /> */}
+      <LogoV2 />
       <input
         type="checkbox"
         name="mobile-nav-trigger"
