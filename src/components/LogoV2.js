@@ -8,7 +8,11 @@ const LogoV2 = (props) => (
     height="50"
     xmlns="http://www.w3.org/2000/svg"
     onClick={() => props.history.push('/')}
-    style={{ cursor: 'pointer' }}
+    style={{
+      cursor: 'pointer',
+      // border: '1px solid black',
+      // borderRadius: '5px',
+    }}
   >
     <g>
       <title>background</title>
