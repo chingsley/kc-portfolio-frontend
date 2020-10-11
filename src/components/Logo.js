@@ -8,7 +8,7 @@ const Logo = (props) => (
     height="50"
     xmlns="http://www.w3.org/2000/svg"
     onClick={() => props.history.push('/')}
-    style={{ cursor: 'pointer' }}
+    style={{ cursor: 'pointer', ...props.style }}
   >
     <g>
       <title>background</title>

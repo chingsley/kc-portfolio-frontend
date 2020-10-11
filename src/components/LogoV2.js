@@ -10,8 +10,7 @@ const LogoV2 = (props) => (
     onClick={() => props.history.push('/')}
     style={{
       cursor: 'pointer',
-      // border: '1px solid black',
-      // borderRadius: '5px',
+      ...props.style,
     }}
   >
     <g>
