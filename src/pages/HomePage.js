@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import FeaturesSection from '../components/FeaturesSection';
+import HomeFindSection from '../components/HomeFindSection';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 
 const Home = styled.div`
@@ -55,8 +56,9 @@ const Home = styled.div`
     }
   }
   .features-wrapper {
-    // border: 1px solid red;
+    border: 1px solid red;
     width: 100%;
+    height: 150rem;
   }
 
   @media only screen and (max-width: 768px) {
@@ -148,6 +150,7 @@ class HomePage extends React.Component {
           className="features-wrapper"
         >
           <FeaturesSection />
+          <HomeFindSection />
         </div>
       </Home>
     );

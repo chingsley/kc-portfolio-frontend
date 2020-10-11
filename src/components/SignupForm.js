@@ -43,7 +43,7 @@ export const AuthForm = styled.form`
           margin-bottom: 2rem;
           background-color: black;
           color: white;
-          font-weight: bold;
+          font-weight: 400;
           border-radius: 0.25rem;
           border: none;
           outline: none;

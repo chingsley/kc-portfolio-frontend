@@ -104,7 +104,7 @@ const Nav = styled.nav`
       padding: 0;
       height: 88vh;
       width: 50%;
-      background: #2c3e50;
+      background: rgba(44, 62, 80, 0.95);
       text-align: center;
       transition: all 0.5s;
 

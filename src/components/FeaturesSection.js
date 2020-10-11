@@ -129,7 +129,7 @@ const FeaturesSection = () => {
             <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
-        <div className="feature-cards__card" data-aos="fade-up">
+        <div className="feature-cards__card" data-aos="fade-down">
           <i className="far fa-file-powerpoint feature-cards__card__fa"></i>
           <span className="feature-cards__card__title">Demo Presentation</span>
           <p className="feature-cards__card__text">
