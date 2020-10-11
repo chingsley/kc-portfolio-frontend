@@ -56,9 +56,9 @@ const Home = styled.div`
     }
   }
   .features-wrapper {
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 100%;
-    height: 150rem;
+    // height: 150rem;
   }
 
   @media only screen and (max-width: 768px) {
