@@ -21,9 +21,15 @@ const FooterRegion = styled.div`
         padding-left: 0;
       }
     }
+  }
+  @media only screen and (max-width: 760px) {
+    .footer {
+      padding: 2rem 1rem;
+      text-align: center;
 
-    &__lower-part {
-      // border: 1px solid red;
+      &__upper-part {
+        display: block;
+      }
     }
   }
 `;
@@ -61,21 +67,17 @@ const Footer = () => {
             <strong className="footer-upper__part__list__header">list 3</strong>
             <li className="footer__upper-part__list__item">item 1</li>
             <li className="footer__upper-part__list__item">item 2</li>
-            <li className="footer__upper-part__list__item">item 3</li>
-            <li className="footer__upper-part__list__item">item 4</li>
           </ul>
           <ul className="footer__upper-part__list">
             <strong className="footer-upper__part__list__header">list 4</strong>
             <li className="footer__upper-part__list__item">item 1</li>
             <li className="footer__upper-part__list__item">item 2</li>
-            <li className="footer__upper-part__list__item">item 3</li>
-            <li className="footer__upper-part__list__item">item 4</li>
           </ul>
         </div>
         <hr />
         <div className="footer__lower-part">
           Copyright © 2020 ShowTower
-          <LogoV2 style={{ display: 'block' }} />
+          <LogoV2 display="block" mobileMargin="0 auto" />
         </div>
       </div>
     </FooterRegion>
