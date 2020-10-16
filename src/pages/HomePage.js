@@ -135,7 +135,7 @@ class HomePage extends React.Component {
               We capture your projects, accomplishments and qualifications...
             </p>
             <p className="window-content__secondary-text">
-              showing your abilities and potentials to prospective employers
+              Deomonstrating your skills and potentials to top employers
             </p>
             <button
               onClick={() => this.props.history.push('/signup')}

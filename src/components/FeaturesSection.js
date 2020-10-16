@@ -104,7 +104,9 @@ const FeaturesSection = () => {
   }, []);
   return (
     <Features className="features">
-      <h3 className="feature-title">Demonstrate your skills without a sound</h3>
+      <h3 className="feature-title">
+        Offering a thorough respresentation of your Skills
+      </h3>
       <div className="feature-title__subtitle">
         There's no substitute for hardwork. But we pair hardwork with
         presentation.
