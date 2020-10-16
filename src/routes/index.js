@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import ProjectsPage from '../pages/ProjectsPage';
+import ProfilePage from '../pages/ProfilePage';
 
 const AppRoutes = () => (
   <div className="app-main">
@@ -14,6 +15,7 @@ const AppRoutes = () => (
       <Route exact path="/signup" component={AuthPage} />
       <Route exact path="/password/forgot" component={AuthPage} />
       <Route path="/password/reset/:resetToken" component={AuthPage} />
+      <Route exact path="/:username" component={ProfilePage} />
       <Route path="/:username/projects" component={ProjectsPage} />
       <Route exact path="/notfound" component={NotFoundPage} />
       <Route component={NotFoundPage} />
