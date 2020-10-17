@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import style, { css } from 'styled-components';
+import MainProfileImage from '../components/MainProfileImage';
 
 const Profile = style.div`
         ${(props) =>
@@ -13,16 +14,16 @@ const Profile = style.div`
 
                   &__side-nav {
                     background-color: lightpink;
-                    width: 30%;
+                    width: 20%;
                     height: none;
                     position: relative;
                   }
 
                   &__right-contents {
-                    background-color: lightgreen;
+                    // background-color: lightgreen;
                     height: 120vh;
                     margin-left: 0;
-                    width: 70%;
+                    width: 80%;
                   }
                 }
               `
@@ -37,12 +38,12 @@ const Profile = style.div`
                     left: 0;
                     top: 12vh;
                     height: 88vh;
-                    width: 30%;
+                    width: 20%;
                   }
 
                   &__right-contents {
-                    background-color: lightgreen;
-                    margin-left: 30%;
+                    // background-color: lightgreen;
+                    margin-left: 20%;
                     height: 120vh;
                   }
                 }
@@ -61,7 +62,6 @@ class ProfilePage extends Component {
   handleScroll = (e) => {
     const pos = this.footerTopRef?.getBoundingClientRect()?.top;
 
-    console.log(pos, this.footerTopRef.pageYOffset);
     if (pos < 902 && !this.scrollSideNav) {
       this.setState({ scrollSideNav: true });
     } else {
@@ -72,23 +72,29 @@ class ProfilePage extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render() {
     console.log(this.props);
     console.log(this.props.match.params.username);
     const { username } = this.props.match.params;
     return (
-      <Profile {...this.props} scrollSideNav={this.state.scrollSideNav}>
-        <div className="profile" onScroll={() => this.handleScroll()}>
-          <div className="profile__side-nav">This is the side nav</div>
-          <div className="profile__right-contents">
-            This is the right contents to contain the main defails
+      <>
+        <Profile {...this.props} scrollSideNav={this.state.scrollSideNav}>
+          <div className="profile" onScroll={() => this.handleScroll()}>
+            <div className="profile__side-nav">This is the side nav</div>
+            <div className="profile__right-contents">
+              <MainProfileImage />
+            </div>
           </div>
-        </div>
+        </Profile>
         <div
           className="just-before-footer"
           ref={(element) => (this.footerTopRef = element)}
         ></div>
-      </Profile>
+      </>
     );
   }
 }
