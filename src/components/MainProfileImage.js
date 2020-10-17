@@ -44,17 +44,54 @@ const Div = styled.div`
   }
   .test {
     border: 1px solid red;
-    display: inline-block;
     position: relative;
-  }
-  .test:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: url('${profileImg}') repeat;
+    // z-index: 2;
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(
+      226deg,
+      rgba(0, 0, 0, 0.2) 0,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+
+    &__img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &__overlay-text {
+      position: relative;
+      // top: -10px;
+      z-index: 3;
+      color: white;
+
+      &__basic-info {
+        border: 1px solid grey;
+        display: inline-block;
+        // position: absolute;
+        top: 10%;
+        left: 10%;
+
+        &__name {
+          font-weight: 400;
+          letter-spacing: 2px;
+          margin: 0;
+          padding: 0;
+        }
+        &__profession {
+          letter-spacing: 2px;
+          margin: 0;
+          padding: 0;
+        }
+        &__location {
+          letter-spacing: 2px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
   }
 `;
 
@@ -69,13 +106,20 @@ function MainProfileImage() {
         </div>
       </div>
       <div className="test">
-        <img
-          src={'../assets/logo_2.jpg'}
-          alt="profile"
-          width="100px"
-          height="100px"
-          className="testing__img"
-        />
+        <img src={profileImg} alt="profile" className="test__img" />
+        <div className="test__overlay-text">
+          <div className="test__overlay-text__basic-info">
+            <h3 className="test__overlay-text__basic-info__name">
+              Eneja Kingsley
+            </h3>
+            <p className="test__overlay-text__basic-info__profession">
+              Software Engineer
+            </p>
+            <p className="test__overlay-text__basic-info__location">
+              Abuja, Nigeria
+            </p>
+          </div>
+        </div>
       </div>
     </Div>
   );
