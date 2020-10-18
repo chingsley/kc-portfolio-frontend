@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import style, { css } from 'styled-components';
-import MainProfileImage from '../components/MainProfileImage';
+import ProfileMain from '../components/ProfileMain';
+import ProfileAbout from '../components/ProfileAbout';
 
 const Profile = style.div`
         ${(props) =>
           props.scrollSideNav
             ? css`
+                // border: 2px solid red;
                 .profile {
                   // background-color: lightblue;
                   display: flex;
@@ -21,7 +23,7 @@ const Profile = style.div`
 
                   &__right-contents {
                     // background-color: lightgreen;
-                    height: 120vh;
+                    // height: 120vh;
                     margin-left: 0;
                     width: 80%;
                   }
@@ -86,7 +88,8 @@ class ProfilePage extends Component {
           <div className="profile" onScroll={() => this.handleScroll()}>
             <div className="profile__side-nav">This is the side nav</div>
             <div className="profile__right-contents">
-              <MainProfileImage />
+              <ProfileMain />
+              <ProfileAbout />
             </div>
           </div>
         </Profile>
