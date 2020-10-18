@@ -66,8 +66,8 @@ const Section = styled.section`
         line-height: 1.5;
       }
       &__btn {
-        border: 1px solid black;
-        border-radius: 3px;
+        // border: 1px solid black;
+        // border-radius: 3px;
         padding: 0;
       }
     }
@@ -113,10 +113,12 @@ function ProfileMain() {
           </h2>
           <KcLink
             text="HIRE ME"
-            color="white"
+            color="black"
             className="pp-about__banner__btn"
-            bgColorOnHover="transparent"
             colorOnHover="white"
+            borderRadius="3px"
+            border="1px solid black"
+            bgColorOnHover="black"
           />
         </div>
       </div>
