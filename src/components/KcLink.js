@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { string } from 'prop-types';
 
 const Parent = styled.div`
   ${(props) => {
     return css`
       // border: 1px solid blue;
-      height: 2rem;
-      line-height: 25px;
+      height: ${props.height};
+      line-height: ${props.lineHeight};
       display: inline-block;
       position: relative;
       z-index: 100;
@@ -18,18 +19,18 @@ const Parent = styled.div`
 
         .sibling {
           width: 100%;
-          background-color: ${props.bgColorOnHover || '#f43544'};
+          background-color: ${props.bgColorOnHover};
           border-bottom: ${props.bottomBorderOnHover};
         }
 
         .link {
-          color: ${props.colorOnHover || 'black'};
+          color: ${props.colorOnHover};
         }
       }
 
       .sibling {
-        // border: 3px solid yellow;
-        border-radius: 3px;
+        // border: 1px solid red;
+        border-radius: ${props.borderRadius};
         position: absolute;
         // top: 0;
         // left: 0;
@@ -40,10 +41,11 @@ const Parent = styled.div`
       }
 
       .link {
-        // border: 1px solid red;
+        border: ${props.border};
+        border-radius: ${props.borderRadius};
         text-decoration: none;
         font-size: 1em;
-        color: ${props.color || 'black'};
+        color: ${props.color};
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -65,6 +67,26 @@ const KcLink = (props) => {
       </Link>
     </Parent>
   );
+};
+
+KcLink.propTypes = {
+  color: string,
+  bgColorOnHover: string,
+  colorOnHover: string,
+  borderRadius: string,
+  height: string,
+  lineHeight: string,
+  bottomBorderOnHover: string,
+};
+KcLink.defaultProps = {
+  color: 'black',
+  bgColorOnHover: '#f43544',
+  colorOnHover: 'white',
+  borderRadius: '3px',
+  height: '2rem',
+  lineHeight: '25px',
+  border: 'none',
+  bottomBorderOnHover: 'none',
 };
 
 export default KcLink;
