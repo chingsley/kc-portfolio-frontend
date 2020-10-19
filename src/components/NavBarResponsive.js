@@ -68,6 +68,7 @@ const Nav = styled.nav`
       display: inline-block;
       line-height: 12vh;
       margin: 0 0.2em;
+      padding-top: 15px;
     }
   }
   @media only screen and (max-width: 768px) {
