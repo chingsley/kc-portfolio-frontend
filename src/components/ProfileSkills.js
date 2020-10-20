@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
+import ProfileSectionHeader from './ProfileSectionHeader';
 
 const Section = styled.section`
+  padding-top: 5rem;
   .skills {
     border: 1px solid green;
     min-height: 10rem;
@@ -41,6 +43,7 @@ const Section = styled.section`
 function ProfileSkills() {
   return (
     <Section>
+      <ProfileSectionHeader title="My Specialty" subtitle="My Skills" />
       <div className="skills">
         <div className="skills__skill">
           NodeJS

@@ -1,30 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import KcLink from './KcLink';
+import ProfileSectionHeader from './ProfileSectionHeader';
 import profileImg from '../assets/my_profile_img.jpg';
 console.log(profileImg);
 
 const Section = styled.section`
   padding-top: 5rem;
   .pp-about {
-    &__mini-title {
-      margin-bottom: 15px;
-      display: block;
-      font-size: 10px;
-      text-transform: uppercase;
-      color: rgb(153, 153, 153);
-      font-weight: 500;
-      letter-spacing: 5px;
-    }
-    &__main-title {
-      font-size: 18px;
-      margin-bottom: 4em;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      line-height: 1.8;
-      position: relative;
-    }
     &__description {
       border: 1px solid gray;
     }
@@ -79,8 +62,7 @@ function ProfileMain() {
   return (
     <Section>
       <div className="pp-about">
-        <span className="pp-about__mini-title">About me</span>
-        <h2 className="pp-about__main-title">Who I am!</h2>
+        <ProfileSectionHeader title="About me" subtitle="Who Am I?" />
         <p className="pp-about__description">
           <strong>Kingsley Eneja C</strong> Lorem ipsum dolor sit amet
           consectetur adipisicing elit. Fugiat, in minus? Vitae animi vero quia,
