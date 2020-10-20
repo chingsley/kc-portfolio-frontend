@@ -15,7 +15,8 @@ const Profile = style.div`
                   display: flex;
 
                   &__side-nav {
-                    background-color: lightpink;
+                    // background-color: lightpink;
+                    border: 1px solid grey;
                     width: 20%;
                     height: none;
                     position: relative;
@@ -35,7 +36,8 @@ const Profile = style.div`
                   display: block;
 
                   &__side-nav {
-                    background-color: yellow;
+                    // background-color: yellow;
+                    border: 1px solid black;
                     position: fixed;
                     left: 0;
                     top: 12vh;

@@ -11,32 +11,33 @@ const Div = styled.div`
     height: 50vh;
     background-image: linear-gradient(
       226deg,
-      rgba(0, 0, 0, 0.7) 0,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.3) 0,
+      rgba(0, 0, 0, 1) 100%
     );
+    // overflow: hidden;
 
     &__img {
       // border: 1px solid red;
       position: absolute;
+      right: 0;
       z-index: -1;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      width: 50%;
+      height: 50vh;
+      display: block;
+      object-fit: cover;
     }
 
     &__basic-info {
       // border: 1px solid grey;
-      // position: relative;
       z-index: 3;
       color: white;
+      padding-left: 2rem;
 
-      display: inline-block;
-      position: absolute;
-      top: 50vh;
-      margin-top: -100px; // -100px is half the 'assumed' height of this div
-      left: 50%;
-      width: 400px;
-      margin-left: -200px; // -200px is half the width of this div
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      height: 100%;
 
       &__name {
         font-weight: 400;
