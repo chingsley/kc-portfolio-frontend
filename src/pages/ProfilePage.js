@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import style, { css } from 'styled-components';
 import ProfileMain from '../components/ProfileMain';
 import ProfileAbout from '../components/ProfileAbout';
+import ProfileSkills from '../components/ProfileSkills';
 
 const Profile = style.div`
         ${(props) =>
@@ -92,6 +93,7 @@ class ProfilePage extends Component {
             <div className="profile__right-contents">
               <ProfileMain />
               <ProfileAbout />
+              <ProfileSkills />
             </div>
           </div>
         </Profile>
