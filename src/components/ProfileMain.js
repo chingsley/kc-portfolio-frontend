@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import profileImg from '../assets/my_profile_img.jpg';
+import KcLink from './KcLink';
 console.log(profileImg);
 
 const Div = styled.div`
@@ -11,7 +12,7 @@ const Div = styled.div`
     height: 50vh;
     background-image: linear-gradient(
       226deg,
-      rgba(0, 0, 0, 0.3) 0,
+      rgba(0, 0, 0, 0.4) 0,
       rgba(0, 0, 0, 1) 100%
     );
     // overflow: hidden;
@@ -32,6 +33,7 @@ const Div = styled.div`
       z-index: 3;
       color: white;
       padding-left: 2rem;
+      position: relative;
 
       display: flex;
       flex-direction: column;
@@ -55,6 +57,11 @@ const Div = styled.div`
         margin: 0;
         padding: 0;
       }
+      &__contact-btn {
+        min-width: 4rem;
+        position: absolute;
+        bottom: 1rem;
+      }
     }
   }
 `;
@@ -68,6 +75,24 @@ function ProfileMain() {
           <h3 className="pp-main__basic-info__name">Eneja Kingsley</h3>
           <p className="pp-main__basic-info__profession">Software Engineer</p>
           <p className="pp-main__basic-info__location">Lagos, Nigeria</p>
+          <div className="pp-main__basic-info__contact-btn">
+            <KcLink
+              color="white"
+              // bgColorOnHover="#f43544"
+              bgColorOnHover="black"
+              colorOnHover="white"
+              border="1px solid grey"
+              text="CONTACT ME"
+            />{' '}
+            <KcLink
+              color="white"
+              // bgColorOnHover="#f43544"
+              bgColorOnHover="black"
+              colorOnHover="white"
+              border="1px solid grey"
+              text="FOLLOW ME"
+            />
+          </div>
         </div>
       </div>
     </Div>
