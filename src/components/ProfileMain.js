@@ -15,7 +15,8 @@ const Div = styled.div`
         rgba(0, 0, 0, 0.7) 100%
       ),
       // url(https://images.unsplash.com/photo-1490410006060-e1dc82ab0a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
-      url(https://media.istockphoto.com/photos/blue-abstract-background-with-hexagon-picture-id1267148622?s=170x170);
+      // url(https://media.istockphoto.com/photos/blue-abstract-background-with-hexagon-picture-id1267148622?s=170x170);
+      url(https://cdn.pixabay.com/photo/2016/07/15/23/53/guilloche-1520733_1280.png);
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: top;

@@ -42,7 +42,8 @@ const Section = styled.section`
     &__banner {
       padding: 2em;
       // background: rgb(249, 191, 63);
-      background: #fafbfc;
+      // background: #fafbfc;
+      background: #e9ecef;
 
       &__text {
         line-height: 1.5;
