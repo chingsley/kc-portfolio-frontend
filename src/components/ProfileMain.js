@@ -2,30 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import profileImg from '../assets/my_profile_img.jpg';
 import KcLink from './KcLink';
-console.log(profileImg);
-
+const height = '50vh';
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     background-image: linear-gradient(
-      226deg,
-      rgba(0, 0, 0, 0.4) 0,
-      rgba(0, 0, 0, 1) 100%
-    );
-    // overflow: hidden;
+        to right,
+        rgba(0, 0, 0, 1) 0,
+        rgba(0, 0, 0, 0.7) 100%
+      ),
+      url(https://images.unsplash.com/photo-1490410006060-e1dc82ab0a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
 
     &__img {
       // border: 1px solid red;
+      border-bottom: 2px solid #f43544;
       position: absolute;
-      right: 0;
-      z-index: -1;
-      width: 50%;
-      height: 50vh;
+      right: 2rem;
+      bottom: -5rem;
+      // z-index: -1;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       display: block;
       object-fit: cover;
+      object-position: 0 0;
     }
 
     &__basic-info {
@@ -78,19 +81,19 @@ function ProfileMain() {
           <div className="pp-main__basic-info__contact-btn">
             <KcLink
               color="white"
-              // bgColorOnHover="#f43544"
               bgColorOnHover="black"
+              fontSize="0.8rem"
               colorOnHover="white"
               border="1px solid grey"
               text="CONTACT ME"
             />{' '}
             <KcLink
               color="white"
-              // bgColorOnHover="#f43544"
               bgColorOnHover="black"
               colorOnHover="white"
               border="1px solid grey"
               text="FOLLOW ME"
+              fontSize="0.8rem"
             />
           </div>
         </div>

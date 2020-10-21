@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import KcLink from './KcLink';
 import ProfileSectionHeader from './ProfileSectionHeader';
-import profileImg from '../assets/my_profile_img.jpg';
-console.log(profileImg);
 
 const Section = styled.section`
   padding-top: 5rem;
