@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 
 const InputUnitContainer = styled.div`
   ${(props) => {
-    console.log(props);
     return css`
       border: 1px solid black;
       // border-radius: 3px;

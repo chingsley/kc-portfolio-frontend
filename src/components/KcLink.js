@@ -31,6 +31,7 @@ const Parent = styled.div`
       .sibling {
         // border: 1px solid red;
         border-radius: ${props.borderRadius};
+
         position: absolute;
         // top: 0;
         // left: 0;
@@ -44,7 +45,7 @@ const Parent = styled.div`
         border: ${props.border};
         border-radius: ${props.borderRadius};
         text-decoration: none;
-        font-size: 1em;
+        font-size: ${props.fontSize};
         color: ${props.color};
         display: inline-block;
         width: 100%;
@@ -53,6 +54,7 @@ const Parent = styled.div`
         padding: 3px 30px;
         z-index: 1000;
         transition-duration: 0.5s;
+        background-color: ${props.bgColor};
       }
     `;
   }}
@@ -77,6 +79,8 @@ KcLink.propTypes = {
   height: string,
   lineHeight: string,
   bottomBorderOnHover: string,
+  bgColor: string,
+  fontSize: string,
 };
 KcLink.defaultProps = {
   color: 'black',
@@ -87,6 +91,8 @@ KcLink.defaultProps = {
   lineHeight: '25px',
   border: 'none',
   bottomBorderOnHover: 'none',
+  bgColor: 'none',
+  fontSize: '1em',
 };
 
 export default KcLink;
