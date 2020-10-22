@@ -10,7 +10,7 @@ const Section = styled.section`
 function ProfileEducation() {
   return (
     <Section>
-      <ProfileSectionHeader title="Education" subtitle="Where I Schooled" />
+      <ProfileSectionHeader title="Education" subtitle="Education" />
       <Collapsible title="University">
         I'm a B.ENG in Computer Engineering from Nnamdi Azikiwe University Awka,
         Anambra state, Nigeria. I graduated with a CGPA of 4.46
