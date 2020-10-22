@@ -15,17 +15,30 @@ const Div = styled.div`
     position: relative;
 
     &__title {
-      // border 1px solid red;
+      // border 1px solid blue;
       display: inline-block;
-      font-weight: 400;
-      font-size: 1rem;
-      min-width: 8rem;
-      text-align: center;
-      padding: 2px;
-      background-color: black;
-      color: white;
-      border-radius: 3px;
-      letter-spacing: 0.5px;
+
+      &__subject {
+        // border: 1px solid red;
+        font-weight: 400;
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 1);
+        margin-right: 1rem;
+        // letter-spacing: 0.5px;
+      }
+      &__period {
+        // border: 1px solid lightgreen;
+        font-style: italic;
+        &:before {
+          content: '';
+          border: 1px solid red;
+          margin-right: 1rem;
+        }
+        &:after {
+          content: '';
+          // border: 1px solid red;
+        }
+      }
     }
 
     &__state {
@@ -51,7 +64,12 @@ const Collapsible = (props) => {
   return (
     <Div>
       <div className="header" onClick={toggle}>
-        <div className="header__title">{props.title}</div>
+        <div className="header__title">
+          <span className="header__title__subject">{props.subject}</span>
+          {props.period && (
+            <span className="header__title__period">{props.period}</span>
+          )}
+        </div>
         <div className="header__state">{isOpen ? '-' : '+'}</div>
       </div>
       <Collapse isOpen={isOpen}>
