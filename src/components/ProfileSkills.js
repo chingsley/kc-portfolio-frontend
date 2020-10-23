@@ -43,7 +43,7 @@ const Section = styled.section`
 function ProfileSkills() {
   return (
     <Section>
-      <ProfileSectionHeader title="My Specialty" subtitle="My Skills" />
+      <ProfileSectionHeader title="My Specialty" subtitle="Major Skills" />
       <div className="skills">
         <div className="skills__skill">
           NodeJS
