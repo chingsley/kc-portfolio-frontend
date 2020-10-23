@@ -10,7 +10,7 @@ const Section = styled.section`
 function ProfileEducation() {
   return (
     <Section>
-      <ProfileSectionHeader subject="Education" subtitle="Education" />
+      <ProfileSectionHeader title="Education" subtitle="Education" />
       <Collapsible
         subject="B.ENG Computer Engineering"
         period="2020-02-19 - 2020-09-21"

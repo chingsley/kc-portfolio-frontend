@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import styled from 'styled-components';
+import { string, bool } from 'prop-types';
 import KcLink from './KcLink';
 
 const Div = styled.div`
@@ -57,7 +58,7 @@ const Div = styled.div`
 `;
 
 const Collapsible = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(props.expandAsDefault);
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -79,6 +80,17 @@ const Collapsible = (props) => {
       </Collapse>
     </Div>
   );
+};
+
+Collapsible.prototype = {
+  subject: string,
+  period: string,
+  expandAsDefault: bool,
+};
+Collapsible.defaultProps = {
+  subject: 'no subject specified',
+  period: null,
+  expandAsDefault: false,
 };
 
 export default Collapsible;
