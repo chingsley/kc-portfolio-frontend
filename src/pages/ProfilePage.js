@@ -8,7 +8,7 @@ import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 import ProfileEducation from '../components/ProfileEducation';
 import ProfileWorkHistory from '../components/ProfileWorkHistory';
-import ProfileProjectListing from '../components/ProfileProjectListing';
+import ProfileProjectsListing2 from '../components/ProfileProjectsListing2';
 
 const Profile = style.div`
 .profile {
@@ -28,7 +28,7 @@ class ProfilePage extends Component {
             <ProfileSkills />
             <ProfileEducation />
             <ProfileWorkHistory />
-            <ProfileProjectListing />
+            <ProfileProjectsListing2 />
           </div>
         </Profile>
       </>

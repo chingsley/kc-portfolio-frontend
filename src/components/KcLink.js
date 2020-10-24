@@ -65,7 +65,7 @@ const KcLink = (props) => {
     <Parent {...props}>
       <div className="sibling"></div>
       <Link to={props.to} className="link">
-        {props.text}
+        {props.text || props.children}
       </Link>
     </Parent>
   );
@@ -81,6 +81,7 @@ KcLink.propTypes = {
   bottomBorderOnHover: string,
   bgColor: string,
   fontSize: string,
+  to: string,
 };
 KcLink.defaultProps = {
   color: 'black',
@@ -93,6 +94,7 @@ KcLink.defaultProps = {
   bottomBorderOnHover: 'none',
   bgColor: 'none',
   fontSize: '1em',
+  to: '/chingsley/projects',
 };
 
 export default KcLink;
