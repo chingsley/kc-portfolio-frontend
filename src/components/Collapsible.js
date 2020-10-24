@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, CardBody, Card } from 'reactstrap';
 import styled from 'styled-components';
 import { string, bool } from 'prop-types';
-import KcLink from './KcLink';
 
 const Div = styled.div`
   margin-bottom: 0.2rem;
