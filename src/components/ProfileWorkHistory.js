@@ -44,7 +44,7 @@ function ProfileEducation() {
         include: (a) Authors Haven - a blog web application for authors. This
         project was part of my training during the simulation program in Andela.
         (b)The VOF project - a internal project for Andela designed to automate
-        and streamline the hiring process for the HR department at Andela.
+        and streamline the process of hiring software engineers in Andela.
       </Collapsible>
       <Collapsible
         subject="Abuja Technical Training Academy"

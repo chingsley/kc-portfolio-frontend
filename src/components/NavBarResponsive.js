@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import KcLink from './KcLink';
-import Logo from './Logo';
+// import Logo from './Logo';
 import LogoV2 from './LogoV2';
 
 const Nav = styled.nav`

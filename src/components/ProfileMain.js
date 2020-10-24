@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import profileImg from '../assets/my_profile_img.jpg';
 import KcLink from './KcLink';
-const height = '50vh';
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
+    // border-bottom: 2px solid #f43544;
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 1) 0,
         rgba(0, 0, 0, 0.7) 100%
       ),
-      // url(https://images.unsplash.com/photo-1490410006060-e1dc82ab0a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
-      // url(https://media.istockphoto.com/photos/blue-abstract-background-with-hexagon-picture-id1267148622?s=170x170);
-      url(https://cdn.pixabay.com/photo/2016/07/15/23/53/guilloche-1520733_1280.png);
+      url(https://images.unsplash.com/photo-1490410006060-e1dc82ab0a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    // url(https://media.istockphoto.com/photos/blue-abstract-background-with-hexagon-picture-id1267148622?s=170x170);
+    // url(https://cdn.pixabay.com/photo/2016/07/15/23/53/guilloche-1520733_1280.png);
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: top;
