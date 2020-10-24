@@ -1,0 +1,136 @@
+import React from 'react';
+import styled, { css } from 'styled-components';
+import KcLink from './KcLink';
+import { number, string } from 'prop-types';
+
+const CardWrapper = styled.div`
+  ${(props) => css`
+    .card {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #f43544;
+      border-radius: 3px;
+      overflow: hidden;
+      width: ${props.widthInRem}rem;
+      height: ${props.heightInRem}rem;
+      position: relative;
+
+      &__img {
+        // border: 1px solid yellow;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        // object-fit: contain;
+      }
+      &__info {
+        // border: 1px solid green;
+        padding: 1rem;
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 100%;
+        white-space: nowrap;
+
+        /*** transition properties ***/
+        height: 30%;
+        background-color: white;
+        transition: 0.5s ease-in-out;
+
+        &__title {
+          // border: 1px solid black;
+        }
+
+        &__short-description {
+          // border: 1px solid black;
+          // max-width: 19rem;
+          overflow: hidden;
+          min-height: 2rem;
+          max-height: 5.5rem;
+
+          text-overflow: ellipsis;
+        }
+
+        &__btn-wrapper {
+          // border: 1px solid red;
+          display: inline-block;
+          &__btn {
+            // border: 1px solid blue;
+            float: right;
+          }
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        position: relative;
+
+        .card__info {
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.9);
+          text-overflow: initial;
+          white-space: normal;
+          // border-top: 2px solid #f43544;
+        }
+      }
+    }
+  `}
+`;
+
+function ProjectCard(props) {
+  return (
+    <CardWrapper {...props}>
+      <div className="card">
+        <img
+          src={props.imageSrc}
+          alt="show-tower-homepage"
+          className="card__img"
+        />
+        <div className="card__info">
+          <h5 className="card__info__title">{props.title}</h5>
+          <p className="card__info__short-description">
+            {props.shortDescription}
+          </p>
+          <div className="card__info__btn-wrapper">
+            <KcLink
+              bgColor="black"
+              color="white"
+              className="card__info__btn-wrapper__btn"
+              to={props.redirectTo}
+            >
+              {props.buttonText}
+            </KcLink>
+          </div>
+        </div>
+      </div>
+    </CardWrapper>
+  );
+}
+
+ProjectCard.prototype = {
+  title: string,
+  shortDescription: string,
+  buttonText: string,
+  redirectTo: string,
+  imageSrc: string,
+  widthInRem: number,
+  heightInRem: number,
+};
+
+ProjectCard.defaultProps = {
+  title: 'Title',
+  shortDescription:
+    'Please provide a short description of the project. Text more than 120 characters will be clipped',
+  imageSrc: 'https://via.placeholder.com/100',
+  buttonText: 'View Details',
+  redirectTo: '/#',
+  widthInRem: 20,
+  heightInRem: 15,
+};
+
+export default ProjectCard;
