@@ -45,15 +45,16 @@ const CardWrapper = styled.div`
 
         &__title {
           // border: 1px solid black;
+          overflow: hidden;
+          min-height: 1.5rem;
+          text-overflow: ellipsis;
         }
 
         &__short-description {
           // border: 1px solid black;
-          // max-width: 19rem;
           overflow: hidden;
           min-height: 2rem;
           max-height: 5.5rem;
-
           text-overflow: ellipsis;
         }
 
@@ -72,7 +73,9 @@ const CardWrapper = styled.div`
 
         .card__info {
           height: 100%;
-          background-color: rgba(255, 255, 255, 0.9);
+          background-color: rgba(255, 255, 255, 0.95);
+          // background-color: rgba(0, 0, 0, 0.8);
+          // color: white;
           text-overflow: initial;
           white-space: normal;
           // border-top: 2px solid #f43544;
@@ -93,6 +96,9 @@ function ProjectCard(props) {
         />
         <div className="card__info">
           <h5 className="card__info__title">{props.title}</h5>
+          <div className="card__info__user-role">
+            <strong>Role:</strong> <i>{props.userRole}</i>
+          </div>
           <p className="card__info__short-description">
             {props.shortDescription}
           </p>
@@ -120,6 +126,7 @@ ProjectCard.prototype = {
   imageSrc: string,
   widthInRem: number,
   heightInRem: number,
+  userRole: string,
 };
 
 ProjectCard.defaultProps = {
@@ -131,6 +138,7 @@ ProjectCard.defaultProps = {
   redirectTo: '/#',
   widthInRem: 20,
   heightInRem: 15,
+  userRole: 'not specified',
 };
 
 export default ProjectCard;

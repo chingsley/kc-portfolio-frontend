@@ -19,7 +19,7 @@ function ProfileEducation() {
       <Collapsible
         subject="Access Bank PLC"
         period="2020-12-19 - Present"
-        expandAsDefault={true}
+        expandAsDefault={false}
       >
         <h4 className="role">Software Engineer</h4>
         Notable projects worked on include: (a) Automation of the bank's ICAD
@@ -36,7 +36,7 @@ function ProfileEducation() {
       <Collapsible
         subject="Andela"
         period="2018-12-11 - 2019-09-21"
-        expandAsDefault={true}
+        expandAsDefault={false}
       >
         <h4 className="role">Software Engineer</h4>
         Having gone through the Andela Fellowship, I worked as a fulstack
@@ -49,7 +49,7 @@ function ProfileEducation() {
       <Collapsible
         subject="Abuja Technical Training Academy"
         period="2017-11-23 - 2018-09-21"
-        expandAsDefault={true}
+        expandAsDefault={false}
       >
         <h4 className="role">Technical Instructor</h4>
         During my service at Abutech as an instructor on wide variety of
