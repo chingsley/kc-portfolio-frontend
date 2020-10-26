@@ -2,17 +2,34 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import KcLink from './KcLink';
 import { number, string } from 'prop-types';
+import placeholderImg from '../assets/Rectangle.png';
 
 const CardWrapper = styled.div`
   ${(props) => css`
     .card {
       border: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 2px solid #f43544;
+      // border-bottom: 2px solid rgba(244, 53, 68, 0.2);
+      // border-bottom: 2px solid rgba(0, 0, 0, 0.7);
       border-radius: 3px;
       overflow: hidden;
       width: ${props.widthInRem}rem;
       height: ${props.heightInRem}rem;
       position: relative;
+
+      &__default-img-title {
+        // border: 1px solid orangered;
+        // font-size: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.5);
+      }
 
       &__img {
         // border: 1px solid yellow;
@@ -64,11 +81,11 @@ const CardWrapper = styled.div`
           &__btn {
             // border: 1px solid blue;
             float: right;
+            cursor: pointer;
           }
         }
       }
       &:hover {
-        cursor: pointer;
         position: relative;
 
         .card__info {
@@ -80,6 +97,9 @@ const CardWrapper = styled.div`
           white-space: normal;
           // border-top: 2px solid #f43544;
         }
+        .card__default-img-title {
+          // z-index: -1;
+        }
       }
     }
   `}
@@ -90,10 +110,13 @@ function ProjectCard(props) {
     <CardWrapper {...props}>
       <div className="card">
         <img
-          src={props.imageSrc}
+          src={props.imageSrc || props.defaultImg}
           alt="show-tower-homepage"
           className="card__img"
         />
+        {!props.imageSrc && (
+          <h2 className="card__default-img-title">{props.title}</h2>
+        )}
         <div className="card__info">
           <h5 className="card__info__title">{props.title}</h5>
           <div className="card__info__user-role">
@@ -124,6 +147,7 @@ ProjectCard.prototype = {
   buttonText: string,
   redirectTo: string,
   imageSrc: string,
+  defaultImg: string,
   widthInRem: number,
   heightInRem: number,
   userRole: string,
@@ -133,7 +157,7 @@ ProjectCard.defaultProps = {
   title: 'Title',
   shortDescription:
     'Please provide a short description of the project. Text more than 120 characters will be clipped',
-  imageSrc: 'https://via.placeholder.com/100',
+  defaultImg: placeholderImg,
   buttonText: 'View Details',
   redirectTo: '/#',
   widthInRem: 20,
