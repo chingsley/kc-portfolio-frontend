@@ -4,7 +4,8 @@ import KcLink from './KcLink';
 import ProfileSectionHeader from './ProfileSectionHeader';
 
 const Section = styled.section`
-  padding-top: 5rem;
+  // border: 1px solid red;
+
   .pp-about {
     &__description {
       border: 1px solid gray;

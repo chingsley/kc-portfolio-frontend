@@ -5,7 +5,7 @@ import Collapsible from './Collapsible';
 
 // will contain the organization, the timeline, the role and the job description
 const Section = styled.section`
-  padding-top: 5rem;
+  // border: 1px solid red;
   .role {
     font-weight: 400;
     font-size: 1.2rem;

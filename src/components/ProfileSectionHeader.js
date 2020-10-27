@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { string } from 'prop-types';
 
 const ProfilePageSectionHeader = styled.div`
+  // border: 1px solid red;
+  margin-bottom: 5rem;
+
   .mini-title {
     margin-bottom: 15px;
     display: block;
@@ -13,8 +16,8 @@ const ProfilePageSectionHeader = styled.div`
     letter-spacing: 5px;
   }
   .main-title {
+    margin: 0;
     font-size: 18px;
-    margin-bottom: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 5px;

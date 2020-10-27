@@ -12,8 +12,22 @@ import ProfileProjectsListing2 from '../components/ProfileProjectsListing2';
 
 const Profile = style.div`
 .profile {
-  // background-color: lightblue;
-  display: block;
+    background-color: #f7f8fc;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    display: block;
+
+    &__section {
+      padding: 4rem;
+      background-color: white;
+      border: 1px solid #dfe0eb;
+
+      &:not(:nth-child(2)) {
+        // border: 1px solid red;
+        margin-top: 2rem;
+      }
+
+    }
 }
 `;
 
@@ -24,11 +38,21 @@ class ProfilePage extends Component {
         <Profile {...this.props}>
           <div className="profile">
             <ProfileMain />
-            <ProfileAbout />
-            <ProfileSkills />
-            <ProfileEducation />
-            <ProfileWorkHistory />
-            <ProfileProjectsListing2 />
+            <div className="profile__section">
+              <ProfileAbout />
+            </div>
+            <div className="profile__section">
+              <ProfileSkills />
+            </div>
+            <div className="profile__section">
+              <ProfileEducation />
+            </div>
+            <div className="profile__section">
+              <ProfileWorkHistory />
+            </div>
+            <div className="profile__section">
+              <ProfileProjectsListing2 />
+            </div>
           </div>
         </Profile>
       </>

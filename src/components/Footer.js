@@ -9,7 +9,6 @@ const FooterRegion = styled.div`
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 2rem 4rem;
     background: #fafbfc;
-    margin-top: 5rem;
 
     &__upper-part {
       // border: 1px solid red;
