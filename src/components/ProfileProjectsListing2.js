@@ -9,7 +9,7 @@ import icad from '../assets/icad.png';
 
 const Section = styled.section`
   // border: 1px solid green;
-  padding-top: 5rem;
+
   .projects {
     // border: 1px solid green;
     display: flex;

@@ -7,7 +7,6 @@ import ProjectCard from './ProjectCard';
 
 const Section = styled.section`
   // border: 1px solid green;
-  padding-top: 5rem;
 
   .projects {
     &__card {

@@ -5,9 +5,9 @@ import 'react-sweet-progress/lib/style.css';
 import ProfileSectionHeader from './ProfileSectionHeader';
 
 const Section = styled.section`
-  padding-top: 5rem;
+  // border: 1px solid red;
   .skills {
-    border: 1px solid green;
+    // border: 1px solid green;
     min-height: 10rem;
     display: flex;
     justify-content: space-between;
@@ -52,26 +52,6 @@ function ProfileSkills() {
         <div className="skills__skill">
           ReactJS
           <Progress percent={69} />
-        </div>
-        <div className="skills__skill">
-          Data Science
-          <Progress percent={30} />
-        </div>
-        <div className="skills__skill">
-          Data Science
-          <Progress percent={30} />
-        </div>
-        <div className="skills__skill">
-          Data Science
-          <Progress percent={30} />
-        </div>
-        <div className="skills__skill">
-          Data Science
-          <Progress percent={30} />
-        </div>
-        <div className="skills__skill">
-          Data Science
-          <Progress percent={30} />
         </div>
         <div className="skills__skill">
           Data Science
