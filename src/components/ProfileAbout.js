@@ -8,10 +8,29 @@ const Section = styled.section`
 
   .pp-about {
     &__description {
-      border: 1px solid gray;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
+      border-radius: 5px;
+      padding: 2rem;
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 1.25vw;
+      line-height: 1.4;
+      text-rendering: optimizeLegibility;
+      font-smoothing: antialiased;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-fon-smoothing: grayscale;
+
+      &__quote:before,
+      &__quote:after {
+        // border: 1px solid red;
+        content: '"';
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: bold;
+      }
     }
     &__main-skills {
-      border: 1px solid gray;
+      // border: 1px solid gray;
       display: flex;
       justify-content: space-between;
       margin-bottom: 2rem;
@@ -64,12 +83,34 @@ function ProfileMain() {
       <div className="pp-about">
         <ProfileSectionHeader title="About me" subtitle="Who Am I?" />
         <p className="pp-about__description">
-          <strong>Kingsley Eneja C</strong> Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Fugiat, in minus? Vitae animi vero quia,
-          tempore aperiam eveniet rem rerum at exercitationem? Maxime deserunt
-          minima, cupiditate ratione commodi consequuntur dicta.
+          <q className="pp-about__description__quote">
+            I am a professional software engineer, a graduate of Nnamdi Azikiwe
+            university with a degree in computer engineering, and an Alumni of
+            Andela Fellowship. I have gotten core software engineering
+            experience from different companies including Andela and Access
+            Bank. In Andela I served as a technical coordinator in my team
+            working to deliver high quality applications. In Access bank, I took
+            on the role of a solutions architect and software developer where
+            some of my notable projects include automation of account reporting
+            and the Access payment gateway application. <br />
+            While freelancing, I have worked on a number of exciting products
+            both for professional and personally gain. Some of which include a
+            Ship management application for the military, a customisable
+            portfolio/cv application, Show Tower, that improves users’ chances
+            of getting hired by recruiting managers, a crime/crisis reporting
+            app called iReporter. My main stack is Javascript NodeJS with React,
+            but I also have experience with Python flask.
+            {/* <br /> I find it
+            particularly interesting working on database designs having worked
+            with a wide array of databases including but not limited to mongoDB,
+            Postgres, mysql, mssql and sqlite3. I enjoy solving problems and I’m
+            a frequent user of hackerrank and codility. Additionally I enjoy
+            working with a team of smart professionals, bringing out the best in
+            each other and working to provide an innovative solution to any form
+            of challenges. */}
+          </q>
         </p>
-        <div className="pp-about__main-skills">
+        {/* <div className="pp-about__main-skills">
           <div className="pp-about__main-skills__skill pp-about__main-skills__skill-1">
             <i className="fas fa-code pp-about__main-skills__skill__icon"></i>
             <h3 className="pp-about__main-skills__skill__title">
@@ -88,8 +129,8 @@ function ProfileMain() {
               Python Flask
             </h3>
           </div>
-        </div>
-        <div className="pp-about__banner">
+        </div> */}
+        {/* <div className="pp-about__banner">
           <h2 className="pp-about__banner__text">
             I am happy to tell you that I've 3+ years of experience with REACT +
             NODE.
@@ -103,7 +144,7 @@ function ProfileMain() {
             border="1px solid black"
             bgColorOnHover="black"
           />
-        </div>
+        </div> */}
       </div>
     </Section>
   );

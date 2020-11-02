@@ -8,6 +8,7 @@ const CardWrapper = styled.div`
   ${(props) => css`
     .card {
       border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
       // border-bottom: 2px solid rgba(244, 53, 68, 0.2);
       // border-bottom: 2px solid rgba(0, 0, 0, 0.7);
       border-radius: 3px;
