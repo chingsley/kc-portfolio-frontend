@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
 import KcLink from './KcLink';
+import Typewriter from 'typewriter-effect';
+
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
-    // border-bottom: 2px solid #f43544;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    // border-bottom: 1px solid #f43544;
     position: relative;
     width: 100%;
     height: 50vh;
@@ -59,11 +64,13 @@ const Div = styled.div`
         letter-spacing: 2px;
         margin: 0;
         padding: 0;
+        color: #f43544;
       }
       &__location {
         letter-spacing: 2px;
         margin: 0;
         padding: 0;
+        color: #f43544;
       }
       &__contact-btn {
         min-width: 4rem;
@@ -75,32 +82,73 @@ const Div = styled.div`
 `;
 
 function ProfileMain() {
+  const [showMainBtns, setShowMainBtns] = useState(false);
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Div>
       <div className="pp-main">
         <img src={profileImg} alt="profile" className="pp-main__img" />
         <div className="pp-main__basic-info">
-          <h3 className="pp-main__basic-info__name">Eneja Kingsley</h3>
+          <h3 className="pp-main__basic-info__name">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .changeDelay(50)
+                  .typeString('Eneja Kingsley Chinonso')
+                  .callFunction(() => {
+                    console.log('String typed out!');
+                    setShowMainBtns(true);
+                  })
+                  .pauseFor(2500)
+                  // .deleteAll()
+                  // .callFunction(() => {
+                  //   console.log('All strings were deleted');
+                  // })
+                  .changeDeleteSpeed(50)
+                  .deleteChars(8)
+                  .pauseFor(500)
+                  .typeString('C.')
+                  .start();
+              }}
+            />
+          </h3>
           <p className="pp-main__basic-info__profession">Software Engineer</p>
           <p className="pp-main__basic-info__location">Lagos, Nigeria</p>
-          <div className="pp-main__basic-info__contact-btn">
-            <KcLink
-              color="white"
-              bgColorOnHover="black"
-              fontSize="0.8rem"
-              colorOnHover="white"
-              border="1px solid grey"
-              text="CONTACT ME"
-            />{' '}
-            <KcLink
+          {showMainBtns && (
+            <div className="pp-main__basic-info__contact-btn">
+              <KcLink
+                color="white"
+                bgColorOnHover="black"
+                fontSize="0.8rem"
+                colorOnHover="white"
+                border="1px solid grey"
+                text="CONTACT"
+                data-aos="fade-down"
+                data-aos-delay={100}
+              />{' '}
+              <KcLink
+                color="white"
+                bgColorOnHover="black"
+                colorOnHover="white"
+                border="1px solid grey"
+                text="PROJECTS"
+                fontSize="0.8rem"
+                data-aos="fade-down"
+                data-aos-delay={500}
+              />
+              {/* <KcLink
               color="white"
               bgColorOnHover="black"
               colorOnHover="white"
               border="1px solid grey"
               text="FOLLOW ME"
               fontSize="0.8rem"
-            />
-          </div>
+              to="/chingsley/projects"
+            /> */}
+            </div>
+          )}
         </div>
       </div>
     </Div>

@@ -8,8 +8,8 @@ import { useEffect } from 'react';
 const InputUnitContainer = styled.div`
   ${(props) => {
     return css`
-      border: 1px solid black;
-      // border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
       overflow: hidden;
       width: 35%;
       width: ${props.widthInPercent || '35'}%;
@@ -19,8 +19,8 @@ const InputUnitContainer = styled.div`
       margin: ${props.margin};
 
       .input {
-        border: none;
         // border: 1px solid red;
+        border: none;
         display: block;
         width: 70%;
         height: 100%;
