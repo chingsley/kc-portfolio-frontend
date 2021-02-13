@@ -166,8 +166,8 @@ function NavBar(props) {
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="Projects"
-            to="/chingsley/projects"
+            text="My Profile"
+            to="/chingsley"
             color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"

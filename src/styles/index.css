@@ -1,3 +1,8 @@
+:root {
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+}
+
 html {
   font-size: 16px;
 }
@@ -14,6 +19,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: '#f5f6fa'; */
   background-color: white;
+  /* background-color: var(--clr-primary-10); */
+  color: var(--clr-grey-1);
 
   /* border: 1px solid cyan; */
   /* width: 100vh; */

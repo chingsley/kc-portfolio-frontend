@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import KcLink from './KcLink';
+import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
 
 const Section = styled.section`
@@ -78,11 +78,18 @@ const Section = styled.section`
 `;
 
 function ProfileMain() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Section>
       <div className="pp-about">
-        <ProfileSectionHeader title="About me" subtitle="Who Am I?" />
-        <p className="pp-about__description">
+        <ProfileSectionHeader title="Who Am I?" subtitle="About me" />
+        <p
+          className="pp-about__description"
+          data-aos="fade-up"
+          data-aos-delay={100}
+        >
           <q className="pp-about__description__quote">
             I am a professional software engineer, a graduate of Nnamdi Azikiwe
             university with a degree in computer engineering, and an Alumni of
@@ -94,7 +101,7 @@ function ProfileMain() {
             some of my notable projects include automation of account reporting
             and the Access payment gateway application. <br />
             While freelancing, I have worked on a number of exciting products
-            both for professional and personally gain. Some of which include a
+            both for professional and personal gain. Some of which include a
             Ship management application for the military, a customisable
             portfolio/cv application, Show Tower, that improves users’ chances
             of getting hired by recruiting managers, a crime/crisis reporting
