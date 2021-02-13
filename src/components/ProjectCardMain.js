@@ -1,9 +1,6 @@
 import React from 'react';
 import style from 'styled-components';
-import KcLink from './KcLink';
 const whiteGrey = 'hsl(210, 36%, 96%)';
-const blackGrey = 'hsl(209, 61%, 16%)';
-const reddish = '#f43544';
 
 const Styled = style.div`
 .pcard {

@@ -101,7 +101,7 @@ function ProfileMain() {
                     console.log('String typed out!');
                     setShowMainBtns(true);
                   })
-                  .pauseFor(2500)
+                  .pauseFor(1500)
                   // .deleteAll()
                   // .callFunction(() => {
                   //   console.log('All strings were deleted');
