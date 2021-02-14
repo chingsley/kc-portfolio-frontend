@@ -12,7 +12,9 @@ const StyledSkill = styled.div`
       width: 45%;
       margin-bottom: 1rem;
       .name {
-        color: darkblue;
+        color: #34495e;
+        text-transform: capitalize;
+        font-size: 0.8rem;
       }
       .react-sweet-progress-line-inner {
         // border: 1px solid red;

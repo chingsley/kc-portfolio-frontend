@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     name: 'show tower',
-    image: `https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60`,
+    image: `https://res.cloudinary.com/dmx0a3nqi/image/upload/v1613301488/kcportfolio/chingsley/show_tower.png`,
     role: 'Fullstack',
     stacks: 'React + NodeJS',
     repo: `https://github.com/chingsley/kc-portfolio-backend`,
@@ -13,7 +13,7 @@ export const projects = [
   {
     id: 2,
     name: 'Nigerian Navy Ship Management App',
-    image: `https://images.unsplash.com/photo-1593642532973-d31b6557fa68?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60`,
+    image: `https://res.cloudinary.com/dmx0a3nqi/image/upload/v1613301300/kcportfolio/chingsley/Screenshot_2021-02-14_at_10.58.28_AM.png`,
     role: 'Backend',
     stacks: 'React + NodeJS',
     repo: `https://github.com/chingsley/nn_ship_magt`,
@@ -24,7 +24,7 @@ export const projects = [
   {
     id: 3,
     name: 'Access Gateway',
-    image: `https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60`,
+    image: `https://res.cloudinary.com/dmx0a3nqi/image/upload/v1613301469/kcportfolio/chingsley/access_gateway.png`,
     role: 'Backend',
     stacks: 'React + NodeJS',
     websiteLink: 'https://agsandbox.accessbankplc.com/#/',
@@ -34,7 +34,7 @@ export const projects = [
   {
     id: 4,
     name: 'Defence Health Management Limited',
-    image: `https://images.unsplash.com/photo-1612548403247-aa2873e9422d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60`,
+    image: `https://res.cloudinary.com/dmx0a3nqi/image/upload/v1613301305/kcportfolio/chingsley/Screenshot_2021-02-14_at_10.58.02_AM.png`,
     role: 'Backend',
     stacks: 'React + NodeJS',
     repo: 'https://github.com/chingsley/dhml_backend',

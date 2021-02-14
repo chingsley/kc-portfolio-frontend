@@ -28,10 +28,7 @@ const Styled = style.div`
       height: 100%;
       width: 100%;
       object-fit: cover;
-      // border-top-right-radius: 0.25rem;
-      // border-top-left-radius: 0.25rem;
       position: absolute;
-      // transition: transform .2s;
       transition: 0.2s ease-in-out;
 
       &:hover {
@@ -43,15 +40,10 @@ const Styled = style.div`
       // border: 1px solid blue;
       padding: 0.5rem;
       background-color: rgba(0, 0, 0, 0.7);
-      border-top-right-radius: 0.25rem;
-      border-bottom-left-radius: 3px;
       position: absolute;
-      top: 0;
-      right: 0;
-      text-background: black;
-      // height: 100%;
-      // width: 100%;
-      display: inline-block;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       &__title {
         // border: 1px solid red;
         text-align: center;
@@ -60,7 +52,7 @@ const Styled = style.div`
         font-size: 0.8rem;
         font-weight: bold;
         text-transform: capitalize;
-        // font-style: italic;
+       padding: 1rem;
     }
 
     }
@@ -132,11 +124,11 @@ function ProjectCardMain(props) {
           </div>
         </div>
         <div className="pcard__content">
-          <p className="pcard__content__txt description">
+          {/* <p className="pcard__content__txt description">
             {project.description}
-          </p>
-          {/* <p className="pcard__content__txt">Role: {project.role}</p> */}
-          {/* <p className="pcard__content__txt">Stack: {project.stacks}</p> */}
+          </p> */}
+          <p className="pcard__content__txt">Role: {project.role}</p>
+          <p className="pcard__content__txt">Stack: {project.stacks}</p>
           <p className="pcard__content__txt link-container">
             {repo && (
               <a className="link" href={repo} target="branch">
