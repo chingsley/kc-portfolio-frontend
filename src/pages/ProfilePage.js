@@ -19,8 +19,9 @@ const Profile = style.div`
 
     &__section {
       padding: 4rem;
-      background-color: white;
-      border: 1px solid #dfe0eb;
+      // background-color: white;
+      background-color: #fffefe;
+      // border: 1px solid #dfe0eb;
       &:nth-child(2) {
         // border: 1px solid red;
         border-bottom-left-radius: 4px;
