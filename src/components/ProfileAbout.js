@@ -11,53 +11,27 @@ const Section = styled.section`
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
       border-radius: 5px;
+      // color: #34495e;
       padding: 2rem;
-      color: rgba(0, 0, 0, 0.7);
-      font-size: 1.25vw;
+      // font-size: 1.17vw;
+      font-size: 0.95rem;
+      // font-style: italic;
+      font-family: montserrat;
+      letter-spacing: 0.5px;
       line-height: 1.4;
       text-rendering: optimizeLegibility;
       font-smoothing: antialiased;
       -webkit-font-smoothing: antialiased;
       -moz-osx-fon-smoothing: grayscale;
 
-      &__quote:before,
-      &__quote:after {
-        // border: 1px solid red;
-        content: '"';
-        font-size: 2rem;
-        font-style: italic;
-        font-weight: bold;
-      }
-    }
-    &__main-skills {
-      // border: 1px solid gray;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-
-      &__skill {
-        // border: 1px solid red;
-        width: 33.333%;
-        width: 30%;
-        height: 8rem;
-        padding: 1rem;
-        box-shadow: rgba(0, 0, 0, 0.17) 0px 0px 56px -8px;
-        // padding: 1.5em;
-        // border-bottom: 2px solid rgb(44, 152, 240);
-        border-bottom: 2px solid rgb(236, 84, 83);
-
-        &__icon {
-          // border: 1px solid blue;
-          font-size: 30px;
-          color: rgb(44, 152, 240);
-          // color: rgb(236, 84, 83);
-        }
-        &__title {
-          font-family: Quicksand, Arial, sans-serif;
-          font-size: 16px;
-          font-weight: 500;
-        }
-      }
+      // &__quote:before,
+      // &__quote:after {
+      //   // border: 1px solid red;
+      //   content: '"';
+      //   font-size: 2rem;
+      //   font-style: italic;
+      //   font-weight: bold;
+      // }
     }
     &__banner {
       padding: 2em;
@@ -117,41 +91,6 @@ function ProfileMain() {
             of challenges. */}
           </q>
         </p>
-        {/* <div className="pp-about__main-skills">
-          <div className="pp-about__main-skills__skill pp-about__main-skills__skill-1">
-            <i className="fas fa-code pp-about__main-skills__skill__icon"></i>
-            <h3 className="pp-about__main-skills__skill__title">
-              Backend NodeJS
-            </h3>
-          </div>
-          <div className="pp-about__main-skills__skill pp-about__main-skills__skill-1">
-            <i className="fas fa-code pp-about__main-skills__skill__icon"></i>
-            <h3 className="pp-about__main-skills__skill__title">
-              Frontend ReactJS
-            </h3>
-          </div>
-          <div className="pp-about__main-skills__skill pp-about__main-skills__skill-1">
-            <i className="fas fa-code pp-about__main-skills__skill__icon"></i>
-            <h3 className="pp-about__main-skills__skill__title">
-              Python Flask
-            </h3>
-          </div>
-        </div> */}
-        {/* <div className="pp-about__banner">
-          <h2 className="pp-about__banner__text">
-            I am happy to tell you that I've 3+ years of experience with REACT +
-            NODE.
-          </h2>
-          <KcLink
-            text="HIRE ME"
-            color="black"
-            className="pp-about__banner__btn"
-            colorOnHover="white"
-            borderRadius="3px"
-            border="1px solid black"
-            bgColorOnHover="black"
-          />
-        </div> */}
       </div>
     </Section>
   );

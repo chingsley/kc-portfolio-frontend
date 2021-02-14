@@ -9,8 +9,6 @@ const CardWrapper = styled.div`
     .card {
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
-      // border-bottom: 2px solid rgba(244, 53, 68, 0.2);
-      // border-bottom: 2px solid rgba(0, 0, 0, 0.7);
       border-radius: 3px;
       overflow: hidden;
       width: ${props.widthInRem}rem;
@@ -48,7 +46,6 @@ const CardWrapper = styled.div`
         position: absolute;
         bottom: 0;
         background-color: white;
-        color: black;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -92,11 +89,9 @@ const CardWrapper = styled.div`
         .card__info {
           height: 100%;
           background-color: rgba(255, 255, 255, 0.95);
-          // background-color: rgba(0, 0, 0, 0.8);
-          // color: white;
           text-overflow: initial;
           white-space: normal;
-          // border-top: 2px solid #f43544;
+          border-top: 2px solid #f43544;
         }
         .card__default-img-title {
           // z-index: -1;
@@ -129,7 +124,7 @@ function ProjectCard(props) {
           <div className="card__info__btn-wrapper">
             <KcLink
               bgColor="black"
-              color="white"
+              color="rgba(255, 255, 255, 0.8)"
               className="card__info__btn-wrapper__btn"
               to={props.redirectTo}
             >
