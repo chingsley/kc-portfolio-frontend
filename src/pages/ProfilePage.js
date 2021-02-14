@@ -8,7 +8,7 @@ import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 import ProfileEducation from '../components/ProfileEducation';
 import ProfileWorkHistory from '../components/ProfileWorkHistory';
-import ProfileProjectsListing2 from '../components/ProfileProjectsListing2';
+import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 
 const Profile = style.div`
 .profile {

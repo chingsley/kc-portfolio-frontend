@@ -10,8 +10,6 @@ const Div = styled.div`
     padding: 1rem;
     background: #e9ecef;
     cursor: pointer;
-    // display: flex;
-    // justify-content: space-between;
     position: relative;
 
     &__title {
@@ -22,9 +20,8 @@ const Div = styled.div`
         // border: 1px solid red;
         font-weight: 400;
         font-size: 1rem;
-        color: rgba(0, 0, 0, 1);
+        // color: rgba(0, 0, 0, 1);
         margin-right: 1rem;
-        // letter-spacing: 0.5px;
       }
       &__period {
         // border: 1px solid lightgreen;
