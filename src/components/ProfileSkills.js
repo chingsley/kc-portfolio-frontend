@@ -51,11 +51,9 @@ function ProfileSkills() {
             return <Skill skill={skill} aosIndex={index} key={index} />;
           })}
       </div>
-      <button className="btn-new">
-        {/* <span className="btn-new__text">+</span> */}
-        {/* <i className="fa fa-plus" aria-hidden="true"></i> */}
+      {/* <button className="btn-new">
         <i className="fa fa-plus-circle" aria-hidden="true"></i>
-      </button>
+      </button> */}
     </Section>
   );
 }

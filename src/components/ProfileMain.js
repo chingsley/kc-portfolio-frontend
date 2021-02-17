@@ -127,6 +127,7 @@ function ProfileMain() {
                 text="RESUME"
                 data-aos="fade-down"
                 data-aos-delay={100}
+                to="/resume/download"
               />{' '}
               <KcLink
                 color="white"
@@ -137,6 +138,7 @@ function ProfileMain() {
                 fontSize="0.8rem"
                 data-aos="fade-down"
                 data-aos-delay={500}
+                to="/projects"
               />
               {/* <KcLink
               color="white"

@@ -167,7 +167,7 @@ function NavBar(props) {
         <li className="topnav-ul-li">
           <KcLink
             text="My Profile"
-            to="/chingsley"
+            to="/profile"
             color={linkTextColor}
             bgColorOnHover="#f43544"
             colorOnHover="#f5f6fa"
@@ -185,7 +185,7 @@ function NavBar(props) {
             data-testid="signin-nav-link"
           />
         </li>
-        <li className="topnav-ul-li">
+        {/* <li className="topnav-ul-li">
           <KcLink
             text="Sign up"
             to="/signup"
@@ -195,7 +195,7 @@ function NavBar(props) {
             onClick={handleHamburgerToggle}
             data-testid="signup-nav-link"
           />
-        </li>
+        </li> */}
       </ul>
     </Nav>
   );

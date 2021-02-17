@@ -40,7 +40,7 @@ const Logo = (props) => (
         stroke={props.color}
         fontWeight="normal"
       >
-        show ower
+        chin gsley
       </text>
       <line
         fill="none"
