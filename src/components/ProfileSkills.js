@@ -54,7 +54,7 @@ function ProfileSkills() {
       <button className="btn-new">
         {/* <span className="btn-new__text">+</span> */}
         {/* <i className="fa fa-plus" aria-hidden="true"></i> */}
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <i className="fa fa-plus-circle" aria-hidden="true"></i>
       </button>
     </Section>
   );
