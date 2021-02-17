@@ -6,7 +6,6 @@ import showTowerImg from '../assets/show_tower.png';
 import nnsManagerImg from '../assets/nns_mgt.png';
 import accessGatewayImg from '../assets/access_gateway.png';
 import icad from '../assets/icad.png';
-import { projects } from '../data/projects.data';
 
 const Section = styled.section`
   // border: 1px solid green;
@@ -34,25 +33,18 @@ function ProfileProjectListing() {
         title="Projects And Contributions"
         subtitle="Projects"
       />
+
       <div className="projects">
-        {projects
-          .sort((p1, p2) => Number(p2.rank) - Number(p1.rank))
-          .slice(0, 5)
-          .map((project, index) => {
-            const { id, name, image, role, shortDescription } = project;
-            return (
-              <ProjectCard
-                key={id}
-                className="projects__card"
-                title={name}
-                userRole={role}
-                imageSrc={image}
-                redirectTo={`/chingsley/projects/${id}`}
-                shortDescription={shortDescription}
-              />
-            );
-          })}
-        {/* <ProjectCard
+        <ProjectCard
+          className="projects__card"
+          title="Show tower"
+          userRole="fullstack developer"
+          imageSrc={showTowerImg}
+          redirectTo="/chingsley/projects/1"
+          shortDescription="A customizable portfolio application, bridging the divide between
+              employers and potential employees."
+        />
+        <ProjectCard
           className="projects__card"
           title="Ship mgt app"
           userRole="backend developer"
@@ -82,7 +74,7 @@ function ProfileProjectListing() {
           userRole="fullstack developer"
           shortDescription="A blog application that connects profilic writers to avid readers all over the world"
           redirectTo="/chingsley/projects/1"
-        /> */}
+        />
       </div>
     </Section>
   );

@@ -87,11 +87,11 @@ const CardWrapper = styled.div`
         position: relative;
 
         .card__info {
+          // border-top: 2px solid #f43544;
           height: 100%;
           background-color: rgba(255, 255, 255, 0.95);
           text-overflow: initial;
           white-space: normal;
-          border-top: 2px solid #f43544;
         }
         .card__default-img-title {
           // z-index: -1;
