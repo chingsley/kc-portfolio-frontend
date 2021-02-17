@@ -1,31 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
+import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import Collapsible from './Collapsible';
+import { educationHistories } from '../data/education.data';
+
+const format = (date) => {
+  return moment(date).format('YYYY/MM/DD');
+};
 
 const Section = styled.section`
   // border: 1px solid red;
+  .collapsible-container {
+    // border: 1px solid lightblue;
+    // border-radius: 5px;
+    // 0ver-flow: hidden;
+  }
 `;
 
 function ProfileEducation() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Section>
       <ProfileSectionHeader title="Education" subtitle="Education" />
-      <Collapsible
-        subject="B.ENG Computer Engineering"
-        period="2020-02-19 - 2020-09-21"
-      >
-        I have a B.ENG in Computer Engineering from Nnamdi Azikiwe University
-        Awka, Anambra state, Nigeria. I graduated with a CGPA of 4.46
-      </Collapsible>
-      <Collapsible subject="Secondary Certificate">
-        I got my Senior School Certificate from College of Immaculate
-        Conception, Enugu State, Nigeria
-      </Collapsible>
-      <Collapsible subject="Primary Certificate">
-        I got my Primary School Cetificate from Hill-top Primary School, Enugu
-        Ngwo, Enugu State, Nigeria
-      </Collapsible>
+      {educationHistories.map((education, index) => {
+        const { subject, from, to, details } = education;
+        const period = from && to ? `${format(from)}  -  ${format(to)}` : '';
+        const aosDelay = index % 2 === 0 ? 'fade-right' : 'fade-left';
+        return (
+          <div
+            key={index}
+            className="collapsible-container"
+            data-aos={aosDelay}
+            data-aos-delay={100 + index * 50}
+          >
+            <Collapsible subject={subject} period={period}>
+              {details}
+            </Collapsible>
+          </div>
+        );
+      })}
     </Section>
   );
 }

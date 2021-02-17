@@ -124,7 +124,7 @@ function ProfileMain() {
                 fontSize="0.8rem"
                 colorOnHover="white"
                 border="1px solid grey"
-                text="CONTACT"
+                text="RESUME"
                 data-aos="fade-down"
                 data-aos-delay={100}
               />{' '}

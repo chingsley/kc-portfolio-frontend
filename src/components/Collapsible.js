@@ -5,6 +5,8 @@ import { string, bool } from 'prop-types';
 
 const Div = styled.div`
   margin-bottom: 0.2rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
   .header {
     // border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -25,10 +27,11 @@ const Div = styled.div`
       }
       &__period {
         // border: 1px solid lightgreen;
-        font-style: italic;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 0.8rem;
         &:before {
           content: '';
-          border: 1px solid red;
+          // border: 1px solid red;
           margin-right: 1rem;
         }
         &:after {
@@ -51,6 +54,16 @@ const Div = styled.div`
   .body {
     padding: 1rem;
   }
+  .fa-chevron-right,
+  .fa-chevron-down {
+    // border: 1px solid red;
+    font-size: 1rem;
+    color: inherit;
+  }
+  .card {
+    // border: 1px solid red;
+    border-radius: 0px !important;
+  }
 `;
 
 const Collapsible = (props) => {
@@ -67,7 +80,14 @@ const Collapsible = (props) => {
             <span className="header__title__period">{props.period}</span>
           )}
         </div>
-        <div className="header__state">{isOpen ? '-' : '+'}</div>
+        <div className="header__state">
+          {/* {isOpen ? '-' : '+'} */}
+          {isOpen ? (
+            <i className="fa fa-chevron-down"></i>
+          ) : (
+            <i className="fa fa-chevron-right"></i>
+          )}
+        </div>
       </div>
       <Collapse isOpen={isOpen}>
         <Card>
