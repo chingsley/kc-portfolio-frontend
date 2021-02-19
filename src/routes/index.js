@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import ProjectsPage from '../pages/ProjectsPage';
 import ProfilePage from '../pages/ProfilePage';
+import ContactsPage from '../pages/ContactsPage';
 
 const AppRoutes = () => (
   <div className="app-main">
@@ -15,6 +16,7 @@ const AppRoutes = () => (
       <Route exact path="/password/forgot" component={AuthPage} />
       <Route path="/password/reset/:resetToken" component={AuthPage} />
       <Route exact path="/profile" component={ProfilePage} />
+      <Route path="/contacts" component={ContactsPage} />
       <Route path="/projects" component={ProjectsPage} />
       <Route exact path="/notfound" component={NotFoundPage} />
       <Route component={NotFoundPage} />

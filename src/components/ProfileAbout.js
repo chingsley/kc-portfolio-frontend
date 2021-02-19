@@ -16,7 +16,7 @@ const Section = styled.section`
       // font-size: 1.17vw;
       font-size: 0.95rem;
       // font-style: italic;
-      font-family: montserrat;
+      // font-family: montserrat;
       letter-spacing: 0.5px;
       line-height: 1.4;
       text-rendering: optimizeLegibility;

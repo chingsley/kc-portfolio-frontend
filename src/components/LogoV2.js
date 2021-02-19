@@ -71,7 +71,7 @@ LogoV2.propTypes = {
 };
 
 LogoV2.defaultProps = {
-  color: '#f43544',
+  color: '#4a99d3',
   display: 'inline-block',
   margin: '0',
 };
