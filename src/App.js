@@ -16,7 +16,7 @@ function App() {
         <ToastContainer
           // ref={wrapper}
           autoClose={8000}
-          position="bottom-right"
+          position="top-right"
           className="toast-container"
           toastClassName="dark-toast"
           hideProgressBar

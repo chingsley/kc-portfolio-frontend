@@ -125,6 +125,7 @@ function ProfileMain() {
                 colorOnHover="white"
                 border="1px solid grey"
                 text="RESUME"
+                to="/resume/download"
                 data-aos="fade-down"
                 data-aos-delay={100}
               />{' '}
@@ -135,18 +136,21 @@ function ProfileMain() {
                 border="1px solid grey"
                 text="PROJECTS"
                 fontSize="0.8rem"
+                to="/projects"
                 data-aos="fade-down"
                 data-aos-delay={500}
-              />
+              />{' '}
               {/* <KcLink
-              color="white"
-              bgColorOnHover="black"
-              colorOnHover="white"
-              border="1px solid grey"
-              text="FOLLOW ME"
-              fontSize="0.8rem"
-              to="/chingsley/projects"
-            /> */}
+                color="white"
+                bgColorOnHover="black"
+                colorOnHover="white"
+                border="1px solid grey"
+                text="CONTACT ME"
+                fontSize="0.8rem"
+                to="/contacts"
+                data-aos="fade-down"
+                data-aos-delay={1000}
+              />{' '} */}
             </div>
           )}
         </div>

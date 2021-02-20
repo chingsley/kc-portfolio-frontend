@@ -66,19 +66,19 @@ class AuthPage extends React.Component {
                     Forgot Password?
                   </Link>
                 </div>
-                <div className="div__auth-nav">
+                {/* <div className="div__auth-nav">
                   <Link to="/signup" className="auth-nav">
                     Don't have an account? signup here
                   </Link>
-                </div>
+                </div> */}
               </>
             )}
             {pathname.match(/\/password\/forgot/i) && (
               <>
                 <ForgotPasswordForm />
                 <div className="div__auth-nav">
-                  <Link to="/signup" className="auth-nav">
-                    Don't have an account? signup here
+                  <Link to="/login" className="auth-nav">
+                    I remember my password.
                   </Link>
                 </div>
               </>
@@ -91,7 +91,7 @@ class AuthPage extends React.Component {
           </div>
         </div>
         <SuccessMessage message={this.props.successMessage} />
-        <ErrorMessage message={this.props.errorMessage} />
+        {/* <ErrorMessage message={this.props.errorMessage} /> */}
         <InfoMessage message={this.props.infoMessage} />
       </div>
     );

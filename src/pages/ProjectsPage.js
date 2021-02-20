@@ -1,32 +1,23 @@
 import React from 'react';
 import style from 'styled-components';
-import ProjectCardMain from '../components/ProjectCardMain';
-import { projects } from '../data/projects.data';
-// import Logo from '../components/Logo';
+import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 
 const Section = style.section`
 padding: 2rem;
-  .projects {
-    // border: 1px solid grey;
-    display: grid;
-    gap: 2rem;
-
-   
+  .profile__section {
+    // border: 1px solid #dfe0eb;
+    padding: 4rem;
+    // background-color: white;
+    background-color: #fffefe;
   }
-  @media screen and (min-width: 576px) {
-    .projects {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-  }
+  
 `;
 
 function ProjectsPage() {
   return (
     <Section className="">
-      <div className="projects">
-        {projects.map((project) => (
-          <ProjectCardMain key={project.id} project={project} />
-        ))}
+      <div className="profile__section">
+        <ProfileProjectsListing2 justifyContent="space-between" />
       </div>
     </Section>
   );

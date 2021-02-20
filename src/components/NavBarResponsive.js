@@ -22,7 +22,7 @@ const Nav = styled.nav`
   z-index: 1000;
   position: fixed;
   top: 0;
-  font-family: montserrat;
+  // font-family: montserrat;
   height: 12vh;
   width: 100%;
   display: flex;
@@ -137,7 +137,7 @@ function NavBar(props) {
   const linkTextColor =
     props.isTransparentTopNav && props.history.location.pathname === '/'
       ? 'white'
-      : '#34495e';
+      : '#4a99d3';
   return (
     <Nav {...props} hamburgerCheckedState={hamburgerCheckedState}>
       {/* <Logo /> */}
@@ -159,7 +159,7 @@ function NavBar(props) {
             text="Home"
             to="/"
             color={linkTextColor}
-            bgColorOnHover="#f43544"
+            bgColorOnHover="#4a99d3"
             colorOnHover="#f5f6fa"
             onClick={handleHamburgerToggle}
           />
@@ -167,19 +167,19 @@ function NavBar(props) {
         <li className="topnav-ul-li">
           <KcLink
             text="My Profile"
-            to="/chingsley"
+            to="/profile"
             color={linkTextColor}
-            bgColorOnHover="#f43544"
+            bgColorOnHover="#4a99d3"
             colorOnHover="#f5f6fa"
             onClick={handleHamburgerToggle}
           />
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="Sign in"
+            text="Sign In"
             to="/login"
             color={linkTextColor}
-            bgColorOnHover="#f43544"
+            bgColorOnHover="#4a99d3"
             colorOnHover="#f5f6fa"
             onClick={handleHamburgerToggle}
             data-testid="signin-nav-link"
@@ -187,13 +187,12 @@ function NavBar(props) {
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="Sign up"
-            to="/signup"
+            text="Contact Me"
+            to="/contacts"
             color={linkTextColor}
-            bgColorOnHover="#f43544"
+            bgColorOnHover="#4a99d3"
             colorOnHover="#f5f6fa"
             onClick={handleHamburgerToggle}
-            data-testid="signup-nav-link"
           />
         </li>
       </ul>

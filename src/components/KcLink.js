@@ -94,7 +94,7 @@ KcLink.defaultProps = {
   bottomBorderOnHover: 'none',
   bgColor: 'none',
   fontSize: '1em',
-  to: '/chingsley/projects',
+  to: '/',
 };
 
 export default KcLink;
