@@ -8,6 +8,9 @@ import PhoneIcon from '../svg/PhoneIcon';
 import Svg1 from '../svg/Svg1';
 import TwitterIcon from '../svg/TwitterIcon';
 import locationImage from '../assets/my_location.png';
+import FormContactMe from '../components/FormContactMe';
+
+const MIN_HEIGHT = '22rem';
 
 const Section = style.section`
   ${(props) => {
@@ -75,45 +78,13 @@ const Section = style.section`
             justify-content: space-between;
 
             &__left {
-              // border: 1px solid salmon;
+              // border: 1px solid red;
               width: 47%;
-              min-height: 22rem;
-              &__form {
-                // border: 1px solid green;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                &__input,
-                &__textarea {
-                  padding: 0.8rem;
-                  width: 100%;
-                  border: 1.2px solid #b4bec8;
-                  box-sizing: border-box;
-                  border-radius: 4px;
-                  outline: none;
-                }
-                &__input {
-                  height: 2.8rem;
-                }
-                &__btn {
-                  background: #4a99d3;
-                  border: none;
-                  outline: none;
-                  border-radius: 4px;
-                  font-style: normal;
-                  font-weight: bold;
-                  font-size: 18px;
-                  height: 2.8rem;
-                  line-height: 19px;
-                  color: #ffffff;
-                  margin-top: 1rem;
-                }
-              }
+              min-height: ${MIN_HEIGHT};
             }
             &__right {
               // border: 1px solid salmon;
-              min-height: 22rem;
+              min-height: ${MIN_HEIGHT};
               width: 47%;
               display: flex;
               flex-direction: column;
@@ -157,26 +128,7 @@ function ContactsPage() {
           <span className="main__contents__subtitle">Leave me a message</span>
           <div className="main__contents__flex">
             <div className="main__contents__flex__left">
-              <form action="" className="main__contents__flex__left__form">
-                <input
-                  type="text"
-                  className="main__contents__flex__left__form__input"
-                  placeholder="Your Name"
-                />
-                <input
-                  type="text"
-                  className="main__contents__flex__left__form__input"
-                  placeholder="Your Email Address"
-                />
-                <textarea
-                  className="main__contents__flex__left__form__textarea"
-                  rows="5"
-                  placeholder="Your Message"
-                ></textarea>
-                <button className="main__contents__flex__left__form__btn">
-                  Send
-                </button>
-              </form>
+              <FormContactMe />
             </div>
             <div className="main__contents__flex__right">
               <p className="main__contents__flex__right__contact-details">
