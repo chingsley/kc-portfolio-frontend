@@ -42,7 +42,7 @@ ${(props) => {
             background-color: #ffffff;
             top: 0;
             opacity: 1;
-            padding-right: 0.8rem;
+            padding-right: 0.3rem;
           }
         }
         &__input {
@@ -61,6 +61,16 @@ ${(props) => {
         line-height: 19px;
         color: #ffffff;
         margin-top: 1rem;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      height: auto;
+      margin-bottom: 2rem;
+      .form {
+        &__field,
+        &__btn {
+          margin-bottom: 1.5rem;
+        }
       }
     }
   `;
