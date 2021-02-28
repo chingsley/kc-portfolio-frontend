@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style, { css } from 'styled-components';
+import Loader from 'react-loader-spinner';
+import { useFetch } from '../custom-hooks/useFetch';
 const FormContainer = style.div`
 ${(props) => {
   return css`
@@ -77,9 +79,31 @@ ${(props) => {
 }}`;
 
 function FormContactMe() {
+  const { setRequest, loading } = useFetch();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const handleInputChange = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setRequest({
+      endpoint: '/users/1/send_mail',
+      method: 'post',
+      body: formData,
+    });
+  };
   return (
     <FormContainer>
-      <form action="" className="form">
+      <form action="" className="form" onSubmit={handleSubmit}>
         <div className="form__field">
           <input
             type="text"
@@ -87,8 +111,10 @@ function FormContactMe() {
             placeholder="Your Name"
             name="name"
             id="name"
+            value={formData.name}
+            onChange={handleInputChange}
           />
-          <label className="form__field__label" for="name">
+          <label className="form__field__label" htmlFor="name">
             Your Name
           </label>
         </div>
@@ -99,8 +125,10 @@ function FormContactMe() {
             placeholder="Your Email Address"
             name="email"
             id="email"
+            value={formData.email}
+            onChange={handleInputChange}
           />
-          <label className="form__field__label" for="email">
+          <label className="form__field__label" htmlFor="email">
             Your Email Address
           </label>
         </div>
@@ -111,12 +139,30 @@ function FormContactMe() {
             placeholder="Your Message"
             name="message"
             id="message"
+            value={formData.message}
+            onChange={handleInputChange}
           ></textarea>
-          <label className="form__field__label" for="message">
+          <label className="form__field__label" htmlFor="message">
             Your Message
           </label>
         </div>
-        <button className="form__btn">Send</button>
+        <button className="form__btn" onClick={handleSubmit} disabled={loading}>
+          {' '}
+          {loading ? (
+            <>
+              {'Loading '}
+              <Loader
+                className="inline-display"
+                type="ThreeDots"
+                color="#fff"
+                height="20"
+                width="20"
+              />
+            </>
+          ) : (
+            'Send'
+          )}
+        </button>
       </form>
     </FormContainer>
   );

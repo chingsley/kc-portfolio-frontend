@@ -53,7 +53,7 @@ const Div = style.div`
 function ContactInfo() {
   return (
     <Div>
-      <p className="contact-details">
+      <div className="contact-details">
         <div className="contact-details__icon">
           <LocationIcon />
         </div>
@@ -62,20 +62,20 @@ function ContactInfo() {
           13 Adeniji Street, The View Apartment, Atlantic View estate, New Road
           Lekki, Lagos Nigeria
         </div>
-      </p>
-      <p className="contact-details">
+      </div>
+      <div className="contact-details">
         <div className="contact-details__icon">
           <PhoneIcon />
         </div>
         +234 0810 903 7816
-      </p>
-      <p className="contact-details">
+      </div>
+      <div className="contact-details">
         <div className="contact-details__icon">
           <EmailIcon />
         </div>
         eneja.kc@gmail.com
-      </p>
-      <p className="contact-details">
+      </div>
+      <div className="contact-details">
         <div className="contact-details__icon">
           <FacebookIcon />
         </div>
@@ -85,14 +85,14 @@ function ContactInfo() {
         <div className="contact-details__icon">
           <TwitterIcon />
         </div>
-      </p>
-      <p className="contact-details">
+      </div>
+      <div className="contact-details">
         <img
           className="contact-details__map-img"
           src={locationImage}
           alt="my location"
         />
-      </p>
+      </div>
     </Div>
   );
 }
