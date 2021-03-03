@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import style from 'styled-components';
-import ProfileMain from '../components/ProfileMain';
+import ProfileMain2 from '../components/ProfileMain2';
 import ProfileAbout from '../components/ProfileAbout';
 import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
@@ -43,7 +43,7 @@ class ProfilePage extends Component {
       <>
         <Profile {...this.props}>
           <div className="profile">
-            <ProfileMain />
+            <ProfileMain2 />
             <div className="profile__section">
               <ProfileAbout />
             </div>

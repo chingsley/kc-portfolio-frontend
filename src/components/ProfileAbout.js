@@ -51,7 +51,7 @@ const Section = styled.section`
   }
 `;
 
-function ProfileMain() {
+function ProfileAbout() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -96,4 +96,4 @@ function ProfileMain() {
   );
 }
 
-export default ProfileMain;
+export default ProfileAbout;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import ProjectCard from './ProjectCard';
 import { projects } from '../data/projects.data';
-import { number, string } from 'prop-types';
+import { string } from 'prop-types';
 
 const Section = styled.section`
   ${(props) => {

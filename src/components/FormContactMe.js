@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style, { css } from 'styled-components';
 import Loader from 'react-loader-spinner';
 import { useFetch } from '../custom-hooks/useFetch';
@@ -79,13 +79,14 @@ ${(props) => {
 }}`;
 
 function FormContactMe() {
-  const { setRequest, loading } = useFetch();
+  const { setRequest, loading, successMsg, setSuccessMsg } = useFetch();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: 'john',
+    email: 'john@gmail.com',
+    message: 'how are you today?',
   });
   const handleInputChange = (e) => {
+    setSuccessMsg(null);
     const field = e.target.name;
     const value = e.target.value;
     setFormData({
@@ -101,6 +102,15 @@ function FormContactMe() {
       body: formData,
     });
   };
+  useEffect(() => {
+    if (successMsg) {
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    }
+  }, [successMsg]);
   return (
     <FormContainer>
       <form action="" className="form" onSubmit={handleSubmit}>
