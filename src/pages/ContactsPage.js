@@ -1,12 +1,5 @@
 import React from 'react';
 import style, { css } from 'styled-components';
-import EmailIcon from '../svg/EmailIcon';
-import FacebookIcon from '../svg/FacebookIcon';
-import InstagramIcon from '../svg/InstagramIcon';
-import LocationIcon from '../svg/LocationIcon';
-import PhoneIcon from '../svg/PhoneIcon';
-import TwitterIcon from '../svg/TwitterIcon';
-import locationImage from '../assets/my_location.png';
 import Svg1 from '../svg/Svg1';
 import FormContactMe from '../components/FormContactMe';
 import ContactInfo from '../components/ContactInfo';

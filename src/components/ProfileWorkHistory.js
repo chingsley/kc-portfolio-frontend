@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import moment from 'moment';
 import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import Collapsible from './Collapsible';
@@ -23,7 +22,7 @@ function ProfileEducation() {
     <Section>
       <ProfileSectionHeader title="Experience" subtitle="Work Experience" />
       {workHistories.map((workHistory, index) => {
-        const { subject, from, to, role, details } = workHistory;
+        const { subject, role, details } = workHistory;
         const aosDelay = index % 2 === 0 ? 'fade-right' : 'fade-left';
         return (
           <div

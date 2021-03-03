@@ -20,15 +20,15 @@ export const useFetch = () => {
           headers,
         });
         setLoading(false);
-        console.log('>>>>>>.. response = ', response);
         setData(response.data);
         setSuccessMsg(response.data.message);
         customToast.success(response.data.message);
       }
     } catch (error) {
-      console.log(error);
+      const errorMessage = error.response?.data?.error || error.message;
+      customToast.error(errorMessage);
       setLoading(false);
-      setError('error: ');
+      setError(errorMessage);
     }
   }, [request]);
 
@@ -36,5 +36,5 @@ export const useFetch = () => {
     fetchApi();
   }, [request, fetchApi]);
 
-  return { setRequest, data, error, successMsg, loading };
+  return { setRequest, data, error, successMsg, loading, setSuccessMsg };
 };
