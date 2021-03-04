@@ -8,10 +8,10 @@ import { string } from 'prop-types';
 const Section = styled.section`
   ${(props) => {
     return css`
-      // border: 1px solid green;
+      border: 1px solid green;
 
       .projects {
-        // border: 1px solid green;
+        border: 1px solid darkred;
         display: flex;
         justify-content: ${props.justifyContent};
         flex-wrap: wrap;
@@ -22,6 +22,11 @@ const Section = styled.section`
           &:not(:first-child) {
             // border: 1px solid black;
           }
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .projects {
+          justify-content: center;
         }
       }
     `;

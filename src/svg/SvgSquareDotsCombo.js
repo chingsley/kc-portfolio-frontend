@@ -7,7 +7,7 @@ const StyledDiv = style.div`
   ${(props) => {
     return css`
       // border: 1px solid red;
-      width: 20rem;
+      width: 15rem;
       height: 20rem;
       position: relative;
       .rings {

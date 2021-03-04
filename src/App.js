@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer';
 
 import NavBar from './components/NavBarResponsive';
-// import NavBar from './components/NavBar';
 import AppRoutes from './routes';
 function App() {
   // const wrapper = React.createRef();

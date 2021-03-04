@@ -85,13 +85,13 @@ const Nav = styled.nav`
       display: block;
       &__hamburger-menu {
         ${
-          props &&
-          props.isTransparentTopNav &&
-          pathname === '/' &&
-          css`
-            color: white;
-            color: #f43544;
-          `
+          props && props.isTransparentTopNav && pathname === '/'
+            ? css`
+                color: #f43544;
+              `
+            : css`
+                color: rgb(74, 153, 211);
+              `
         }
       }
     }
