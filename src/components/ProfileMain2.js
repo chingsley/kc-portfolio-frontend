@@ -4,18 +4,15 @@ import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
 import KcLink from './KcLink';
 import Typewriter from 'typewriter-effect';
-import Svg1 from '../svg/Svg1';
 import SvgSquareDotsCombo from '../svg/SvgSquareDotsCombo';
+import SvgSquareRings from '../svg/SvgSquareRings';
 
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    // border-bottom: 1px solid #4a99d3;
     position: relative;
     width: 100%;
-    height: 50vh;
+    min-height: 25rem;
     color: black;
     background: linear-gradient(
       180deg,
@@ -23,69 +20,108 @@ const Div = styled.div`
       rgba(74, 153, 211, 0) 71%,
       #ffffff
     );
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
 
-    &__dots-1 {
+    &__svg-rings {
       position: absolute;
       left: 0;
-      // bottom: 0;
+      bottom: 0;
+      transform: rotateY(180deg);
     }
-    &__dots-2 {
+    &__svg-dots-n-rings {
       position: absolute;
       right: 0;
       // bottom: 0;
     }
-
-    &__img {
-      // border: 1px solid red;
-      border-bottom: 2px solid #d3844a;
-      position: absolute;
-      right: 2rem;
-      bottom: -5rem;
-      // z-index: -1;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      display: block;
-      object-fit: cover;
-      object-position: 0 0;
-    }
-
-    &__basic-info {
-      // border: 1px solid grey;
-      // border-right: 1px solid rgba(74, 153, 211, 0.2);
-      border-right: 1px solid #d3844a;
-      z-index: 3;
-      padding-left: 2rem;
-      position: relative;
-
+    &__left {
+      // border: 1px solid #b8e994;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 50%;
-      height: 100%;
+      position: relative;
+      &__img {
+        // border: 1px solid red;
+        border-bottom: 2px solid #d3844a;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: block;
+        object-fit: cover;
+        object-position: 0 0;
+      }
+    }
+
+    &__right {
+      // border: 1px solid #34ace0;
+      width: 40%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       &__name {
-        font-weight: 400;
+        // border: 1px solid #706fd3;
+        color: #0a3d62;
+        font-weight: 500;
+        font-size: 32px;
         letter-spacing: 2px;
         margin: 0;
         padding: 0;
+        margin-bottom: 0.8rem;
       }
-      &__profession {
-        letter-spacing: 2px;
-        margin: 0;
-        padding: 0;
-        // color: #f43544;
-      }
+      &__profession,
       &__location {
         letter-spacing: 2px;
         margin: 0;
         padding: 0;
-        // color: #f43544;
+        color: #0a3d62;
+        font-size: 18px;
       }
-      &__contact-btn {
+      &__contact-btns {
         min-width: 4rem;
+        // margin-top: 2rem;
         position: absolute;
-        bottom: 1rem;
+        bottom: 4rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .pp-main {
+      height: 88vh;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      gap: 0;
+      overflow: hidden;
+      &__left {
+        width: 100%;
+        padding: 1rem;
+        // height: 38vh;
+        &__img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      &__right {
+        width: 100%;
+        height: 50vh;
+        align-items: center;
+        &__name {
+          font-size: 38px;
+        }
+        &__contact-btns {
+          display: none;
+        }
+      }
+      &__svg-rings {
+        // border: 1px solid red;
+        display: none;
+      }
+      &__svg-dots-n-rings {
+        // border: 1px solid red;
+        top: 50%;
       }
     }
   }
@@ -99,41 +135,39 @@ function ProfileMain2() {
   return (
     <Div>
       <div className="pp-main">
-        {/* <span className="pp-main__dots-1">
-          <Svg1 />
-        </span> */}
-        <span className="pp-main__dots-2">
+        <span className="pp-main__svg-rings">
+          <SvgSquareRings color="#D3844A" opacity="0.2" />
+        </span>
+        <span className="pp-main__svg-dots-n-rings">
           <SvgSquareDotsCombo />
         </span>
-        <img src={profileImg} alt="profile" className="pp-main__img" />
-        <div className="pp-main__basic-info">
-          <h3 className="pp-main__basic-info__name">
+        <div className="pp-main__left">
+          <img src={profileImg} alt="profile" className="pp-main__left__img" />
+        </div>
+        <div className="pp-main__right">
+          <p className="pp-main__right__name">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .changeDelay(50)
-                  .typeString('Eneja Kingsley Chinonso')
+                  .typeString('Kingsley Eneja')
                   .callFunction(() => {
                     console.log('String typed out!');
                     setShowMainBtns(true);
                   })
-                  .pauseFor(1500)
-                  // .deleteAll()
-                  // .callFunction(() => {
-                  //   console.log('All strings were deleted');
-                  // })
-                  .changeDeleteSpeed(50)
-                  .deleteChars(8)
-                  .pauseFor(500)
-                  .typeString('C.')
+                  // .pauseFor(1500)
+                  // .changeDeleteSpeed(50)
+                  // .deleteChars(8)
+                  // .pauseFor(500)
+                  // .typeString('C.')
                   .start();
               }}
             />
-          </h3>
-          <p className="pp-main__basic-info__profession">Software Engineer</p>
-          <p className="pp-main__basic-info__location">Lagos, Nigeria</p>
+          </p>
+          <p className="pp-main__right__profession">Software Engineer</p>
+          <p className="pp-main__right__location">Lagos, Nigeria</p>
           {showMainBtns && (
-            <div className="pp-main__basic-info__contact-btn">
+            <div className="pp-main__right__contact-btns">
               <KcLink
                 color="white"
                 bgColor="#4a99d3"
@@ -157,18 +191,7 @@ function ProfileMain2() {
                 to="/projects"
                 data-aos="fade-down"
                 data-aos-delay={500}
-              />{' '}
-              {/* <KcLink
-                color="white"
-                bgColorOnHover="black"
-                colorOnHover="white"
-                border="1px solid grey"
-                text="CONTACT ME"
-                fontSize="0.8rem"
-                to="/contacts"
-                data-aos="fade-down"
-                data-aos-delay={1000}
-              />{' '} */}
+              />
             </div>
           )}
         </div>

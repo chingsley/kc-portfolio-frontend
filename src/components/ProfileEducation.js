@@ -13,7 +13,8 @@ const format = (date) => {
 const Section = styled.section`
   // border: 1px solid red;
   .collapsible-container {
-    // border: 1px solid lightblue;
+    border: 1px solid lightblue;
+    width: 100%;
     // border-radius: 5px;
     // 0ver-flow: hidden;
   }

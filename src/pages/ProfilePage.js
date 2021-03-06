@@ -12,25 +12,24 @@ import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 
 const Profile = style.div`
 .profile {
-    background-color: #f7f8fc;
-    padding: 2rem;
+    // background-color: #f7f8fc;
+    padding: 0;
     padding-bottom: 5rem;
     display: block;
 
     &__section {
+      border: 1px solid #dfe0eb;
       padding: 4rem;
-      // background-color: white;
-      background-color: #fffefe;
-      // border: 1px solid #dfe0eb;
+      // background-color: #fffefe;
       &:nth-child(2) {
         // border: 1px solid red;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+        // border-bottom-left-radius: 4px;
+        // border-bottom-right-radius: 4px;
       }
       &:not(:nth-child(2)) {
         // border: 1px solid red;
-        margin-top: 2rem;
-        border-radius: 4px;
+        // margin-top: 2rem;
+        // border-radius: 4px;
       }
 
     }
@@ -50,12 +49,12 @@ class ProfilePage extends Component {
             <div className="profile__section">
               <ProfileSkills />
             </div>
-            <div className="profile__section">
+            {/* <div className="profile__section">
               <ProfileEducation />
             </div>
             <div className="profile__section">
               <ProfileWorkHistory />
-            </div>
+            </div> */}
             <div className="profile__section">
               <ProfileProjectsListing2 />
             </div>

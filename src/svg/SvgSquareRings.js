@@ -1,6 +1,7 @@
 import React from 'react';
+import { string } from 'prop-types';
 
-function SvgSquareRings() {
+function SvgSquareRings(props) {
   return (
     <div>
       <svg
@@ -10,7 +11,7 @@ function SvgSquareRings() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g opacity="0.8">
+        <g opacity={props.opacity}>
           <mask id="path-1-inside-1" fill="white">
             <rect y="32.4841" width="141.306" height="118.567" rx="4" />
           </mask>
@@ -19,7 +20,7 @@ function SvgSquareRings() {
             width="141.306"
             height="118.567"
             rx="4"
-            stroke="#4A99D3"
+            stroke={props.color}
             strokeWidth="12"
             mask="url(#path-1-inside-1)"
           />
@@ -38,7 +39,7 @@ function SvgSquareRings() {
             width="141.306"
             height="118.567"
             rx="4"
-            stroke="#4A99D3"
+            stroke={props.color}
             strokeWidth="12"
             mask="url(#path-2-inside-2)"
           />
@@ -50,7 +51,7 @@ function SvgSquareRings() {
             width="141.306"
             height="118.567"
             rx="4"
-            stroke="#4A99D3"
+            stroke={props.color}
             strokeWidth="16"
             mask="url(#path-3-inside-3)"
           />
@@ -60,6 +61,14 @@ function SvgSquareRings() {
   );
 }
 
-export default SvgSquareRings;
+SvgSquareRings.prototype = {
+  color: string,
+  opacity: string,
+};
 
-// D3844A
+SvgSquareRings.defaultProps = {
+  color: '#4A99D3',
+  opacity: '0.8',
+};
+
+export default SvgSquareRings;

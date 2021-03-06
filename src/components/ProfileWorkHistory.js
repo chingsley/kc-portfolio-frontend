@@ -8,6 +8,9 @@ import { workHistories } from '../data/work.data';
 // will contain the organization, the timeline, the role and the job description
 const Section = styled.section`
   // border: 1px solid red;
+  .collapsible-container {
+    width: 100%;
+  }
   .role {
     font-weight: 400;
     font-size: 1.2rem;
