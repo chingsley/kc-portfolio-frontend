@@ -64,20 +64,26 @@ const Div = styled.div`
 
       &__name {
         // border: 1px solid #706fd3;
-        color: #0a3d62;
-        font-weight: 500;
-        font-size: 32px;
-        letter-spacing: 2px;
+        // color: #0a3d62;
+        color: #260041;
+        // font-size: 32px;
         margin: 0;
         padding: 0;
         margin-bottom: 0.8rem;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 70px;
+        letter-spacing: 0.02em;
       }
       &__profession,
       &__location {
         letter-spacing: 2px;
         margin: 0;
         padding: 0;
-        color: #0a3d62;
+        // color: #0a3d62;
+        color: #260041;
         font-size: 18px;
       }
       &__contact-btns {
@@ -201,3 +207,22 @@ function ProfileMain2() {
 }
 
 export default ProfileMain2;
+
+/* New E-commerce App best for You */
+
+// position: absolute;
+// width: 595px;
+// height: 140px;
+// left: 245px;
+// top: 233px;
+
+// font-family: Objective;
+// width: 595px;
+// height: 140px;
+// font-style: normal;
+// font-weight: 500;
+// font-size: 50px;
+// line-height: 70px;
+// letter-spacing: 0.02em;
+
+// color: #260041;
