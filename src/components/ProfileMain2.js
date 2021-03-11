@@ -13,7 +13,7 @@ const Div = styled.div`
     // border: 1px solid red;
     position: relative;
     width: 100%;
-    min-height: 25rem;
+    min-height: 28rem;
     color: black;
     background: linear-gradient(
       180deg,

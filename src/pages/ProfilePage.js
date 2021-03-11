@@ -9,6 +9,8 @@ import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 import ProfileEducation from '../components/ProfileEducation';
 import ProfileWorkHistory from '../components/ProfileWorkHistory';
 import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
+import SvgSquareRings from '../svg/SvgSquareRings';
+import SvgDots from '../svg/SvgDots';
 
 const Profile = style.div`
 .profile {
@@ -19,17 +21,32 @@ const Profile = style.div`
 
     &__section {
       border: 1px solid #dfe0eb;
+      position: relative;
       padding: 4rem;
-      // background-color: #fffefe;
-      &:nth-child(2) {
-        // border: 1px solid red;
-        // border-bottom-left-radius: 4px;
-        // border-bottom-right-radius: 4px;
+      
+      &__svg-top-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
       }
-      &:not(:nth-child(2)) {
-        // border: 1px solid red;
-        // margin-top: 2rem;
-        // border-radius: 4px;
+      &__svg-top-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+      &__svg-bottom-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 9;
+      }
+      &__svg-bottom-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
       }
 
     }
@@ -61,9 +78,16 @@ class ProfilePage extends Component {
           <div className="profile">
             <ProfileMain2 />
             <div className="profile__section profile__section-about">
+              <span className="profile__section__svg-top-right">
+                {/* <SvgSquareRings color="#D3844A" opacity="0.2" /> */}
+                <SvgDots />
+              </span>
               <ProfileAbout />
             </div>
             <div className="profile__section profile__section-skills">
+              <span className="profile__section__svg-top-right">
+                <SvgSquareRings opacity="0.2" />
+              </span>
               <ProfileSkills />
             </div>
             {/* <div className="profile__section profile__section-education">

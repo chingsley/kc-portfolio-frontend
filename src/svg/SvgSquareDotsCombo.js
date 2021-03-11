@@ -17,8 +17,10 @@ const StyledDiv = style.div`
       }
       .dots {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        // bottom: 0;
+        // left: 0;
+        bottom: 21px;
+        left: -98px;
       }
     `;
   }}`;
