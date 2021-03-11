@@ -110,7 +110,10 @@ function ProfileAbout() {
             could be done better, stuff you just think would be cool if added or
             even just to let me know you liked it
           </div>
-          <div className="pp-about__parent__right">My favorite tech quote:</div>
+          <div className="pp-about__parent__right">
+            My favorite quotes:
+            <p>carousel animation of my favorite quotes / tech quotes</p>
+          </div>
         </div>
         {/* <p className="pp-about__text">
           Hi! I'm Kingsley, a passionate and creative software engineer, who is
