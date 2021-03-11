@@ -6,9 +6,38 @@ import ProfileSectionHeader from './ProfileSectionHeader';
 const Section = styled.section`
   // border: 1px solid red;
 
+  // background: rgba(74, 153, 211, 0.1);
   .pp-about {
+    // border: 1px solid red;
+    &__parent {
+      display: flex;
+      gap: 2%;
+      // flex-wrap: wrap;
+      border-left: 2px solid #4A99D3;
+      border-right: 2px solid #4A99D3;
+      &__left,
+      &__right {
+        // border: 1px solid #0a3d62;
+        width: 50%;
+        padding: 1rem;
+      }
+      &__left {
+        // background: rgba(74, 153, 211, 0.1);
+        // border-left: 4px solid  rgba(74, 153, 211, 0.1);
+      }
+      &__right {
+        background: rgba(74, 153, 211, 0.1);
+      }
+    }
+    &__text {
+      border: 1px solid #eb2f06;
+      column-count: 2;
+      column-rule: 1px solid lightblue;
+      // column-gap: 40px;
+    }
     &__description {
       border: 1px solid rgba(0, 0, 0, 0.1);
+      // border: 1px solid blue;
       box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
       border-radius: 5px;
       // color: #34495e;
@@ -23,20 +52,9 @@ const Section = styled.section`
       font-smoothing: antialiased;
       -webkit-font-smoothing: antialiased;
       -moz-osx-fon-smoothing: grayscale;
-
-      // &__quote:before,
-      // &__quote:after {
-      //   // border: 1px solid red;
-      //   content: '"';
-      //   font-size: 2rem;
-      //   font-style: italic;
-      //   font-weight: bold;
-      // }
     }
     &__banner {
       padding: 2em;
-      // background: rgb(249, 191, 63);
-      // background: #fafbfc;
       background: #e9ecef;
 
       &__text {
@@ -49,6 +67,24 @@ const Section = styled.section`
       }
     }
   }
+  @media only screen and (max-width: 540px) {
+    .pp-about { 
+      // border: 1px solid blue;
+      &__parent {
+        // border: 1px solid #fa983a;
+        display: block;
+        &__left{
+          // border: 1px solid #0a3d62;
+          width: 100%;
+          font-size: 0.95rem;
+          // background: rgba(74, 153, 211, 0.1);
+        }
+        &__right {
+          // background: rgba(74, 153, 211, 0.1);
+          display: none;
+        }
+    }
+  }
 `;
 
 function ProfileAbout() {
@@ -59,7 +95,37 @@ function ProfileAbout() {
     <Section>
       <div className="pp-about">
         <ProfileSectionHeader title="Who Am I?" subtitle="About me" />
-        <p
+        <div className="pp-about__parent">
+          <div className="pp-about__parent__left">
+            {' '}
+            Hi there! I'm Kingsley, a passionate and creative software engineer,
+            who is super excited about technology and how it can be used to
+            solve problems. I feel a profound sense of joy every time I see a
+            solution I created being used to solve problems for fellow humans
+            (even if it's for just one person). I make a point of writing clean,
+            maintainable code that scales easily because while I believe in the
+            quest to solve problems for the everyday man, I shouldn’t create new
+            ones for developers trying to maintain my code. Please feel free to
+            email me feedback on this website. It could be anything you think
+            could be done better, stuff you just think would be cool if added or
+            even just to let me know you liked it
+          </div>
+          <div className="pp-about__parent__right">My favorite tech quote:</div>
+        </div>
+        {/* <p className="pp-about__text">
+          Hi! I'm Kingsley, a passionate and creative software engineer, who is
+          super excited about technology and how it can be used to solve
+          problems. I feel a profound sense of joy every time I see a solution I
+          created being used to solve problems for fellow humans (even if it's
+          for just one person). I make a point of writing clean, maintainable
+          code that scales easily because while I believe in the quest to solve
+          problems for the everyday man, I shouldn’t create new ones for
+          developers trying to maintain my code. Please feel free to email me
+          feedback on this website. It could be anything you think could be done
+          better, stuff you just think would be cool if added or even just to
+          let me know you liked it
+        </p> */}
+        {/* <p
           className="pp-about__description"
           data-aos="fade-up"
           data-aos-delay={100}
@@ -81,16 +147,8 @@ function ProfileAbout() {
             of getting hired by recruiting managers, a crime/crisis reporting
             app called iReporter. My main stack is Javascript NodeJS with React,
             but I also have experience with Python flask.
-            {/* <br /> I find it
-            particularly interesting working on database designs having worked
-            with a wide array of databases including but not limited to mongoDB,
-            Postgres, mysql, mssql and sqlite3. I enjoy solving problems and I’m
-            a frequent user of hackerrank and codility. Additionally I enjoy
-            working with a team of smart professionals, bringing out the best in
-            each other and working to provide an innovative solution to any form
-            of challenges. */}
           </q>
-        </p>
+        </p> */}
       </div>
     </Section>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import style, { css } from 'styled-components';
-import Svg1 from '../svg/Svg1';
+import SvgDots from '../svg/SvgDots';
 import FormContactMe from '../components/FormContactMe';
 import ContactInfo from '../components/ContactInfo';
 
@@ -130,7 +130,7 @@ function ContactsPage() {
     <Section>
       <div className="main">
         <span className="main__dots-1">
-          <Svg1 />
+          <SvgDots />
         </span>
         <div className="main__contents">
           <h6 className="main__contents__title">
@@ -150,7 +150,7 @@ function ContactsPage() {
           </div>
         </div>
         <span className="main__dots-2">
-          <Svg1 />
+          <SvgDots />
         </span>
       </div>
     </Section>

@@ -33,8 +33,25 @@ const Profile = style.div`
       }
 
     }
+    &__section-about {
+      // background: rgba(74, 153, 211, 0.05);
+      background-color: #fafbfc;
+    }
+    &__section-skills {
+      // background: rgba(74, 153, 211, 0.1);
+    }
+}
+@media only screen and (max-width: 540px) {
+  .profile {
+    &__section  {
+      // border: 1px solid red;
+      padding: 1rem;
+    }
+  }
 }
 `;
+
+// border-radius: 0px 6px 6px 0px;
 
 class ProfilePage extends Component {
   render() {
@@ -43,19 +60,19 @@ class ProfilePage extends Component {
         <Profile {...this.props}>
           <div className="profile">
             <ProfileMain2 />
-            <div className="profile__section">
+            <div className="profile__section profile__section-about">
               <ProfileAbout />
             </div>
-            <div className="profile__section">
+            <div className="profile__section profile__section-skills">
               <ProfileSkills />
             </div>
-            {/* <div className="profile__section">
+            {/* <div className="profile__section profile__section-education">
               <ProfileEducation />
             </div>
-            <div className="profile__section">
+            <div className="profile__section profile__section-workhistory">
               <ProfileWorkHistory />
             </div> */}
-            <div className="profile__section">
+            <div className="profile__section profile__section-projects">
               <ProfileProjectsListing2 />
             </div>
           </div>

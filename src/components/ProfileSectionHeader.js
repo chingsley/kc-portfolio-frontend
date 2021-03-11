@@ -24,6 +24,14 @@ const ProfilePageSectionHeader = styled.div`
     line-height: 1.8;
     position: relative;
   }
+  @media only screen and (max-width: 540px) {
+    // border: 1px solid #1e3799;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    // .mini-title {
+    // }
+  }
 `;
 
 function ProfileSectionHeader(props) {
