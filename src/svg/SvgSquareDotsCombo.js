@@ -1,6 +1,6 @@
 import React from 'react';
 import style, { css } from 'styled-components';
-import Svg1 from './Svg1';
+import Dots from './SvgDots';
 import SvgSquareRings from './SvgSquareRings';
 
 const StyledDiv = style.div`
@@ -30,7 +30,7 @@ function SvgSquareDotsCombo() {
         <SvgSquareRings />
       </span>
       <span className="dots">
-        <Svg1 />
+        <Dots />
       </span>
     </StyledDiv>
   );

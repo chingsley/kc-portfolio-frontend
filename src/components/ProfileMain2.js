@@ -6,6 +6,7 @@ import KcLink from './KcLink';
 import Typewriter from 'typewriter-effect';
 import SvgSquareDotsCombo from '../svg/SvgSquareDotsCombo';
 import SvgSquareRings from '../svg/SvgSquareRings';
+import SvgDots from '../svg/SvgDots';
 
 const Div = styled.div`
   .pp-main {
@@ -142,10 +143,12 @@ function ProfileMain2() {
     <Div>
       <div className="pp-main">
         <span className="pp-main__svg-rings">
-          <SvgSquareRings color="#D3844A" opacity="0.2" />
+          {/* <SvgSquareRings color="#D3844A" opacity="0.2" /> */}
+          <SvgDots />
         </span>
         <span className="pp-main__svg-dots-n-rings">
-          <SvgSquareDotsCombo />
+          {/* <SvgSquareDotsCombo /> */}
+          <SvgSquareRings />
         </span>
         <div className="pp-main__left">
           <img src={profileImg} alt="profile" className="pp-main__left__img" />

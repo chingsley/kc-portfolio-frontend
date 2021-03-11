@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Svg1() {
+function SvgDots() {
   return (
     <div>
       <svg
@@ -53,4 +53,4 @@ function Svg1() {
   );
 }
 
-export default Svg1;
+export default SvgDots;
