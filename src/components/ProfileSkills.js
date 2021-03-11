@@ -13,11 +13,22 @@ const Section = styled.section`
       // border: 1px solid red;
       position: relative;
       .skills {
-        // border: 1px solid green;
+        // border: 1px solid #4a69bd;
         min-height: 10rem;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        // border-left: 2px solid #4a99d3;
+        // border-right: 2px solid #4a99d3;
+        padding: 1rem;
+        background-image: linear-gradient(
+            90deg,
+            rgba(74, 153, 211, 0.1) 0%,
+            rgba(74, 153, 211, 0.1),
+            50%,
+            #fafbfc 50%
+          ),
+          url();
       }
       .btn-new {
         position: absolute;
@@ -34,6 +45,20 @@ const Section = styled.section`
         justify-content: center;
         .fa-plus-circle:before {
           // color: ${color.reddish};
+        }
+      }
+
+      @media only screen and (max-width: 540px) {
+        .skills {
+          flex-direction: column;
+          background-image: linear-gradient(
+              105deg,
+              rgba(74, 153, 211, 0.1) 0%,
+              rgba(74, 153, 211, 0.1),
+              50%,
+              #fafbfc 50%
+            ),
+            url();
         }
       }
     `;

@@ -36,6 +36,9 @@ const StyledSkill = styled.div`
           border-radius: 50%;
         }
       }
+      @media only screen and (max-width: 540px) {
+        width: 100%;
+      }
     `;
   }}
 `;
