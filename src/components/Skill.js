@@ -36,7 +36,7 @@ const StyledSkill = styled.div`
           border-radius: 50%;
         }
       }
-      @media only screen and (max-width: 540px) {
+      @media only screen and (max-width: 720px) {
         width: 100%;
       }
     `;
@@ -48,7 +48,7 @@ function Skill(props) {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const dataAos = props.aosIndex % 2 === 0 ? 'fade-left' : 'fade-right';
+  const dataAos = props.aosIndex % 2 === 0 ? 'fade-up' : 'fade-down';
   const dataAosDelay = props.aosIndex * 50;
 
   const computeSkillColor = ({ level }) => {

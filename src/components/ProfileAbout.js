@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
@@ -34,7 +34,7 @@ const Section = styled.section`
       }
     }
   }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 720px) {
     .pp-about { 
       // border: 1px solid blue;
       &__parent {
@@ -57,18 +57,47 @@ const Section = styled.section`
 `;
 
 function ProfileAbout() {
+  // const [writeupFading, setView] = useState(null);
+
+  const [view, setView] = useState(
+    window.innerWidth > 720 ? 'desktop' : 'mobile'
+  );
+
+  const dataAos = {
+    desktop: {
+      delay: '500',
+      animation: 'fade-left',
+    },
+    mobile: {
+      delay: '0',
+      animation: 'fade-up',
+    },
+  };
+
+  function changeView() {
+    console.log(window.innerWidth);
+    if (window.innerWidth < 720) {
+      setView('mobile');
+    } else {
+      setView('desktop');
+    }
+  }
   useEffect(() => {
     Aos.init({ duration: 1000 });
+    window.addEventListener('resize', changeView);
+    return (_) => {
+      window.removeEventListener('resize', changeView);
+    };
   }, []);
   return (
     <Section>
       <div className="pp-about">
         <ProfileSectionHeader title="Who Am I?" subtitle="About me" />
-        <div className="pp-about__parent" data-aos="fade-up">
+        <div className="pp-about__parent">
           <div
             className="pp-about__parent__left"
-            data-aos-delay="500"
-            data-aos="fade-left"
+            data-aos-delay={dataAos[view].delay}
+            data-aos={dataAos[view].animation}
           >
             {' '}
             Hi there! I'm Kingsley, a passionate and creative software engineer,
