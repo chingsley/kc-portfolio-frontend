@@ -10,7 +10,7 @@ const Section = styled.section`
   ${(props) => {
     console.log(props.skillColor);
     return css`
-      // border: 1px solid red;
+      // border: 1px solid blue;
       position: relative;
       .skills {
         // border: 1px solid #4a69bd;
