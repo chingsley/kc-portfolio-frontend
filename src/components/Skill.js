@@ -52,12 +52,12 @@ function Skill(props) {
   const dataAosDelay = props.aosIndex * 50;
 
   const computeSkillColor = ({ level }) => {
-    if (level < 30) return 'rgba(3, 9, 15, 0.01)';
-    if (level < 50) return 'rgba(3, 9, 15, 0.2)';
-    if (level < 70) return 'rgba(3, 9, 15, 0.4)';
-    if (level < 80) return 'rgba(3, 9, 15, 0.6)';
-    if (level < 90) return 'rgba(3, 9, 15, 0.8)';
-    return 'rgba(3, 9, 15, 1)';
+    if (level < 30) return 'rgba(74, 153, 211, 0.01)';
+    if (level < 50) return 'rgba(74, 153, 211, 0.2)';
+    if (level < 70) return 'rgba(74, 153, 211, 0.4)';
+    if (level < 80) return 'rgba(74, 153, 211, 0.6)';
+    if (level < 90) return 'rgba(74, 153, 211, 0.8)';
+    return 'rgba(74, 153, 211, 1)';
   };
   return (
     <StyledSkill
