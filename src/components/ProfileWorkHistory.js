@@ -25,8 +25,8 @@ function ProfileEducation() {
     <Section>
       <ProfileSectionHeader title="Experience" subtitle="Work Experience" />
       {workHistories.map((workHistory, index) => {
-        const { subject, role, details } = workHistory;
-        const aosDelay = index % 2 === 0 ? 'fade-right' : 'fade-left';
+        const { subject, role, details, from, to } = workHistory;
+        const aosDelay = index % 2 === 0 ? 'fade-down' : 'fade-down';
         return (
           <div
             key={index}
@@ -36,7 +36,7 @@ function ProfileEducation() {
           >
             <Collapsible
               subject={subject}
-              period="2020-12-19 - Present"
+              period={from + ' - ' + to}
               expandAsDefault={false}
             >
               <h4 className="role">{role}</h4>

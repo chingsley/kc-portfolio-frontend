@@ -154,7 +154,7 @@ function ProfileMain2() {
           <img src={profileImg} alt="profile" className="pp-main__left__img" />
         </div>
         <div className="pp-main__right">
-          <p className="pp-main__right__name">
+          <div className="pp-main__right__name">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
@@ -172,7 +172,7 @@ function ProfileMain2() {
                   .start();
               }}
             />
-          </p>
+          </div>
           <p className="pp-main__right__profession">Software Engineer</p>
           <p className="pp-main__right__location">Lagos, Nigeria</p>
           {showMainBtns && (

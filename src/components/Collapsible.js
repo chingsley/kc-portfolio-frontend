@@ -4,19 +4,19 @@ import styled from 'styled-components';
 import { string, bool } from 'prop-types';
 
 const Div = styled.div`
+  // border: 1px solid red;
   margin-bottom: 0.2rem;
   border-radius: 4px;
-  border: 1px solid #e9ecef;
   .header {
-    // border: 1px solid rgba(0, 0, 0, 0.1);
+    // border: 1px solid black;
     padding: 1rem;
-    background: #e9ecef;
+    background: rgba(74, 153, 211, 0.1);
     cursor: pointer;
     position: relative;
 
     &__title {
       // border 1px solid blue;
-      display: inline-block;
+      display: flex;
 
       &__subject {
         // border: 1px solid red;
@@ -29,15 +29,9 @@ const Div = styled.div`
         // border: 1px solid lightgreen;
         color: rgba(0, 0, 0, 0.6);
         font-size: 0.8rem;
-        &:before {
-          content: '';
-          // border: 1px solid red;
-          margin-right: 1rem;
-        }
-        &:after {
-          content: '';
-          // border: 1px solid red;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
 
@@ -47,7 +41,7 @@ const Div = styled.div`
       display: inline-block;
       position: absolute;
       right: 1rem;
-      bottom: 15px;
+      bottom: 22px;
       color: rgba(0, 0, 0, 0.5);
     }
   }
@@ -57,12 +51,33 @@ const Div = styled.div`
   .fa-chevron-right,
   .fa-chevron-down {
     // border: 1px solid red;
-    font-size: 1rem;
-    color: inherit;
+    font-size: 0.8rem;
+    color: #4a99d3;
+    display: block;
   }
   .card {
     // border: 1px solid red;
     border-radius: 0px !important;
+  }
+  .card-body {
+    // color: #4a99d3;
+  }
+
+  @media only screen and (max-width: 540px) {
+    margin-bottom: 0.8rem;
+    .header {
+      &__title {
+        // width: 90%;
+        justify-content: space-between;
+        &__period {
+          text-align: right;
+        }
+      }
+
+      &__state {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -81,7 +96,6 @@ const Collapsible = (props) => {
           )}
         </div>
         <div className="header__state">
-          {/* {isOpen ? '-' : '+'} */}
           {isOpen ? (
             <i className="fa fa-chevron-down"></i>
           ) : (

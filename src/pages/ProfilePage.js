@@ -6,7 +6,7 @@ import ProfileMain2 from '../components/ProfileMain2';
 import ProfileAbout from '../components/ProfileAbout';
 import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
-import ProfileEducation from '../components/ProfileEducation';
+// import ProfileEducation from '../components/ProfileEducation';
 import ProfileWorkHistory from '../components/ProfileWorkHistory';
 import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 import SvgSquareRings from '../svg/SvgSquareRings';
@@ -20,7 +20,7 @@ const Profile = style.div`
     display: block;
 
     &__section {
-      border: 1px solid #dfe0eb;
+      // border: 1px solid #dfe0eb;
       position: relative;
       padding: 4rem;
       
@@ -51,11 +51,22 @@ const Profile = style.div`
 
     }
     &__section-about {
-      // background: rgba(74, 153, 211, 0.05);
       background-color: #fafbfc;
+      // background-image: linear-gradient(
+      //   90deg,
+      //   rgba(74, 153, 211, 0.1) 0%,
+      //   rgba(74, 153, 211, 0.1),
+      //   50%,
+      //   #fafbfc 50%
+      // ),
+      // url();
     }
     &__section-skills {
       // background: rgba(74, 153, 211, 0.1);
+    }
+    &__section-workhistory {
+      // background: rgba(74, 153, 211, 0.05);
+      background-color: #fafbfc;
     }
 }
 @media only screen and (max-width: 540px) {
@@ -68,8 +79,6 @@ const Profile = style.div`
 }
 `;
 
-// border-radius: 0px 6px 6px 0px;
-
 class ProfilePage extends Component {
   render() {
     return (
@@ -79,23 +88,27 @@ class ProfilePage extends Component {
             <ProfileMain2 />
             <div className="profile__section profile__section-about">
               <span className="profile__section__svg-top-right">
-                {/* <SvgSquareRings color="#D3844A" opacity="0.2" /> */}
-                <SvgDots />
+                <SvgSquareRings color="#D3844A" opacity="0.1" />
               </span>
               <ProfileAbout />
             </div>
             <div className="profile__section profile__section-skills">
               <span className="profile__section__svg-top-right">
-                <SvgSquareRings opacity="0.2" />
+                {/* <SvgSquareRings opacity="0.2" /> */}
+                <SvgDots />
               </span>
               <ProfileSkills />
             </div>
             {/* <div className="profile__section profile__section-education">
               <ProfileEducation />
-            </div>
-            <div className="profile__section profile__section-workhistory">
-              <ProfileWorkHistory />
             </div> */}
+            <div className="profile__section profile__section-workhistory">
+              <span className="profile__section__svg-top-right">
+                <SvgSquareRings opacity="0.1" />
+                {/* <SvgDots /> */}
+              </span>
+              <ProfileWorkHistory />
+            </div>
             <div className="profile__section profile__section-projects">
               <ProfileProjectsListing2 />
             </div>
