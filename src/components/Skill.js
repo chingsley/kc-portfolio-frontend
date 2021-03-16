@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Aos from 'aos';
 import { Progress } from 'react-sweet-progress';
@@ -6,7 +6,7 @@ import 'react-sweet-progress/lib/style.css';
 
 const StyledSkill = styled.div`
   ${(props) => {
-    console.log(props.skillColor);
+    // console.log(props.skillColor);
     return css`
       // border: 1px solid lightblue;
       width: 45%;
@@ -44,11 +44,35 @@ const StyledSkill = styled.div`
 `;
 
 function Skill(props) {
+  const [view, setView] = useState(
+    window.innerWidth > 720 ? 'desktop' : 'mobile'
+  );
+
+  const dataAos = {
+    desktop: {
+      animation: props.aosIndex % 2 === 0 ? 'fade-up' : 'fade-down',
+    },
+    mobile: {
+      animation: 'fade-down',
+    },
+  };
+
+  function changeView() {
+    if (window.innerWidth < 720) {
+      setView('mobile');
+    } else {
+      setView('desktop');
+    }
+  }
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 1000, easing: '' });
+    window.addEventListener('resize', changeView);
+    return (_) => {
+      window.removeEventListener('resize', changeView);
+    };
   }, []);
 
-  const dataAos = props.aosIndex % 2 === 0 ? 'fade-up' : 'fade-down';
+  // const dataAos = props.aosIndex % 2 === 0 ? 'fade-up' : 'fade-down';
   const dataAosDelay = props.aosIndex * 50;
 
   const computeSkillColor = ({ level }) => {
@@ -62,7 +86,7 @@ function Skill(props) {
   return (
     <StyledSkill
       skillColor={computeSkillColor(props.skill)}
-      data-aos={dataAos}
+      data-aos={dataAos[view].animation}
       data-aos-delay={dataAosDelay}
     >
       <span className="name">{props.skill.name}</span>
