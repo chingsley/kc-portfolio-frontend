@@ -6,13 +6,19 @@ import { string, bool } from 'prop-types';
 const Div = styled.div`
   // border: 1px solid red;
   margin-bottom: 0.2rem;
-  border-radius: 4px;
+  border-radius: 5px;
+  overflow: hidden;
   .header {
     // border: 1px solid black;
     padding: 1rem;
     background: rgba(74, 153, 211, 0.1);
     cursor: pointer;
     position: relative;
+    transition: background 1s;
+
+    &:hover {
+      background: rgba(74, 153, 211, 0.2);
+    }
 
     &__title {
       // border 1px solid blue;

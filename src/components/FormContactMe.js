@@ -81,9 +81,9 @@ ${(props) => {
 function FormContactMe() {
   const { setRequest, loading, successMsg, setSuccessMsg } = useFetch();
   const [formData, setFormData] = useState({
-    name: 'john',
-    email: 'john@gmail.com',
-    message: 'how are you today?',
+    name: '',
+    email: '',
+    message: '',
   });
   const handleInputChange = (e) => {
     setSuccessMsg(null);

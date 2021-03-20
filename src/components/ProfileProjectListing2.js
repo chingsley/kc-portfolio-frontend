@@ -8,10 +8,10 @@ import { string } from 'prop-types';
 const Section = styled.section`
   ${(props) => {
     return css`
-      border: 1px solid green;
+      // border: 1px solid green;
 
       .projects {
-        border: 1px solid darkred;
+        // border: 1px solid darkred;
         display: flex;
         justify-content: ${props.justifyContent};
         flex-wrap: wrap;
@@ -45,7 +45,14 @@ function ProfileProjectListing(props) {
           .sort((p1, p2) => Number(p2.rank) - Number(p1.rank))
           // .slice(0, 5)
           .map((project, index) => {
-            const { id, name, image, role, shortDescription } = project;
+            const {
+              id,
+              name,
+              image,
+              role,
+              shortDescription,
+              websiteLink,
+            } = project;
             return (
               <ProjectCard
                 key={id}
@@ -53,42 +60,11 @@ function ProfileProjectListing(props) {
                 title={name}
                 userRole={role}
                 imageSrc={image}
-                redirectTo={`/chingsley/projects/${id}`}
+                websiteLink={websiteLink}
                 shortDescription={shortDescription}
               />
             );
           })}
-        {/* <ProjectCard
-          className="projects__card"
-          title="Ship mgt app"
-          userRole="backend developer"
-          imageSrc={nnsManagerImg}
-          shortDescription="A ship management application that automatically notifies ship officers about due maintenance requests"
-          redirectTo="/chingsley/projects/1"
-        />
-        <ProjectCard
-          className="projects__card"
-          title="Access gateway"
-          userRole="backend developer"
-          imageSrc={accessGatewayImg}
-          shortDescription="An access bank payment gateway that offers a simple and secure way to send and receive payments globally"
-          redirectTo="/chingsley/projects/1"
-        />
-        <ProjectCard
-          className="projects__card"
-          title="ICAD"
-          userRole="backend developer"
-          imageSrc={icad}
-          shortDescription="Automation of the bank's ICAD account Submission to Nigeria Interbanking settlement scheme"
-          redirectTo="/chingsley/projects/1"
-        />
-        <ProjectCard
-          className="projects__card"
-          title="Authors Haven"
-          userRole="fullstack developer"
-          shortDescription="A blog application that connects profilic writers to avid readers all over the world"
-          redirectTo="/chingsley/projects/1"
-        /> */}
       </div>
     </Section>
   );

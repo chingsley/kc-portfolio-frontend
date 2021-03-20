@@ -11,11 +11,11 @@ export const projects = [
       'This project is help job seekers organize their portfolio in a presentable fashion. I built this project using NodeJS for the backend and React for the frontend',
     shortDescription: `A customizable portfolio application, bridging the divide between
       employers and potential employees.`,
-    rank: 5,
+    rank: 4.7,
   },
   {
     id: 2,
-    name: 'Nigerian Navy Ship Mgt. App',
+    name: 'Ship Management System',
     image: `https://res.cloudinary.com/dmx0a3nqi/image/upload/v1613301300/kcportfolio/chingsley/Screenshot_2021-02-14_at_10.58.28_AM.png`,
     role: 'Backend',
     stacks: 'React + NodeJS',
@@ -23,7 +23,7 @@ export const projects = [
     websiteLink: 'https://nn-ship-maintenance.herokuapp.com/#/',
     description:
       'A web application with which the Nigeria Navy can manage her ships. Features include user management, ship management, service management, maintenance requests, etc. Ship officers can request for services for their ships, and the appropriate teams will be notified via mail once the request is due to take place.',
-    shortDescription: `A ship management application that automatically notifies ship officers about due maintenance requests`,
+    shortDescription: `A ship management system for the Nigeria Navy that automatically notifies ship officers about due maintenance requests`,
     rank: 5,
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     description:
       'A payment gateway for access bank that solves payment problems for companies and businesses by enabling their customers to make both local and international payments using VISA, VERVE and MASTERCARD',
     shortDescription: `An access bank payment gateway that offers a simple and secure way to send and receive payments globally`,
-    rank: 4,
+    rank: 4.9,
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const projects = [
     description:
       'This project is for managing the health insurance of personnels in the Nigerian Military. I built the backend with NodeJS. I contributed to the frontend which is built with React',
     shortDescription: `A health insurance management application for the Nigerian Military`,
-    rank: 5,
+    rank: 4.8,
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ export const projects = [
     description:
       'An Access bank internal service application that integrates with NIBSS (Nigeria Inter-Banking Settlement Scheme) for auto transmission of all accounts opened or updated in the bank to NIBSS for record keeping.',
     shortDescription: `Automation of the bank's ICAD account Submission to Nigeria Interbanking settlement scheme`,
-    rank: 3,
+    rank: 4.2,
   },
   {
     id: 6,
@@ -71,6 +71,6 @@ export const projects = [
       'A blog application that connects profilic writers to avid readers all over the world',
     shortDescription:
       'A blog application that connects profilic writers to avid readers all over the world',
-    rank: 3,
+    rank: 4.1,
   },
 ];

@@ -94,7 +94,6 @@ class ProfilePage extends Component {
             </div>
             <div className="profile__section profile__section-skills">
               <span className="profile__section__svg-top-right">
-                {/* <SvgSquareRings opacity="0.2" /> */}
                 <SvgDots />
               </span>
               <ProfileSkills />
@@ -105,12 +104,14 @@ class ProfilePage extends Component {
             <div className="profile__section profile__section-workhistory">
               <span className="profile__section__svg-top-right">
                 <SvgSquareRings opacity="0.1" />
-                {/* <SvgDots /> */}
               </span>
               <ProfileWorkHistory />
             </div>
             <div className="profile__section profile__section-projects">
-              <ProfileProjectsListing2 />
+              <span className="profile__section__svg-top-right">
+                <SvgDots />
+              </span>
+              <ProfileProjectsListing2 justifyContentxxx="center" />
             </div>
           </div>
         </Profile>
