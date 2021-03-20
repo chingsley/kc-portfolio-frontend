@@ -8,9 +8,16 @@ import { workHistories } from '../data/work.data';
 // will contain the organization, the timeline, the role and the job description
 const Section = styled.section`
   // border: 1px solid red;
-  .collapsible-container {
-    width: 100%;
-  }
+  // .works {
+  //   // border: 1px solid blue;
+  //   justify-content: space-between;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   &__work {
+  //     // border: 1px solid yellow;
+  //     width: 49%;
+  //   }
+  // }
   .role {
     font-weight: 400;
     font-size: 1.2rem;
@@ -24,27 +31,29 @@ function ProfileEducation() {
   return (
     <Section>
       <ProfileSectionHeader title="Experience" subtitle="Work Experience" />
-      {workHistories.map((workHistory, index) => {
-        const { subject, role, details, from, to } = workHistory;
-        const aosDelay = index % 2 === 0 ? 'fade-down' : 'fade-down';
-        return (
-          <div
-            key={index}
-            className="collapsible-container"
-            data-aos={aosDelay}
-            data-aos-delay={100 + index * 50}
-          >
-            <Collapsible
-              subject={subject}
-              period={from + ' - ' + to}
-              expandAsDefault={false}
+      <div className="works">
+        {workHistories.map((workHistory, index) => {
+          const { subject, role, details, from, to } = workHistory;
+          const aosDelay = index % 2 === 0 ? 'fade-down' : 'fade-down';
+          return (
+            <div
+              key={index}
+              className="works__work"
+              data-aos={aosDelay}
+              data-aos-delay={100 + index * 50}
             >
-              <h4 className="role">{role}</h4>
-              {details}
-            </Collapsible>
-          </div>
-        );
-      })}
+              <Collapsible
+                subject={subject}
+                period={from + ' - ' + to}
+                expandAsDefault={false}
+              >
+                <h4 className="role">{role}</h4>
+                {details}
+              </Collapsible>
+            </div>
+          );
+        })}
+      </div>
     </Section>
   );
 }

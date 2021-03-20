@@ -60,6 +60,7 @@ const CardWrapper = styled.div`
 
         &__title {
           // border: 1px solid black;
+          // color: #4a99d3;
           overflow: hidden;
           min-height: 1.5rem;
           text-overflow: ellipsis;
@@ -76,10 +77,15 @@ const CardWrapper = styled.div`
         &__btn-wrapper {
           // border: 1px solid red;
           display: inline-block;
-          &__btn {
+          &__website-link {
             // border: 1px solid blue;
             float: right;
             cursor: pointer;
+            background-color: #4a99d3;
+            color: white;
+            padding: 5px 1rem;
+            border-radius: 2px;
+            text-decoration: none;
           }
         }
       }
@@ -87,7 +93,7 @@ const CardWrapper = styled.div`
         position: relative;
 
         .card__info {
-          // border-top: 2px solid #f43544;
+          border-top: 2px solid #4a99d3;
           height: 100%;
           background-color: rgba(255, 255, 255, 0.95);
           text-overflow: initial;
@@ -107,6 +113,7 @@ const CardWrapper = styled.div`
 `;
 
 function ProjectCard(props) {
+  console.log(props);
   return (
     <CardWrapper {...props}>
       <div className="card">
@@ -127,14 +134,13 @@ function ProjectCard(props) {
             {props.shortDescription}
           </p>
           <div className="card__info__btn-wrapper">
-            <KcLink
-              bgColor="black"
-              color="rgba(255, 255, 255, 0.8)"
-              className="card__info__btn-wrapper__btn"
-              to={props.redirectTo}
+            <a
+              href={props.websiteLink}
+              className="card__info__btn-wrapper__website-link"
+              target="branch"
             >
               {props.buttonText}
-            </KcLink>
+            </a>
           </div>
         </div>
       </div>
@@ -146,12 +152,12 @@ ProjectCard.prototype = {
   title: string,
   shortDescription: string,
   buttonText: string,
-  redirectTo: string,
   imageSrc: string,
   defaultImg: string,
   widthInRem: number,
   heightInRem: number,
   userRole: string,
+  websiteLink: string,
 };
 
 ProjectCard.defaultProps = {
@@ -159,8 +165,8 @@ ProjectCard.defaultProps = {
   shortDescription:
     'Please provide a short description of the project. Text more than 120 characters will be clipped',
   defaultImg: placeholderImg,
-  buttonText: 'View Details',
-  redirectTo: '/#',
+  buttonText: 'Goto Website',
+  websiteLink: '/#',
   widthInRem: 20,
   heightInRem: 15,
   userRole: 'not specified',
