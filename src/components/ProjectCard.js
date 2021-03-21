@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import KcLink from './KcLink';
 import { number, string } from 'prop-types';
 import placeholderImg from '../assets/Rectangle.png';
+import Modal from './Modal';
 
 const CardWrapper = styled.div`
   ${(props) => css`
@@ -77,15 +77,22 @@ const CardWrapper = styled.div`
         &__btn-wrapper {
           // border: 1px solid red;
           display: inline-block;
-          &__website-link {
-            // border: 1px solid blue;
+
+          &__website-link,
+          &__btn-show-modal {
             float: right;
             cursor: pointer;
             background-color: #4a99d3;
             color: white;
             padding: 5px 1rem;
             border-radius: 2px;
+          }
+          &__website-link {
             text-decoration: none;
+          }
+          &__btn-show-modal {
+            outline: none;
+            border: none;
           }
         }
       }
@@ -113,9 +120,11 @@ const CardWrapper = styled.div`
 `;
 
 function ProjectCard(props) {
-  console.log(props);
+  const [showModal, setShowModal] = useState(false);
+  console.log(showModal, setShowModal);
   return (
     <CardWrapper {...props}>
+      <Modal {...props} showModal={showModal} />
       <div className="card">
         <img
           src={props.imageSrc || props.defaultImg}
@@ -134,13 +143,23 @@ function ProjectCard(props) {
             {props.shortDescription}
           </p>
           <div className="card__info__btn-wrapper">
-            <a
-              href={props.websiteLink}
-              className="card__info__btn-wrapper__website-link"
-              target="branch"
-            >
-              {props.buttonText}
-            </a>
+            {props.websiteLink ? (
+              <a
+                href={props.websiteLink}
+                className="card__info__btn-wrapper__website-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {props.buttonText}
+              </a>
+            ) : (
+              <button
+                className="card__info__btn-wrapper__btn-show-modal"
+                onClick={() => setShowModal(true)}
+              >
+                {props.buttonText}
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -166,7 +185,7 @@ ProjectCard.defaultProps = {
     'Please provide a short description of the project. Text more than 120 characters will be clipped',
   defaultImg: placeholderImg,
   buttonText: 'Goto Website',
-  websiteLink: '/#',
+  websiteLink: null,
   widthInRem: 20,
   heightInRem: 15,
   userRole: 'not specified',
