@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { number, string } from 'prop-types';
 import placeholderImg from '../assets/Rectangle.png';
-import Modal from './Modal';
+import { ModalContext } from '../context/ModalContext';
 
 const CardWrapper = styled.div`
   ${(props) => css`
@@ -120,11 +120,12 @@ const CardWrapper = styled.div`
 `;
 
 function ProjectCard(props) {
-  const [showModal, setShowModal] = useState(false);
+  const modalContext = useContext(ModalContext);
+  const { showModal, setShowModal } = modalContext;
   console.log(showModal, setShowModal);
   return (
     <CardWrapper {...props}>
-      <Modal {...props} showModal={showModal} />
+      {/* <Modal {...props} showModal={showModal} /> */}
       <div className="card">
         <img
           src={props.imageSrc || props.defaultImg}

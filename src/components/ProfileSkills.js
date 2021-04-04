@@ -8,7 +8,7 @@ import { color } from '../utils/variables';
 
 const Section = styled.section`
   ${(props) => {
-    console.log(props.skillColor);
+    // console.log(props.skillColor);
     return css`
       // border: 1px solid blue;
       position: relative;

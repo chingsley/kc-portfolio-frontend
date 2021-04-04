@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer';
+import Modal from './components/Modal';
 
 import NavBar from './components/NavBarResponsive';
 import AppRoutes from './routes';
@@ -22,6 +23,7 @@ function App() {
         />
         <NavBar />
         <AppRoutes />
+        <Modal />
         <Footer />
       </div>
     </Router>
