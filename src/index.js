@@ -9,13 +9,16 @@ import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.css';
+import { ModalProvider } from './context/ModalContext';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ModalProvider>
+      <App />
+    </ModalProvider>
   </Provider>,
   document.getElementById('root')
 );
