@@ -62,6 +62,7 @@ function ProfileProjectListing(props) {
                 imageSrc={image}
                 websiteLink={websiteLink}
                 shortDescription={shortDescription}
+                project={project}
               />
             );
           })}

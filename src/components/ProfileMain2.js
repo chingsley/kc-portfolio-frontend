@@ -15,12 +15,14 @@ const Div = styled.div`
     width: 100%;
     min-height: 28rem;
     color: black;
-    background: linear-gradient(
-      180deg,
-      rgba(74, 153, 211, 0.5) -71%,
-      rgba(74, 153, 211, 0) 71%,
-      #ffffff
-    );
+    background: #fafbfc;
+    // background: rgba(74, 153, 211, 0.1);
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(74, 153, 211, 0.5) -71%,
+    //   rgba(74, 153, 211, 0) 71%,
+    //   #ffffff
+    // );
     display: flex;
     justify-content: center;
     gap: 5%;
@@ -148,7 +150,7 @@ function ProfileMain2() {
         </span>
         <span className="pp-main__svg-dots-n-rings">
           {/* <SvgSquareDotsCombo /> */}
-          <SvgSquareRings />
+          <SvgSquareRings color="rgba(74, 153, 211, 0.3)" />
         </span>
         <div className="pp-main__left">
           <img src={profileImg} alt="profile" className="pp-main__left__img" />

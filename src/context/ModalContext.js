@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 const ModalContext = React.createContext();
 const ModalProvider = (props) => {
   const [showModal, setShowModal] = useState(false);
-  // console.log(showModal, setShowModal);
+  const [modalMsg, setModalMsg] = useState('No message');
 
-  const openModal = () => {
+  const openModal = ({ withMsg = modalMsg } = {}) => {
+    setModalMsg(withMsg);
     setShowModal(true);
   };
 
@@ -12,9 +13,6 @@ const ModalProvider = (props) => {
     setShowModal(false);
   };
 
-  // useEffect(() => {
-  //   fetchRecipe();
-  // }, []);
   return (
     <ModalContext.Provider
       value={{
@@ -22,6 +20,8 @@ const ModalProvider = (props) => {
         openModal,
         closeModal,
         setShowModal,
+        modalMsg,
+        setModalMsg,
       }}
     >
       {props.children}
