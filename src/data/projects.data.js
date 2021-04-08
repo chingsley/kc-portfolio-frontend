@@ -54,14 +54,14 @@ export const projects = [
   {
     id: 5,
     name: 'ICAD',
-    // image: `https://images.unsplash.com/photo-1612367922194-bc8df4f183c8?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60`,
     role: 'Backend',
     stacks: 'React + NodeJS',
     description:
       'An Access bank internal service application that integrates with NIBSS (Nigeria Inter-Banking Settlement Scheme) for auto transmission of all accounts opened or updated in the bank to NIBSS for record keeping.',
     shortDescription: `Automation of the bank's ICAD account Submission to Nigeria Interbanking settlement scheme`,
     rank: 4.2,
-    reasonForMissingLink: 'propietary app',
+    reasonForMissingWebsiteLink:
+      'Kindly note that ICAD is a propietary application for the bank, restricted to internal use only. But I will be more than happy to tell you all about it if you contact me.',
   },
   {
     id: 6,
@@ -72,6 +72,6 @@ export const projects = [
     shortDescription:
       'A blog application that connects profilic writers to avid readers all over the world',
     rank: 4.1,
-    reasonForMissingLink: 'work in progress',
+    reasonForMissingWebsiteLink: 'Authors Haven is work in progress',
   },
 ];

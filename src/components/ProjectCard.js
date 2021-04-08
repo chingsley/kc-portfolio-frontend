@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
-import { number, string } from 'prop-types';
+import { number, object } from 'prop-types';
 import placeholderImg from '../assets/Rectangle.png';
 import { ModalContext } from '../context/ModalContext';
 
@@ -121,44 +121,47 @@ const CardWrapper = styled.div`
 
 function ProjectCard(props) {
   const modalContext = useContext(ModalContext);
-  const { showModal, setShowModal } = modalContext;
-  console.log(showModal, setShowModal);
+  const { openModal } = modalContext;
+  const {
+    name: title,
+    image = placeholderImg,
+    role,
+    websiteLink,
+    shortDescription,
+    reasonForMissingWebsiteLink,
+  } = props.project;
+  console.log('props => ', props);
   return (
     <CardWrapper {...props}>
-      {/* <Modal {...props} showModal={showModal} /> */}
       <div className="card">
-        <img
-          src={props.imageSrc || props.defaultImg}
-          alt="show-tower-homepage"
-          className="card__img"
-        />
+        <img src={image} alt="show-tower-homepage" className="card__img" />
         {!props.imageSrc && (
-          <h2 className="card__default-img-title">{props.title}</h2>
+          <h2 className="card__default-img-title">{title}</h2>
         )}
         <div className="card__info">
-          <h5 className="card__info__title">{props.title}</h5>
+          <h5 className="card__info__title">{title}</h5>
           <div className="card__info__user-role">
-            <strong>Role:</strong> <i>{props.userRole}</i>
+            <strong>Role:</strong> <i>{role}</i>
           </div>
-          <p className="card__info__short-description">
-            {props.shortDescription}
-          </p>
+          <p className="card__info__short-description">{shortDescription}</p>
           <div className="card__info__btn-wrapper">
-            {props.websiteLink ? (
+            {websiteLink ? (
               <a
-                href={props.websiteLink}
+                href={websiteLink}
                 className="card__info__btn-wrapper__website-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {props.buttonText}
+                Goto Website
               </a>
             ) : (
               <button
                 className="card__info__btn-wrapper__btn-show-modal"
-                onClick={() => setShowModal(true)}
+                onClick={() =>
+                  openModal({ withMsg: reasonForMissingWebsiteLink })
+                }
               >
-                {props.buttonText}
+                Goto Website
               </button>
             )}
           </div>
@@ -169,27 +172,14 @@ function ProjectCard(props) {
 }
 
 ProjectCard.prototype = {
-  title: string,
-  shortDescription: string,
-  buttonText: string,
-  imageSrc: string,
-  defaultImg: string,
   widthInRem: number,
   heightInRem: number,
-  userRole: string,
-  websiteLink: string,
+  project: object.isRequired,
 };
 
 ProjectCard.defaultProps = {
-  title: 'Title',
-  shortDescription:
-    'Please provide a short description of the project. Text more than 120 characters will be clipped',
-  defaultImg: placeholderImg,
-  buttonText: 'Goto Website',
-  websiteLink: null,
   widthInRem: 20,
   heightInRem: 15,
-  userRole: 'not specified',
 };
 
 export default ProjectCard;
