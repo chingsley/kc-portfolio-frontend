@@ -28,14 +28,26 @@ const Section = styled.section`
       }
       &__left {
         // border: 4px solid  rgba(74, 153, 211, 0.1);
-        // border-left: 2px solid #4A99D3;
+        border-left: 2px solid #4A99D3;
         &__text{
           display: inline-block; // if set to 'inline' animation will not work as expected;
         }
       }
       &__right {
         background: rgba(74, 153, 211, 0.1);
-        // border-right: 2px solid #4A99D3;
+        border-right: 2px solid #4A99D3;
+        padding: 2rem;
+        &__quote-container {
+          // border: 1px solid red;
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          &__content {
+            margin: 0;
+            padding: 0;
+          }
+        }
       }
     }
   }
@@ -147,8 +159,16 @@ function ProfileAbout() {
             data-aos-delay="500"
             data-aos="fade-right"
           >
-            My favorite quotes:
-            <p>carousel animation of my favorite quotes / tech quotes</p>
+            <strong className="pp-about__parent__right__quote-header">
+              My favorite quotes
+            </strong>
+            <div className="pp-about__parent__right__quote-container">
+              <p className="pp-about__parent__right__quote-container__content">
+                “The fastest algorithm can frequently be replaced by one that is
+                almost as fast and much easier to understand.” – Douglas W.
+                Joness
+              </p>
+            </div>
           </div>
         </div>
       </div>
