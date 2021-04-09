@@ -71,6 +71,7 @@ const Nav = styled.nav`
       padding-top: 15px;
     }
   }
+
   @media only screen and (max-width: 768px) {
     // border: 1px solid blue;
     z-index: 1000;
@@ -166,8 +167,8 @@ function NavBar(props) {
         </li>
         <li className="topnav-ul-li">
           <KcLink
-            text="My Profile"
-            to="/profile"
+            text="Projects"
+            to="/projects"
             color={linkTextColor}
             bgColorOnHover="#4a99d3"
             colorOnHover="#f5f6fa"

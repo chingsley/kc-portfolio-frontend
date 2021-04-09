@@ -44,7 +44,7 @@ const NotFound = styled.div`
         margin-top: 0px;
         margin-bottom: 10px;
         // color: #151723;
-        color: #b20600;
+        color: #4a99d3;
         text-transform: uppercase;
       }
 

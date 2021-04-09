@@ -6,9 +6,9 @@ const FooterRegion = styled.div`
   // border: 1px solid green;
   .footer {
     // border: 1px solid salmon;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 2rem 4rem;
-    background: #fafbfc;
+    background: #4a99d3;
+    color: #ffffff;
 
     &__upper-part {
       // border: 1px solid red;
@@ -20,6 +20,9 @@ const FooterRegion = styled.div`
         list-style-type: none;
         padding-left: 0;
       }
+    }
+    &__hr {
+      border-top: 1px solid #ffffff;
     }
   }
   @media only screen and (max-width: 760px) {
@@ -64,19 +67,24 @@ const Footer = () => {
             <li className="footer__upper-part__list__item">item 4</li>
           </ul>
           <ul className="footer__upper-part__list">
-            <strong className="footer-upper__part__list__header">list 3</strong>
-            <li className="footer__upper-part__list__item">item 1</li>
-            <li className="footer__upper-part__list__item">item 2</li>
+            <strong className="footer-upper__part__list__header">
+              CI / CD
+            </strong>
+            <li className="footer__upper-part__list__item">CircleCI</li>
+            <li className="footer__upper-part__list__item">TravisCI</li>
+            <li className="footer__upper-part__list__item">Jenkins</li>
           </ul>
           <ul className="footer__upper-part__list">
-            <strong className="footer-upper__part__list__header">list 4</strong>
-            <li className="footer__upper-part__list__item">item 1</li>
-            <li className="footer__upper-part__list__item">item 2</li>
+            <strong className="footer-upper__part__list__header">
+              Other stacks
+            </strong>
+            <li className="footer__upper-part__list__item">Python (Flask)</li>
+            <li className="footer__upper-part__list__item">Ruby on Rails</li>
           </ul>
         </div>
-        <hr />
+        <hr className="footer__hr" />
         <div className="footer__lower-part">
-          Copyright © 2020 ShowTower
+          Copyright © Kingsley Eneja
           <LogoV2 display="block" mobileMargin="0 auto" />
         </div>
       </div>
