@@ -72,6 +72,7 @@ export const projects = [
     shortDescription:
       'A blog application that connects profilic writers to avid readers all over the world',
     rank: 4.1,
-    reasonForMissingWebsiteLink: 'Authors Haven is work in progress',
+    reasonForMissingWebsiteLink:
+      'Please be informed that Authors Haven is currently undergoing some maintenance and will be up and running in no time. However, I will be very happy to talk about it with you over a cup a coffee (digital coffee too)',
   },
 ];

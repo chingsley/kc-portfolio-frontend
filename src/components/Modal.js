@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { ModalContext } from '../context/ModalContext';
 
 const ModalWindow = styled.div`
   ${(props) => {
-    console.log(props);
+    // console.log(props);
     return css`
       // border: 1px solid red;
       display: ${props.showModal ? 'flex' : 'none'};
@@ -16,7 +16,7 @@ const ModalWindow = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: modalFadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: modalFadeIn 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
       .modal-view {
         border: 1px solid rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ const ModalWindow = styled.div`
         overflow: hidden;
         background: rgba(255, 255, 255, 1);
         animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        animation-delay: 0.5s;
+        animation-delay: 0.3s;
 
         &__header {
           // border: 1px solid salmon;
@@ -91,17 +91,55 @@ const ModalWindow = styled.div`
           background-color: rgba(0, 0, 0, 0.5);
         }
       }
+      @media only screen and (max-width: 768px) {
+        .modal-view {
+          width: 0%;
+          height: 0%;
+          // animation: none;
+          animation: fadeInMobile 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
+            forwards;
+          animation-delay: 0.3s;
+        }
+        @keyframes fadeInMobile {
+          0% {
+            width: 0%;
+            height: 0%;
+          }
+          50% {
+            width: 0%;
+            height: 100%;
+          }
+          100% {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
     `;
   }}
 `;
 
 function Modal(props) {
   const modalContext = useContext(ModalContext);
-  const { showModal, setShowModal, modalMsg, closeModal } = modalContext;
+  const refModalView = useRef(null);
+  const { showModal, modalMsg, closeModal } = modalContext;
+
+  const handleOutsideClick = (e) => {
+    if (!refModalView?.current.contains(e.target)) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  });
 
   return (
     <ModalWindow {...props} showModal={showModal}>
-      <div className="modal-view">
+      <div className="modal-view" ref={refModalView}>
         <div className="modal-view__header">
           <strong>Hi there!</strong>
         </div>

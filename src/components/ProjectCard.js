@@ -130,7 +130,7 @@ function ProjectCard(props) {
     shortDescription,
     reasonForMissingWebsiteLink,
   } = props.project;
-  console.log('props => ', props);
+  // console.log('props => ', props);
   return (
     <CardWrapper {...props}>
       <div className="card">
