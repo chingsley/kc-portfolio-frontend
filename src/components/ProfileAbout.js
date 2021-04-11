@@ -91,19 +91,24 @@ function ProfileAbout() {
     window.innerWidth > 720 ? 'desktop' : 'mobile'
   );
 
+  /**
+   * zoom-in zoom-in
+   * zoom-in-left zoom-in-left
+   */
   const dataAos = {
     desktop: {
       delay: '500',
-      animation: 'fade-left',
+      animation: (index) =>
+        index % 2 === 0 ? 'zoom-in-right' : 'zoom-in-right',
     },
     mobile: {
       delay: '0',
-      animation: 'fade-down',
+      animation: () => 'none',
     },
   };
 
   function changeView() {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth < 720) {
       setView('mobile');
     } else {
@@ -111,6 +116,7 @@ function ProfileAbout() {
     }
   }
   useEffect(() => {
+    // console.log(view, dataAos[view], window.innerWidth);
     Aos.init({ duration: 1000, easing: '' });
     window.addEventListener('resize', changeView);
     return (_) => {
@@ -143,9 +149,10 @@ function ProfileAbout() {
               .map((word, i) => (
                 <span
                   key={i}
-                  data-aos="fade-left"
+                  // data-aos="fade-left"
+                  data-aos={dataAos[view].animation(i)}
                   data-aos-delay={i * 100}
-                  // data-aos-duration={i * 1000}
+                  data-aos-duration={1000}
                   className="pp-about__parent__left__text"
                   // style={{ display: 'inline-block' }}
                 >
@@ -156,8 +163,8 @@ function ProfileAbout() {
           </div>
           <div
             className="pp-about__parent__right"
-            data-aos-delay="500"
-            data-aos="fade-right"
+            data-aos-delay="200"
+            data-aos="none"
           >
             <strong className="pp-about__parent__right__quote-header">
               My favorite quotes

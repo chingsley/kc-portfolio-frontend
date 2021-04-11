@@ -27,6 +27,11 @@ export const skills = [
     level: 92,
   },
   {
+    id: 5,
+    name: 'SQL',
+    level: 80,
+  },
+  {
     id: 6,
     name: 'figma',
     level: 75,

@@ -11,11 +11,11 @@ import ContactsPage from '../pages/ContactsPage';
 const AppRoutes = () => (
   <div className="app-main">
     <Switch>
-      <Route exact path="/" component={HomePage} />
+      <Route exact path="/" component={ProfilePage} />
       <Route exact path="/login" component={AuthPage} />
-      <Route exact path="/password/forgot" component={AuthPage} />
-      <Route path="/password/reset/:resetToken" component={AuthPage} />
-      <Route exact path="/profile" component={ProfilePage} />
+      {/* <Route exact path="/password/forgot" component={AuthPage} /> */}
+      {/* <Route path="/password/reset/:resetToken" component={AuthPage} /> */}
+      {/* <Route exact path="/profile" component={ProfilePage} /> */}
       <Route path="/contacts" component={ContactsPage} />
       <Route path="/projects" component={ProjectsPage} />
       <Route exact path="/notfound" component={NotFoundPage} />

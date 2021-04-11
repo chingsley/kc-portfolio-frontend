@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { string } from 'prop-types';
 
@@ -56,6 +56,10 @@ const Parent = styled.div`
         transition-duration: 0.5s;
         background-color: ${props.bgColor};
       }
+      .active {
+        border-bottom: 1px solid #4a99d3;
+        // color: red;
+      }
     `;
   }}
 `;
@@ -64,9 +68,9 @@ const KcLink = (props) => {
   return (
     <Parent {...props}>
       <div className="sibling"></div>
-      <Link to={props.to} className="link">
+      <NavLink exact to={props.to} className="link" activeClassName="active">
         {props.text || props.children}
-      </Link>
+      </NavLink>
     </Parent>
   );
 };

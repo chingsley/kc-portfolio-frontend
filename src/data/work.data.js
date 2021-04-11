@@ -16,6 +16,13 @@ export const workHistories = [
     payment gateway`,
   },
   {
+    subject: 'Erregen Technology',
+    from: '2020-10-04',
+    to: 'Present',
+    role: 'Solutions Architect and Backend Engineer',
+    details: `At Erregen I worked on several projects such as: a Ship Mangement Application for the Nigerian Navy, a Health Insurance Application for the Nigerian Millitary`,
+  },
+  {
     subject: 'Andela',
     from: '2018-12-11',
     to: '2019-09-21',
