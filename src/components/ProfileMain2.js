@@ -187,7 +187,7 @@ function ProfileMain2() {
                 colorOnHover="white"
                 // border="1px solid grey"
                 text="RESUME"
-                to="/resume/download"
+                to="/kingsley_eneja_resume.pdf"
                 data-aos="fade-down"
                 data-aos-delay={100}
               />{' '}
