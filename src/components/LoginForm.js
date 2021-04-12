@@ -1,13 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { AuthForm } from './SignupForm';
 import { loginUser } from '../store/actions';
-import Loader from 'react-loader-spinner';
+import style, { css } from 'styled-components';
+import FormInput from './FormInput';
+import FormSubmit from './FormSubmit';
+const FormContainer = style.div`
+${(props) => {
+  return css`
+    // border: 1px solid yellow;
+    height: 100%;
+    .form {
+      // border: 1px solid green;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      &__control {
+        margin-bottom: 1.5rem;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      height: auto;
+      margin-bottom: 2rem;
+      .form {
+        &__control {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  `;
+}}`;
 
 class LoginForm extends React.Component {
   state = {
-    emailOrUsername: 'eneja.kc@gmail.com',
+    emailOrUsername: '',
     password: 'Testing*123',
   };
 
@@ -33,42 +59,37 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <AuthForm {...this.props} onSubmit={this.handleFormSubmit}>
-        <div className="left-inputs-in-form">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Email / Username"
-            name="emailOrUsername"
-            value={this.state.emailOrUsername}
-            onChange={this.handleInputChange}
-          />
-          <input
-            className="form-control"
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-          <button className="auth-btn">
-            {this.props.isLoading ? (
-              <>
-                {'Loading '}
-                <Loader
-                  className="inline-display"
-                  type="ThreeDots"
-                  color="#fff"
-                  height="20"
-                  width="20"
-                />
-              </>
-            ) : (
-              'Sign In'
-            )}
-          </button>
-        </div>
-      </AuthForm>
+      <FormContainer {...this.props} onSubmit={this.handleFormSubmit}>
+        <form action="" className="form" onSubmit={this.handleFormSubmit}>
+          <div className="form__control">
+            <FormInput
+              inputType="input"
+              type="text"
+              placeholder="Email/Username"
+              name="emailOrUsername"
+              value={this.state.emailOrUsername}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className="form__control">
+            <FormInput
+              inputType="input"
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className="form__control">
+            <FormSubmit
+              onClick={this.handleFormSubmit}
+              loading={this.props.isLoading}
+              text="Sign In"
+            />
+          </div>
+        </form>
+      </FormContainer>
     );
   }
 }

@@ -61,7 +61,7 @@ export const projects = [
     shortDescription: `Automation of the bank's ICAD account Submission to Nigeria Interbanking settlement scheme`,
     rank: 4.2,
     reasonForMissingWebsiteLink:
-      'Kindly note that ICAD is a propietary application for the bank, restricted to internal use only. But I will be more than happy to tell you all about it if you contact me.',
+      'Please be informed that ICAD is a propietary application for the bank, restricted to internal use only. But I will be more than happy to tell you all about it if you contact me.',
   },
   {
     id: 6,

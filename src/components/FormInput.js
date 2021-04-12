@@ -1,5 +1,6 @@
 import React from 'react';
 import style, { css } from 'styled-components';
+import Loader from 'react-loader-spinner';
 
 const StyledDiv = style.div`
 ${(props) => {
@@ -10,6 +11,7 @@ ${(props) => {
       flex-flow: column-reverse; // flex-flow is a shorthand for flex-direction + flex-wrap
       position: relative;
       box-sizing: border-box;
+
       &__label {
         position: absolute;
         top: 0.8rem;
@@ -46,34 +48,41 @@ ${(props) => {
 `;
 
 function FormInput(props) {
-  const { elementType, labelText } = props;
+  const { inputType } = props;
   return (
     <StyledDiv>
       <div className="form-field">
-        {elementType === 'textarea' ? (
-          <textarea
-            className="form-field__textarea form-field__control"
-            placeholder={props.placeholder}
-            name={props.name}
-            id={props.id}
-            value={props.value}
-            onChange={props.onChange}
-            rows={props.rows}
-          ></textarea>
+        {inputType === 'textarea' ? (
+          <>
+            <textarea
+              className="form-field__textarea form-field__control"
+              placeholder={props.placeholder}
+              name={props.name}
+              id={props.id}
+              value={props.value}
+              onChange={props.onChange}
+              rows={props.rows}
+            ></textarea>
+            <label className="form-field__label" htmlFor={props.id}>
+              {props.placeholder}
+            </label>
+          </>
         ) : (
-          <input
-            className="form-field__input form-field__control"
-            type={props.type}
-            placeholder={props.placeholder}
-            name={props.name}
-            id={props.id}
-            value={props.value}
-            onChange={props.onChange}
-          />
+          <>
+            <input
+              className="form-field__input form-field__control"
+              type={props.type}
+              placeholder={props.placeholder}
+              name={props.name}
+              id={props.id}
+              value={props.value}
+              onChange={props.onChange}
+            />
+            <label className="form-field__label" htmlFor={props.id}>
+              {props.placeholder}
+            </label>
+          </>
         )}
-        <label className="form-field__label" htmlFor={props.id}>
-          {labelText}
-        </label>
       </div>
     </StyledDiv>
   );
