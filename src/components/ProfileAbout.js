@@ -167,7 +167,7 @@ function ProfileAbout() {
             data-aos="none"
           >
             <strong className="pp-about__parent__right__quote-header">
-              My favorite quotes
+              Favorite quote
             </strong>
             <div className="pp-about__parent__right__quote-container">
               <p className="pp-about__parent__right__quote-container__content">

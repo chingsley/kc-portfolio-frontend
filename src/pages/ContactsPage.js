@@ -1,7 +1,7 @@
 import React from 'react';
 import style, { css } from 'styled-components';
 import SvgDots from '../svg/SvgDots';
-import FormContactMe from '../components/FormContactMe';
+import FormContactMe2 from '../components/FormContactMe2';
 import ContactInfo from '../components/ContactInfo';
 
 const MIN_HEIGHT = '22rem';
@@ -142,7 +142,7 @@ function ContactsPage() {
               <span className="main__contents__flex__left__hidden-subtitle">
                 Leave me a message
               </span>
-              <FormContactMe />
+              <FormContactMe2 />
             </div>
             <div className="main__contents__flex__right">
               <ContactInfo />

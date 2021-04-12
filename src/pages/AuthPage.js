@@ -43,7 +43,7 @@ class AuthPage extends React.Component {
       <div className="auth-page">
         <div className="page-content">
           <div className="content-left">
-            <img src={loginImage} alt="person-reading" />
+            {/* <img src={loginImage} alt="person-reading" /> */}
           </div>
           <div className="content-right">
             <FormTitle {...this.props} />
