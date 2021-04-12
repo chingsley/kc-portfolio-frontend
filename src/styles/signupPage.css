@@ -25,6 +25,8 @@
   height: auto;
   width: 40%;
   overflow: hidden;
+  background: #4a99d3;
+  opacity: 0.2;
 }
 .content-left > img {
   /* border: 1px solid blue; */

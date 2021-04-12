@@ -8,7 +8,7 @@ const FormTitle = styled.div`
       // border: 1px solid blue;
       .fa-user {
         /* border: 1px solid blue; */
-        color: #eb2f06;
+        color: #4a99d3;
         display: inline-flex;
         align-items: center;
         justify-content: center;

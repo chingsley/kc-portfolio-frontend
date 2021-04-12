@@ -41,7 +41,7 @@ export const AuthForm = styled.form`
           cursor: pointer;
           width: 100%;
           margin-bottom: 2rem;
-          background-color: black;
+          background-color: #4a99d3;
           color: white;
           font-weight: 400;
           border-radius: 0.25rem;
