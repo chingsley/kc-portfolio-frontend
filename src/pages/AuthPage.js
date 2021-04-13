@@ -109,22 +109,20 @@ const Section = style.section`
         .main {
           width: 100%;
           &__contents {
+            padding: 1rem;
             &__subtitle {
               display: none;
             }
             &__flex {
               flex-direction: column;
-              &__left,
-              &__right {
+              &__left {
                 width: 100%;
                 &:not(:first-child) {
                   margin-bottom: 4rem;
                 }
               }
-              &__left {
-                &__hidden-subtitle {
-                  display: block;
-                }
+              &__right {
+                display: none;
               }
             }
           }
@@ -134,6 +132,9 @@ const Section = style.section`
         .main {
           width: 100%;
           padding: 0;
+          &__contents {
+            border-radius: 0;
+          }
         }
       }
     `;

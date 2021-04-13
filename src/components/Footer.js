@@ -44,27 +44,23 @@ const Footer = () => {
         <div className="footer__upper-part">
           <ul className="footer__upper-part__list">
             <strong className="footer-upper__part__list__header">
-              About Show Tower
+              My Interests
             </strong>
-            <li className="footer__upper-part__list__item">
-              The Show Tower Team
-            </li>
-            <li className="footer__upper-part__list__item">Idealogy</li>
-            <li className="footer__upper-part__list__item">Our Vision</li>
-            <li className="footer__upper-part__list__item">Our Mission</li>
+            <li className="footer__upper-part__list__item">Web Development</li>
+            <li className="footer__upper-part__list__item">Data science</li>
+            <li className="footer__upper-part__list__item">Automation</li>
+            <li className="footer__upper-part__list__item">Data analytics</li>
           </ul>
           <ul className="footer__upper-part__list">
             <strong className="footer-upper__part__list__header">
-              {' Help & FAQs'}
+              {' Hobbies'}
             </strong>
+            <li className="footer__upper-part__list__item">Binging sitcoms</li>
             <li className="footer__upper-part__list__item">
-              Who Needs Show Tower
+              Reading tech articles
             </li>
-            <li className="footer__upper-part__list__item">
-              Why Should I Use Show Tower
-            </li>
-            <li className="footer__upper-part__list__item">item 3</li>
-            <li className="footer__upper-part__list__item">item 4</li>
+            <li className="footer__upper-part__list__item">Watching soccer</li>
+            <li className="footer__upper-part__list__item">Running</li>
           </ul>
           <ul className="footer__upper-part__list">
             <strong className="footer-upper__part__list__header">
@@ -85,7 +81,7 @@ const Footer = () => {
         <hr className="footer__hr" />
         <div className="footer__lower-part">
           Copyright © Kingsley Eneja
-          <LogoV2 display="block" mobileMargin="0 auto" />
+          <LogoV2 display="block" mobileMargin="0 auto" color="#ffffff" />
         </div>
       </div>
     </FooterRegion>
