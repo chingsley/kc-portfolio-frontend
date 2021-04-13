@@ -3,6 +3,7 @@ import style, { css } from 'styled-components';
 import Loader from 'react-loader-spinner';
 import { useFetch } from '../custom-hooks/useFetch';
 import FormInput from './FormInput';
+import FormSubmit from './FormSubmit';
 const FormContainer = style.div`
 ${(props) => {
   return css`
@@ -14,21 +15,6 @@ ${(props) => {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      &__btn {
-        background: #4a99d3;
-        border: none;
-        outline: none;
-        border-radius: 4px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        height: 2.8rem;
-        line-height: 19px;
-        color: #ffffff;
-        margin-top: 1rem;
-        width: 100%;
-      }
     }
     @media only screen and (max-width: 768px) {
       height: auto;
@@ -80,9 +66,8 @@ function FormContactMe() {
       <form action="" className="form" onSubmit={handleSubmit}>
         <div className="form__control">
           <FormInput
-            elementType="input"
+            inputType="input"
             type="text"
-            labelText="Your Name"
             placeholder="Your Name"
             name="name"
             id="name"
@@ -92,9 +77,8 @@ function FormContactMe() {
         </div>
         <div className="form__control">
           <FormInput
-            elementType="input"
+            inputType="input"
             type="text"
-            labelText="Your Email Address"
             placeholder="Your Email Address"
             name="email"
             id="email"
@@ -104,8 +88,7 @@ function FormContactMe() {
         </div>
         <div className="form__control">
           <FormInput
-            labelText="Your Message"
-            elementType="textarea"
+            inputType="textarea"
             rows="5"
             placeholder="Your Message"
             name="message"
@@ -115,27 +98,7 @@ function FormContactMe() {
           />
         </div>
         <div className="form__control">
-          <button
-            className="form__btn"
-            onClick={handleSubmit}
-            disabled={loading}
-          >
-            {' '}
-            {loading ? (
-              <>
-                {'Loading '}
-                <Loader
-                  className="inline-display"
-                  type="ThreeDots"
-                  color="#fff"
-                  height="20"
-                  width="20"
-                />
-              </>
-            ) : (
-              'Send'
-            )}
-          </button>
+          <FormSubmit onClick={handleSubmit} loading={loading} text="send" />
         </div>
       </form>
     </FormContainer>
