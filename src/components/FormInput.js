@@ -1,6 +1,5 @@
 import React from 'react';
 import style, { css } from 'styled-components';
-import Loader from 'react-loader-spinner';
 
 const StyledDiv = style.div`
 ${(props) => {

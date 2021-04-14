@@ -89,6 +89,7 @@ const Section = style.section`
               border-bottom: 2px solid rgba(74, 153, 211, 0.2);
             }
             &__left {
+              // border: 1px solid red;
               // background: #fafbfc;
               padding: 1rem;
               border-left: 2px solid rgba(74, 153, 211, 0.2);
@@ -119,6 +120,9 @@ const Section = style.section`
                 width: 100%;
                 &:not(:first-child) {
                   margin-bottom: 4rem;
+                }
+                &__hidden-subtitle {
+                  display: block;
                 }
               }
               &__right {
@@ -184,7 +188,6 @@ class AuthPage extends React.Component {
                 <LoginForm />
               </div>
               <div className="main__contents__flex__right">
-                {/* <ContactInfo /> */}
                 <PlaceholderComponent />
               </div>
             </div>

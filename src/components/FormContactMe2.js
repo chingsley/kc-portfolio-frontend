@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import style, { css } from 'styled-components';
-import Loader from 'react-loader-spinner';
 import { useFetch } from '../custom-hooks/useFetch';
 import FormInput from './FormInput';
 import FormSubmit from './FormSubmit';
