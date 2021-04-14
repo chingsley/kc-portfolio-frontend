@@ -4,7 +4,6 @@ import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
 import KcLink from './KcLink';
 import Typewriter from 'typewriter-effect';
-import SvgSquareDotsCombo from '../svg/SvgSquareDotsCombo';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SvgDots from '../svg/SvgDots';
 
