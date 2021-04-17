@@ -43,7 +43,6 @@ class LoginForm extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
     const form = Object.keys(this.state).reduce((obj, key) => {
       if (key === 'emailOrUsername' && this.state[key].includes('@')) {
         return { ...obj, email: this.state[key] };
@@ -53,13 +52,12 @@ class LoginForm extends React.Component {
         return { ...obj, [key]: this.state[key] };
       }
     }, {});
-    // console.log(form);
     this.props.loginUser(form, this.props.history);
   };
 
   render() {
     return (
-      <FormContainer {...this.props} onSubmit={this.handleFormSubmit}>
+      <FormContainer>
         <form action="" className="form" onSubmit={this.handleFormSubmit}>
           <div className="form__control">
             <FormInput
@@ -67,6 +65,7 @@ class LoginForm extends React.Component {
               type="text"
               placeholder="Email/Username"
               name="emailOrUsername"
+              id="emailOrUsername"
               value={this.state.emailOrUsername}
               onChange={this.handleInputChange}
             />
@@ -77,6 +76,7 @@ class LoginForm extends React.Component {
               type="password"
               placeholder="Password"
               name="password"
+              id="password"
               value={this.state.password}
               onChange={this.handleInputChange}
             />

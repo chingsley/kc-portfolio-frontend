@@ -1,6 +1,6 @@
 import axios from 'axios';
-export const BASE_URL = 'http://localhost:5000/api/v1';
-// export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
+// export const BASE_URL = 'http://localhost:5000/api/v1';
+export const BASE_URL = 'https://kc-portfolio-backend.herokuapp.com/api/v1';
 
 class Request {
   static async post(path, { body, headers }) {
