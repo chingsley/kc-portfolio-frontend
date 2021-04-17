@@ -1,3 +1,9 @@
+const path = require('path');
+console.log(
+  process.cwd(),
+  path.join(__dirname, '../assets/beta_banking.png'),
+  path.resolve(__dirname, '../assets', 'beta_banking.png')
+);
 export const projects = [
   {
     id: 1,
@@ -11,7 +17,7 @@ export const projects = [
       'This project is help job seekers organize their portfolio in a presentable fashion. I built this project using NodeJS for the backend and React for the frontend',
     shortDescription: `A customizable portfolio application, bridging the divide between
       employers and potential employees.`,
-    rank: 4.7,
+    rank: 4.0,
   },
   {
     id: 2,
@@ -74,5 +80,16 @@ export const projects = [
     rank: 4.1,
     reasonForMissingWebsiteLink:
       'Please be informed that Authors Haven is currently undergoing some maintenance and will be up and running in no time. However, I will be very happy to talk about it with you over a cup a coffee (digital coffee too 😄)',
+  },
+  {
+    id: 7,
+    name: 'Beta Banking',
+    role: 'Backend',
+    image:
+      'https://res.cloudinary.com/dmx0a3nqi/image/upload/v1618651267/kcportfolio/chingsley/beta_banking.png',
+    description: `A digital platform for bringing banking experience to customers. Customers don't have to walk into the banking hall, they interact with bank agents who does the banking for them via this app`,
+    shortDescription: `A digital platform for bringing banking experience to customers.`,
+    rank: 4.7,
+    websiteLink: 'https://beta.accessbankplc.com:1001/#/',
   },
 ];

@@ -45,7 +45,7 @@ const CardWrapper = styled.div`
         padding: 1rem;
         position: absolute;
         bottom: 0;
-        background-color: white;
+        background-color: #f8f9fa;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -55,7 +55,7 @@ const CardWrapper = styled.div`
 
         /*** transition properties ***/
         height: 30%;
-        background-color: white;
+        background-color: #f8f9fa;
         transition: 0.5s ease-in-out;
 
         &__title {

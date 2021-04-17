@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import style from 'styled-components';
-import ProfileMain2 from '../components/ProfileMain2';
+import ProfileMain4 from '../components/ProfileMain4';
 import ProfileAbout from '../components/ProfileAbout';
 import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
@@ -85,7 +85,7 @@ class ProfilePage extends Component {
       <>
         <Profile {...this.props}>
           <div className="profile">
-            <ProfileMain2 />
+            <ProfileMain4 />
             <div className="profile__section profile__section-about">
               <span className="profile__section__svg-top-right">
                 <SvgSquareRings color="#D3844A" opacity="0.1" />

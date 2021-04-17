@@ -76,7 +76,8 @@ ProfileProjectListing.prototype = {
 };
 
 ProfileProjectListing.defaultProps = {
-  justifyContent: 'space-between',
+  // justifyContent: 'space-between',
+  justifyContent: 'center',
 };
 
 export default ProfileProjectListing;

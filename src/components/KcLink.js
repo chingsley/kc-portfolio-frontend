@@ -6,12 +6,13 @@ import { string } from 'prop-types';
 const Parent = styled.div`
   ${(props) => {
     return css`
-      // border: 1px solid blue;
+      // border: 1px solid red;
       height: ${props.height};
       line-height: ${props.lineHeight};
       display: inline-block;
       position: relative;
       z-index: 100;
+      text-align: center;
       // box-sizing: border-box;
 
       &:hover {
