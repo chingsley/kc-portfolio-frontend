@@ -116,7 +116,7 @@ function ProfileAbout() {
     }
   }
   useEffect(() => {
-    // console.log(view, dataAos[view], window.innerWidth);
+    console.log(view, dataAos[view], window.innerWidth);
     Aos.init({ duration: 1000, easing: '' });
     window.addEventListener('resize', changeView);
     return (_) => {
@@ -131,40 +131,24 @@ function ProfileAbout() {
           <div
             className="pp-about__parent__left"
             // data-aos-delay={dataAos[view].delay}
-            // data-aos={dataAos[view].animation}
+            data-aos="fade-up"
           >
-            {' '}
-            {` Hi there! I'm Kingsley, a passionate and creative software engineer.~~~
-             I am super excited about technology and how it can be used to~~~
-             solve problems. I feel a profound sense of joy every time I see a~~~
-             solution I created being used to solve problems for fellow humans~~~
-             (even if it's for just one person). I make a point of writing clean,~~~
-             maintainable code that scales easily because while I believe in the~~~
-             quest to solve problems for the everyday man, I shouldn’t create new~~~
-             ones for developers trying to maintain my code. Please feel free to~~~
-             email me feedback on this website. It could be anything you think~~~
-             could be done better, stuff you just think would be cool if added or~~~
-             even just to let me know you liked it`
-              .split('~~~')
-              .map((word, i) => (
-                <span
-                  key={i}
-                  // data-aos="fade-left"
-                  data-aos={dataAos[view].animation(i)}
-                  data-aos-delay={i * 100}
-                  data-aos-duration={1000}
-                  className="pp-about__parent__left__text"
-                  // style={{ display: 'inline-block' }}
-                >
-                  {' '}
-                  {word}
-                </span>
-              ))}
+            Hi there! I'm Kingsley, a passionate and creative software engineer.
+            I am super excited about technology and how it can be used to solve
+            problems. I feel a profound sense of joy every time I see a solution
+            I created being used to solve problems (even if it's for just one
+            person). I make a point of writing clean, maintainable code that
+            scales easily because while I believe in the quest to solve problems
+            for the everyday man, I shouldn’t create new ones for developers
+            trying to maintain my code. Please feel free to email me feedback on
+            this website. It could be anything you think could be done better,
+            stuff you just think would be cool if added or even just to let me
+            know you liked it
           </div>
           <div
             className="pp-about__parent__right"
-            data-aos-delay="200"
-            data-aos="none"
+            data-aos-delay="1000"
+            data-aos="fade-right"
           >
             <strong className="pp-about__parent__right__quote-header">
               Favorite quote

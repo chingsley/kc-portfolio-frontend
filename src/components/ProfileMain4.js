@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
-import KcLink from './KcLink';
 import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
-// import SvgSquareDotsCombo from '../svg/SvgSquareDotsCombo';
-// import SvgDots from '../svg/SvgDots';
 
 const Div = styled.div`
   .pp-main {
@@ -53,16 +50,22 @@ const Div = styled.div`
       align-items: center;
       position: relative;
 
-      &__img {
-        // border: 1px solid red;
-        // border-bottom: 2px solid #d3844a;
-        // border-bottom: 2px solid #4a99d3;
-        width: 200px;
-        height: 200px;
+      &__img-div {
+        border-bottom: 5px solid rgba(74, 153, 211, 0.3);
+        border-left: 5px solid rgba(74, 153, 211, 0.3);
         border-radius: 50%;
-        display: block;
-        object-fit: cover;
-        object-position: 0 0;
+        &__img {
+          // border: 1px solid red;
+          // border-bottom: 2px solid #d3844a;
+          // border-bottom: 2px solid #4a99d3;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          display: block;
+          object-fit: cover;
+          object-position: 0 0;
+          box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
+        }
       }
     }
 
@@ -84,12 +87,7 @@ const Div = styled.div`
         margin: 0;
         padding: 0;
         margin-bottom: 0.8rem;
-
         font-style: normal;
-        // font-weight: 500;
-        // font-size: 50px;
-        // line-height: 70px;
-        // letter-spacing: 0.02em;
 
         font-size: 25px;
         font-weight: 700;
@@ -127,13 +125,18 @@ const Div = styled.div`
         width: 100%;
         padding: 1rem;
         display: block;
-        &__img {
-          // border: 1px solid red;
-          display: block;
-          float: right;
-          margin-right: 5%;
-          width: 100px;
-          height: 100px;
+        &__img-div {
+          border-bottom: none;
+          border-left: none;
+          &__img {
+            // border: 1px solid red;
+            display: block;
+            float: right;
+            margin-right: 10%;
+            margin-bottom: 15%;
+            width: 100px;
+            height: 100px;
+          }
         }
       }
       &__right {
@@ -168,27 +171,16 @@ function ProfileMain2() {
       <div className="pp-main">
         <span className="pp-main__svg-rings">
           <SvgSquareRings color="#D3844A" opacity="0.2" />
-          {/* <SvgDots />
-          <SvgDots />
-          <SvgDots />
-          <SvgDots /> */}
         </span>
         <span className="pp-main__svg-dots-n-rings">
-          {/* <SvgSquareDotsCombo /> */}
           <SvgSquareRings color="rgba(74, 153, 211, 0.3)" />
         </span>
         <div className="pp-main__left">
-          <div
-            style={{
-              borderBottom: '5px solid rgba(74, 153, 211, 0.3)',
-              borderLeft: '5px solid rgba(74, 153, 211, 0.3)',
-              borderRadius: '50%',
-            }}
-          >
+          <div className="pp-main__left__img-div">
             <img
               src={profileImg}
               alt="profile"
-              className="pp-main__left__img"
+              className="pp-main__left__img-div__img"
             />
           </div>
         </div>
@@ -219,7 +211,7 @@ function ProfileMain2() {
               data-aos="fade-down"
               // data-aos-delay={100}
             >
-              I am full stack software engineer with a zeal for crafting simple
+              I'm fullstack software engineer with a zeal for creating simple
               but ingenious solutions on both the backend and the frontend.
             </p>
           )}
