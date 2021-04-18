@@ -21,7 +21,8 @@ const Div = styled.div`
       ),
       url(https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBhdHRlcm5zJTIwd2hpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
     background-repeat: no-repeat;
-    background-position: cover;
+    background-size: cover;
+    // background-position: center;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -79,49 +80,49 @@ const Div = styled.div`
       padding: 2%;
       text-align: left;
 
-      &__name {
-        // border: 1px solid #706fd3;
-        // color: #260041;
-        // color: #34495e;
-        color: #102a42;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 0.8rem;
-        font-style: normal;
+      &__content {
+        // border: 1px solid red;
+        height: 12rem;
+        &__name {
+          // border: 1px solid #706fd3;
+          // color: #260041;
+          // color: #34495e;
+          color: #102a42;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 0.8rem;
+          font-style: normal;
 
-        font-size: 25px;
-        font-weight: 700;
-        -webkit-letter-spacing: 5px;
-        -moz-letter-spacing: 5px;
-        -ms-letter-spacing: 5px;
-        letter-spacing: 5px;
-        line-height: 1.8;
-      }
-      &__intro {
-        letter-spacing: 2px;
-        margin: 0;
-        padding: 0;
-        // color: #260041;
-        // color: #34495e;
-        color: #102a42;
-        font-size: 16px;
-      }
-      &__contact-btns {
-        min-width: 4rem;
-        // margin-top: 2rem;
-        position: absolute;
-        bottom: 4rem;
+          font-size: 25px;
+          font-weight: 700;
+          -webkit-letter-spacing: 5px;
+          -moz-letter-spacing: 5px;
+          -ms-letter-spacing: 5px;
+          letter-spacing: 5px;
+          line-height: 1.8;
+        }
+        &__intro {
+          letter-spacing: 2px;
+          margin: 0;
+          padding: 0;
+          // color: #260041;
+          // color: #34495e;
+          color: #102a42;
+          font-size: 16px;
+        }
       }
     }
   }
   @media only screen and (max-width: 768px) {
     .pp-main {
+      // border: 1px solid red;
       height: 88vh;
       flex-direction: column-reverse;
       justify-content: space-between;
       gap: 0;
       overflow: hidden;
       &__left {
+        // border: 1px solid red;
         width: 100%;
         padding: 1rem;
         display: block;
@@ -132,22 +133,19 @@ const Div = styled.div`
             // border: 1px solid red;
             display: block;
             float: right;
-            margin-right: 10%;
-            margin-bottom: 15%;
-            width: 100px;
-            height: 100px;
+            // margin-right: 1rem;
+            // margin-bottom: 15%;
+            width: 150px;
+            height: 150px;
           }
         }
       }
       &__right {
+        // border: 1px solid red;
         width: 100%;
         height: 50vh;
-        // align-items: center;
         text-align: center;
-
-        &__contact-btns {
-          display: none;
-        }
+        flex-grow: 1;
       }
       &__svg-rings {
         // border: 1px solid red;
@@ -185,36 +183,43 @@ function ProfileMain2() {
           </div>
         </div>
         <div className="pp-main__right">
-          <div className="pp-main__right__name">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .changeDelay(50)
-                  .typeString(`KINGSLEY ENEJA`)
-                  .pauseFor(500)
-                  .callFunction(() => {
-                    console.log('String typed out!');
-                    setShowMainBtns(true);
-                  })
-                  // .pauseFor(1500)
-                  // .changeDeleteSpeed(50)
-                  // .deleteChars(8)
-                  // .pauseFor(500)
-                  // .typeString('C.')
-                  .start();
-              }}
-            />
-          </div>
-          {showMainBtns && (
-            <p
-              className="pp-main__right__intro"
+          <div className="pp-main__right__content">
+            <div
+              className="pp-main__right__content__name"
               data-aos="fade-down"
-              // data-aos-delay={100}
+              data-aos-delay={100}
             >
-              I'm fullstack software engineer with a zeal for creating simple
-              but ingenious solutions on both the backend and the frontend.
-            </p>
-          )}
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .changeDelay(50)
+                    .typeString(`KINGSLEY ENEJA`)
+                    .pauseFor(500)
+                    .callFunction(() => {
+                      console.log('String typed out!');
+                      setShowMainBtns(true);
+                    })
+                    // .pauseFor(1500)
+                    // .changeDeleteSpeed(50)
+                    // .deleteChars(8)
+                    // .pauseFor(500)
+                    // .typeString('C.')
+                    .start();
+                }}
+              />
+            </div>
+            {showMainBtns && (
+              <p
+                className="pp-main__right__content__intro"
+                data-aos="fade-up"
+                // data-aos-delay={100}
+              >
+                I'm a fullstack software engineer with a zeal for creating
+                simple but ingenious solutions on both the backend and the
+                frontend.
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </Div>
