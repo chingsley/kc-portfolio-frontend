@@ -164,6 +164,7 @@ const Div = styled.div`
         &__content {
           &__resume-btn {
             float: none;
+            margin-top: 2rem;
           }
         }
       }
