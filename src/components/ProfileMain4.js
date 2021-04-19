@@ -82,7 +82,8 @@ const Div = styled.div`
 
       &__content {
         // border: 1px solid red;
-        height: 12rem;
+        padding-right: 1rem;
+        height: 14rem;
         &__name {
           // border: 1px solid #706fd3;
           // color: #260041;
@@ -109,6 +110,19 @@ const Div = styled.div`
           // color: #34495e;
           color: #102a42;
           font-size: 16px;
+        }
+        &__resume-btn {
+          display: inline-block;
+          background-color: rgba(211, 132, 74, 0.8);
+          padding: 0.5rem 1rem;
+          color: #102a42;
+          cursor: pointer;
+          border-radius: 2px;
+          margin-top: 1rem;
+          float: right;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -146,6 +160,12 @@ const Div = styled.div`
         height: 50vh;
         text-align: center;
         flex-grow: 1;
+
+        &__content {
+          &__resume-btn {
+            float: none;
+          }
+        }
       }
       &__svg-rings {
         // border: 1px solid red;
@@ -209,15 +229,24 @@ function ProfileMain2() {
               />
             </div>
             {showMainBtns && (
-              <p
-                className="pp-main__right__content__intro"
-                data-aos="fade-up"
-                // data-aos-delay={100}
-              >
-                I'm a fullstack software engineer with a zeal for creating
-                simple but ingenious solutions on both the backend and the
-                frontend.
-              </p>
+              <>
+                <p
+                  className="pp-main__right__content__intro"
+                  data-aos="fade-up"
+                >
+                  I'm a fullstack software engineer with a zeal for creating
+                  simple but ingenious solutions on both the backend and the
+                  frontend.
+                </p>
+                <a
+                  className="pp-main__right__content__resume-btn"
+                  href="https://enejakc.netlify.app/kingsley_eneja_resume.pdf"
+                  data-aos="fade-up"
+                  data-aos-delay={1000}
+                >
+                  View Resume
+                </a>
+              </>
             )}
           </div>
         </div>
