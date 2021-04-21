@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
-import KcLink from './KcLink';
 import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
-import SvgDots from '../svg/SvgDots';
 
 const Div = styled.div`
   .pp-main {
@@ -13,122 +11,158 @@ const Div = styled.div`
     position: relative;
     width: 100%;
     min-height: 28rem;
-    color: black;
-    // background: #fafbfc;
-    // background: linear-gradient(
-    //   180deg,
-    //   rgba(74, 153, 211, 1) -71%,
-    //   // rgba(74, 153, 211, 0) 71%,
-    //   rgba(74, 153, 211, 0)
-    // );
     background-image: linear-gradient(
-        -270deg,
-        rgba(12, 36, 97, 1) 0px,
-        rgba(255, 255, 255, 0.5) 100%
+        105deg,
+        rgba(12, 36, 97, 0.8) 0px,
+        rgba(12, 36, 97, 0.8),
+        50%,
+        #ffffff 50%
       ),
-      url();
+      url(https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBhdHRlcm5zJTIwd2hpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-position: center;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
-    gap: 5%;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    // gap: 5%;
+    // flex-wrap: wrap;
 
     &__svg-rings {
+      // border: 1px solid red;
       position: absolute;
       left: 0;
       bottom: 0;
       transform: rotateY(180deg);
     }
     &__svg-dots-n-rings {
+      // border: 1px solid red;
       position: absolute;
       right: 0;
       // bottom: 0;
     }
     &__left {
       // border: 1px solid #b8e994;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       position: relative;
-      // z-index: -1;
 
-      &__img {
-        // border: 1px solid red;
-        border-bottom: 2px solid #d3844a;
-        width: 200px;
-        height: 200px;
+      &__img-div {
+        border-bottom: 5px solid rgba(74, 153, 211, 0.3);
+        border-left: 5px solid rgba(74, 153, 211, 0.3);
         border-radius: 50%;
-        display: block;
-        object-fit: cover;
-        object-position: 0 0;
+        &__img {
+          // border: 1px solid red;
+          // border-bottom: 2px solid #d3844a;
+          // border-bottom: 2px solid #4a99d3;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          display: block;
+          object-fit: cover;
+          object-position: 0 0;
+          box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
+        }
       }
     }
 
     &__right {
       // border: 1px solid #34ace0;
-      width: 40%;
+      width: 50%;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 2%;
+      text-align: left;
 
-      &__name {
-        // border: 1px solid #706fd3;
-        // color: #260041;
-        color: #ffffff;
-        // font-size: 32px;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 0.8rem;
+      &__content {
+        // border: 1px solid red;
+        padding-right: 1rem;
+        height: 14rem;
+        &__name {
+          // border: 1px solid #706fd3;
+          color: white;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 0.8rem;
+          font-style: normal;
 
-        font-style: normal;
-        font-weight: 500;
-        font-size: 50px;
-        line-height: 70px;
-        letter-spacing: 0.02em;
-      }
-      &__profession,
-      &__location {
-        letter-spacing: 2px;
-        margin: 0;
-        padding: 0;
-        // color: #260041;
-        color: #ffffff;
-        font-size: 18px;
-      }
-      &__contact-btns {
-        min-width: 4rem;
-        // margin-top: 2rem;
-        position: absolute;
-        bottom: 4rem;
+          font-size: 25px;
+          font-weight: 700;
+          -webkit-letter-spacing: 5px;
+          -moz-letter-spacing: 5px;
+          -ms-letter-spacing: 5px;
+          letter-spacing: 5px;
+          line-height: 1.8;
+        }
+        &__intro {
+          letter-spacing: 2px;
+          margin: 0;
+          padding: 0;
+          // color: #260041;
+          // color: #34495e;
+          color: white;
+          font-size: 16px;
+        }
+        &__resume-btn {
+          display: inline-block;
+          background-color: rgba(211, 132, 74, 0.8);
+          padding: 0.5rem 1rem;
+          color: white;
+          cursor: pointer;
+          border-radius: 2px;
+          margin-top: 1rem;
+          float: right;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+        }
       }
     }
   }
   @media only screen and (max-width: 768px) {
     .pp-main {
+      // border: 1px solid red;
       height: 88vh;
       flex-direction: column-reverse;
       justify-content: space-between;
       gap: 0;
       overflow: hidden;
       &__left {
+        // border: 1px solid red;
         width: 100%;
         padding: 1rem;
-        // height: 38vh;
-        &__img {
-          width: 100px;
-          height: 100px;
+        display: block;
+        &__img-div {
+          border-bottom: none;
+          border-left: none;
+          &__img {
+            // border: 1px solid red;
+            display: block;
+            float: right;
+            // margin-right: 1rem;
+            // margin-bottom: 15%;
+            width: 150px;
+            height: 150px;
+          }
         }
       }
       &__right {
+        // border: 1px solid red;
         width: 100%;
         height: 50vh;
-        align-items: center;
-        &__name {
-          font-size: 38px;
-        }
-        &__contact-btns {
-          display: none;
+        text-align: center;
+        flex-grow: 1;
+
+        &__content {
+          &__resume-btn {
+            float: none;
+            margin-top: 2rem;
+          }
         }
       }
       &__svg-rings {
@@ -152,66 +186,67 @@ function ProfileMain2() {
     <Div>
       <div className="pp-main">
         <span className="pp-main__svg-rings">
-          {/* <SvgSquareRings color="#D3844A" opacity="0.2" /> */}
-          <SvgDots />
+          <SvgSquareRings color="#D3844A" opacity="0.2" />
         </span>
         <span className="pp-main__svg-dots-n-rings">
-          {/* <SvgSquareDotsCombo /> */}
           <SvgSquareRings color="rgba(74, 153, 211, 0.3)" />
         </span>
         <div className="pp-main__left">
-          <img src={profileImg} alt="profile" className="pp-main__left__img" />
-        </div>
-        <div className="pp-main__right">
-          <div className="pp-main__right__name">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .changeDelay(50)
-                  .typeString('Kingsley Eneja')
-                  .callFunction(() => {
-                    console.log('String typed out!');
-                    setShowMainBtns(true);
-                  })
-                  // .pauseFor(1500)
-                  // .changeDeleteSpeed(50)
-                  // .deleteChars(8)
-                  // .pauseFor(500)
-                  // .typeString('C.')
-                  .start();
-              }}
+          <div className="pp-main__left__img-div">
+            <img
+              src={profileImg}
+              alt="profile"
+              className="pp-main__left__img-div__img"
             />
           </div>
-          <p className="pp-main__right__profession">Software Engineer</p>
-          <p className="pp-main__right__location">Lagos, Nigeria</p>
-          {showMainBtns && (
-            <div className="pp-main__right__contact-btns">
-              <KcLink
-                color="white"
-                bgColor="#4a99d3"
-                bgColorOnHover="#4a99d3"
-                fontSize="0.8rem"
-                colorOnHover="white"
-                // border="1px solid grey"
-                text="RESUME"
-                to="/kingsley_eneja_resume.pdf"
-                data-aos="fade-down"
-                data-aos-delay={100}
-              />{' '}
-              <KcLink
-                color="white"
-                bgColor="#4a99d3"
-                bgColorOnHover="black"
-                colorOnHover="white"
-                // border="1px solid grey"
-                text="PROJECTS"
-                fontSize="0.8rem"
-                to="/projects"
-                data-aos="fade-down"
-                data-aos-delay={500}
+        </div>
+        <div className="pp-main__right">
+          <div className="pp-main__right__content">
+            <div
+              className="pp-main__right__content__name"
+              data-aos="fade-down"
+              data-aos-delay={100}
+            >
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .changeDelay(50)
+                    .typeString(`KINGSLEY ENEJA`)
+                    .pauseFor(500)
+                    .callFunction(() => {
+                      console.log('String typed out!');
+                      setShowMainBtns(true);
+                    })
+                    // .pauseFor(1500)
+                    // .changeDeleteSpeed(50)
+                    // .deleteChars(8)
+                    // .pauseFor(500)
+                    // .typeString('C.')
+                    .start();
+                }}
               />
             </div>
-          )}
+            {showMainBtns && (
+              <>
+                <p
+                  className="pp-main__right__content__intro"
+                  data-aos="fade-up"
+                >
+                  I'm a fullstack software engineer with a zeal for creating
+                  simple but ingenious solutions on both the backend and the
+                  frontend.
+                </p>
+                <a
+                  className="pp-main__right__content__resume-btn"
+                  href="https://enejakc.netlify.app/kingsley_eneja_resume.pdf"
+                  data-aos="fade-up"
+                  data-aos-delay={1000}
+                >
+                  View Resume
+                </a>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </Div>
@@ -219,22 +254,3 @@ function ProfileMain2() {
 }
 
 export default ProfileMain2;
-
-/* New E-commerce App best for You */
-
-// position: absolute;
-// width: 595px;
-// height: 140px;
-// left: 245px;
-// top: 233px;
-
-// font-family: Objective;
-// width: 595px;
-// height: 140px;
-// font-style: normal;
-// font-weight: 500;
-// font-size: 50px;
-// line-height: 70px;
-// letter-spacing: 0.02em;
-
-// color: #260041;

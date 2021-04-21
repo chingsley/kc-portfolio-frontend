@@ -171,7 +171,7 @@ function ProjectCard(props) {
   );
 }
 
-ProjectCard.prototype = {
+ProjectCard.propType = {
   widthInRem: number,
   heightInRem: number,
   project: object.isRequired,
