@@ -61,7 +61,7 @@ function SvgSquareRings(props) {
   );
 }
 
-SvgSquareRings.prototype = {
+SvgSquareRings.propTypes = {
   color: string,
   opacity: string,
 };

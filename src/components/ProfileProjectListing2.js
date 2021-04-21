@@ -71,7 +71,7 @@ function ProfileProjectListing(props) {
   );
 }
 
-ProfileProjectListing.prototype = {
+ProfileProjectListing.propTypes = {
   justifyContent: string,
 };
 

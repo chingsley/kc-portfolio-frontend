@@ -118,7 +118,7 @@ const Collapsible = (props) => {
   );
 };
 
-Collapsible.prototype = {
+Collapsible.propTypes = {
   subject: string,
   period: string,
   expandAsDefault: bool,
