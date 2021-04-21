@@ -54,7 +54,7 @@ function SvgDots(props) {
   );
 }
 
-SvgDots.prototype = {
+SvgDots.propTypes = {
   color: string,
   opacity: string,
 };
