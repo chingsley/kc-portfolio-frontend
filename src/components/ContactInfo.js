@@ -1,12 +1,10 @@
 import React from 'react';
 import style, { css } from 'styled-components';
 import EmailIcon from '../svg/EmailIcon';
-import FacebookIcon from '../svg/FacebookIcon';
-import InstagramIcon from '../svg/InstagramIcon';
 import LocationIcon from '../svg/LocationIcon';
 import PhoneIcon from '../svg/PhoneIcon';
-import TwitterIcon from '../svg/TwitterIcon';
 import locationImage from '../assets/my_location.png';
+import SocialMediaIcons from './SocialMediaIcons';
 
 const Div = style.div`
   ${(props) => {
@@ -30,6 +28,14 @@ const Div = style.div`
           width: 20rem;
           border-radius: 4px;
           overflow: hidden;
+        }
+        &__email {
+          color: black;
+          text-decoration: none;
+          transition-duration: 0.3s;
+          &:hover {
+            color: #4a99d3;
+          }
         }
       }
 
@@ -73,18 +79,16 @@ function ContactInfo() {
         <div className="contact-details__icon">
           <EmailIcon />
         </div>
-        eneja.kc@gmail.com
+        <a
+          href="mailto:https://eneja.kc@gmail.com"
+          className="contact-details__email"
+        >
+          {' '}
+          eneja.kc@gmail.com
+        </a>
       </div>
       <div className="contact-details">
-        <div className="contact-details__icon">
-          <FacebookIcon />
-        </div>
-        <div className="contact-details__icon">
-          <InstagramIcon />
-        </div>
-        <div className="contact-details__icon">
-          <TwitterIcon />
-        </div>
+        <SocialMediaIcons layout="horizontal" />
       </div>
       <div className="contact-details">
         <img

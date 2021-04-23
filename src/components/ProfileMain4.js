@@ -4,6 +4,7 @@ import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
 import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
+import SocialMediaIcons from './SocialMediaIcons';
 
 const Div = styled.div`
   .pp-main {
@@ -68,6 +69,11 @@ const Div = styled.div`
           box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
         }
       }
+      &__icons {
+        // border: 1px solid red;
+        position: absolute;
+        bottom: 0;
+      }
     }
 
     &__right {
@@ -86,8 +92,6 @@ const Div = styled.div`
         height: 14rem;
         &__name {
           // border: 1px solid #706fd3;
-          // color: #260041;
-          // color: #34495e;
           color: #102a42;
           margin: 0;
           padding: 0;
@@ -202,6 +206,18 @@ function ProfileMain2() {
               className="pp-main__left__img-div__img"
             />
           </div>
+
+          {showMainBtns && (
+            <>
+              <div
+                className="pp-main__left__icons"
+                data-aos="fade-up"
+                data-aos-delay={1000}
+              >
+                <SocialMediaIcons horizontalSpacing="2.5rem" />
+              </div>
+            </>
+          )}
         </div>
         <div className="pp-main__right">
           <div className="pp-main__right__content">
