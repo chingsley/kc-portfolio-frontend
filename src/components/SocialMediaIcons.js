@@ -3,7 +3,6 @@ import style, { css } from 'styled-components';
 import { string } from 'prop-types';
 const Anchor = style.a`
 ${(props) => {
-  console.log(props);
   return props.layout === 'vertical'
     ? css`
         // border: 1px solid red;
