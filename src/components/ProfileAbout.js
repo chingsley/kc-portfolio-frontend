@@ -122,7 +122,7 @@ function ProfileAbout() {
     return (_) => {
       window.removeEventListener('resize', changeView);
     };
-  }, []);
+  }, [dataAos, view]);
   return (
     <Section>
       <div className="pp-about">

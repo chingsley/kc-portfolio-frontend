@@ -7,7 +7,7 @@ import ProfileAbout from '../components/ProfileAbout';
 import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 // import ProfileEducation from '../components/ProfileEducation';
-import ProfileWorkHistory from '../components/ProfileWorkHistory';
+import ProfileWorkHistory from '../components/ProfileWorkHistory2';
 import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SvgDots from '../svg/SvgDots';
@@ -52,14 +52,6 @@ const Profile = style.div`
     }
     &__section-about {
       background-color: #fafbfc;
-      // background-image: linear-gradient(
-      //   90deg,
-      //   rgba(74, 153, 211, 0.1) 0%,
-      //   rgba(74, 153, 211, 0.1),
-      //   50%,
-      //   #fafbfc 50%
-      // ),
-      // url();
     }
     &__section-skills {
       // background: rgba(74, 153, 211, 0.1);

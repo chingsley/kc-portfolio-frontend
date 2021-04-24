@@ -108,3 +108,21 @@ width: 331px;
 height: 207px; 
 background: url(dark-bg-img.png);
 */
+
+.react-sweet-progress-symbol {
+  /* color: red; */
+  /* display: none; */
+  visibility: hidden;
+}
+
+.img-div {
+  /* border: 1px solid brown;
+  margin: auto;
+  height: 215px;
+  width: 215px;
+  border-radius: 50%; */
+  /* background-image: url('../assets/access_logo_1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
