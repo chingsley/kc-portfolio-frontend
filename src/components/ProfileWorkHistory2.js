@@ -11,22 +11,28 @@ const Section = styled.section`
     return css`
       // border: 1px solid red;
       .works {
-        // border: 1px solid blue;
+        // border: 1px solid #009432;
         display: flex;
         justify-content: space-between;
 
         &__work {
-          // border: 1px solid yellow;
-          width: 22%;
+          // border: 1px solid #1b1464;
+          width: 23%;
           padding-top: 1rem;
-          background-image: linear-gradient(
-            rgba(74, 153, 211, 0.1) 0%,
-            rgba(74, 153, 211, 0.1) 100%
-          );
-          // box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
+          background-color: rgba(74, 153, 211, 0.1);
         }
       }
       @media only screen and (max-width: 540px) {
+        .works {
+          flex-direction: column;
+          align-items: center;
+          &__work {
+            width: 90%;
+            &:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+          }
+        }
       }
     `;
   }}

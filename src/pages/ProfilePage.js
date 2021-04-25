@@ -103,7 +103,7 @@ class ProfilePage extends Component {
               <span className="profile__section__svg-top-right">
                 <SvgDots />
               </span>
-              <ProfileProjectsListing2 justifyContentxxx="center" />
+              <ProfileProjectsListing2 />
             </div>
           </div>
         </Profile>
