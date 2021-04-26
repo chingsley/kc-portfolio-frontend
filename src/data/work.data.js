@@ -24,8 +24,8 @@ export const workHistories = [
     from: '2018-12-11',
     to: '2019-09-21',
     role: 'Software Engineer',
-    details: `I worked as a fulstack
-    software Engineer on notable projects such as Authors Haven - a blog web application for authors, and the VOF project - an Andela application that automates
+    details: `I was a full-stack
+    software Engineer. Projects worked on inlcude Authors Haven - a blog web application for authors, and the VOF project - an Andela application that automates
     and streamlines the process of hiring software engineers in Andela.`,
     companyLogoUrl: require('../assets/andela_logo_4.jpeg'),
   },

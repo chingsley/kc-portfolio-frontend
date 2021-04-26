@@ -158,6 +158,9 @@ const Div = styled.div`
             height: 150px;
           }
         }
+        &__icons {
+          display: none;
+        }
       }
       &__right {
         // border: 1px solid red;
