@@ -5,6 +5,7 @@ import profileImg from '../assets/my_profile_img.jpg';
 import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SocialMediaIcons from './SocialMediaIcons';
+import bgImgMain from '../assets/bgimg-main.jpeg';
 
 const Div = styled.div`
   .pp-main {
@@ -20,7 +21,7 @@ const Div = styled.div`
         50%,
         #fafbfc 50%
       ),
-      url(https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBhdHRlcm5zJTIwd2hpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
+      url(${bgImgMain});
     background-repeat: no-repeat;
     background-size: cover;
     // background-position: center;
@@ -156,6 +157,9 @@ const Div = styled.div`
             width: 150px;
             height: 150px;
           }
+        }
+        &__icons {
+          display: none;
         }
       }
       &__right {
