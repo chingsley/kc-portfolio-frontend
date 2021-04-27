@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { color } from '../utils/variables';
 import KcLink from './KcLink';
 import LogoV2 from './LogoV2';
 
@@ -55,7 +56,7 @@ const Nav = styled.nav`
       justify-content: space-between;
       align-items: center;
       padding: 0 2em;
-      background-color: #fafbfc;
+      background-color: ${color.lightGrey};
 
       .navlinks {
         // border: 1px solid blue;
@@ -93,7 +94,7 @@ const Nav = styled.nav`
             float: right;
             width: 70%;
             height: 100%;
-            background: #fafbfc;
+            background: ${color.lightGrey};
 
             &__li {
               // border: 1px solid green;

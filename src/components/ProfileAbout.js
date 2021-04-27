@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
+import { color } from '../utils/variables';
 
 const Section = styled.section`
   ${(props) => {
@@ -68,7 +69,7 @@ const Section = styled.section`
             rgba(74, 153, 211, 0.1) 0%,
             rgba(74, 153, 211, 0.1),
             50%,
-            #fafbfc 50%
+            ${color.lightGrey} 50%
           ),
           url();
           &__text{

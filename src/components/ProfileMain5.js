@@ -4,21 +4,25 @@ import Aos from 'aos';
 import profileImg from '../assets/my_profile_img.jpg';
 import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
+import SocialMediaIcons from './SocialMediaIcons';
+import bgImgMain from '../assets/bgimg-main.jpeg';
+import { color } from '../utils/variables';
 
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
     position: relative;
     width: 100%;
-    min-height: 28rem;
+    min-height: 80vh;
+    color: black;
     background-image: linear-gradient(
         105deg,
-        rgba(12, 36, 97, 0.8) 0px,
-        rgba(12, 36, 97, 0.8),
+        rgba(74, 153, 211, 0.5) 0%,
+        rgba(74, 153, 211, 0.5),
         50%,
-        #ffffff 50%
+        ${color.lightGrey} 50%
       ),
-      url(https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBhdHRlcm5zJTIwd2hpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
+      url(${bgImgMain});
     background-repeat: no-repeat;
     background-size: cover;
     // background-position: center;
@@ -42,13 +46,23 @@ const Div = styled.div`
       // bottom: 0;
     }
     &__left {
-      // border: 1px solid #b8e994;
+      border: 1px solid #b8e994;
+      // background-image: url(${profileImg});
+      background-image: linear-gradient(
+          rgba(74, 153, 211, 0.5) 0%,
+          rgba(74, 153, 211, 0.5) 100%
+        ),
+        url(/static/media/my_profile_img.47c3dea5.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
+      z-index: -1;
 
       &__img-div {
         border-bottom: 5px solid rgba(74, 153, 211, 0.3);
@@ -66,6 +80,11 @@ const Div = styled.div`
           object-position: 0 0;
           box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
         }
+      }
+      &__icons {
+        // border: 1px solid red;
+        position: absolute;
+        bottom: 0;
       }
     }
 
@@ -85,7 +104,7 @@ const Div = styled.div`
         height: 14rem;
         &__name {
           // border: 1px solid #706fd3;
-          color: white;
+          color: #102a42;
           margin: 0;
           padding: 0;
           margin-bottom: 0.8rem;
@@ -105,14 +124,14 @@ const Div = styled.div`
           padding: 0;
           // color: #260041;
           // color: #34495e;
-          color: white;
+          color: #102a42;
           font-size: 16px;
         }
         &__resume-btn {
           display: inline-block;
           background-color: rgba(211, 132, 74, 0.8);
           padding: 0.5rem 1rem;
-          color: white;
+          color: #102a42;
           cursor: pointer;
           border-radius: 2px;
           margin-top: 1rem;
@@ -149,6 +168,9 @@ const Div = styled.div`
             width: 150px;
             height: 150px;
           }
+        }
+        &__icons {
+          display: none;
         }
       }
       &__right {
@@ -193,12 +215,24 @@ function ProfileMain2() {
         </span>
         <div className="pp-main__left">
           <div className="pp-main__left__img-div">
-            <img
+            {/* <img
               src={profileImg}
               alt="profile"
               className="pp-main__left__img-div__img"
-            />
+            /> */}
           </div>
+
+          {showMainBtns && (
+            <>
+              <div
+                className="pp-main__left__icons"
+                data-aos="fade-up"
+                data-aos-delay={1000}
+              >
+                <SocialMediaIcons horizontalSpacing="2.5rem" />
+              </div>
+            </>
+          )}
         </div>
         <div className="pp-main__right">
           <div className="pp-main__right__content">

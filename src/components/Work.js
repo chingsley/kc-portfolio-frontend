@@ -13,6 +13,7 @@ const Div = styled.div`
 
       .img-div {
         // border: 1px solid #12cbc4;
+        border: 1px solid rgba(74, 153, 211, 0.1);
         margin: auto;
         height: 215px;
         width: 215px;
