@@ -11,6 +11,7 @@ import ProfileWorkHistory from '../components/ProfileWorkHistory2';
 import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SvgDots from '../svg/SvgDots';
+import { color } from '../utils/variables';
 
 const Profile = style.div`
 .profile {
@@ -51,14 +52,13 @@ const Profile = style.div`
 
     }
     &__section-about {
-      background-color: #fafbfc;
+      background-color: ${color.lightGrey};
     }
     &__section-skills {
       // background: rgba(74, 153, 211, 0.1);
     }
     &__section-workhistory {
-      // background: rgba(74, 153, 211, 0.05);
-      background-color: #fafbfc;
+      background-color: ${color.lightGrey};
     }
 }
 @media only screen and (max-width: 540px) {

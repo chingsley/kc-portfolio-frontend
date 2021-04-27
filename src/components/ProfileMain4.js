@@ -6,20 +6,22 @@ import Typewriter from 'typewriter-effect';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SocialMediaIcons from './SocialMediaIcons';
 import bgImgMain from '../assets/bgimg-main.jpeg';
+import { color } from '../utils/variables';
+import { randInt } from '../utils';
 
 const Div = styled.div`
   .pp-main {
     // border: 1px solid red;
     position: relative;
     width: 100%;
-    min-height: 28rem;
+    min-height: 80vh;
     color: black;
     background-image: linear-gradient(
         105deg,
         rgba(74, 153, 211, 0.5) 0%,
         rgba(74, 153, 211, 0.5),
         50%,
-        #fafbfc 50%
+        ${color.lightGrey} 50%
       ),
       url(${bgImgMain});
     background-repeat: no-repeat;
@@ -73,7 +75,7 @@ const Div = styled.div`
       &__icons {
         // border: 1px solid red;
         position: absolute;
-        bottom: 0;
+        bottom: 5rem;
       }
     }
 
@@ -227,7 +229,7 @@ function ProfileMain2() {
           <div className="pp-main__right__content">
             <div
               className="pp-main__right__content__name"
-              data-aos="fade-down"
+              data-aos={['zoom-in', 'fade-down', 'fade-up'][randInt(0, 2)]}
               data-aos-delay={100}
             >
               <Typewriter
