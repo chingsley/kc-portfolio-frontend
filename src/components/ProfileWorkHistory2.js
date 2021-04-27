@@ -19,7 +19,9 @@ const Section = styled.section`
         &__work {
           // border: 1px solid #1b1464;
           padding-top: 1rem;
+          // border: 1px solid rgba(74, 153, 211, 0.1);
           background-color: rgba(74, 153, 211, 0.1);
+
           // background-image: linear-gradient(
           //   70deg,
           //   rgba(74, 153, 211, 0.1) 0%,
@@ -27,9 +29,8 @@ const Section = styled.section`
           //   50%,
           //   #fafbfc 50%
           // );
-          // box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
           // border-bottom-left-radius: 2rem;
-          // border-radius: 5px;
+          border-radius: 5px;
         }
       }
     `;
@@ -46,7 +47,14 @@ function ProfileWorkHistory() {
       <div className="works">
         {workHistories.map((workHistory, index) => {
           return (
-            <div key={index} className="works__work">
+            <div
+              key={index}
+              className="works__work"
+              data-aos="fade-right"
+              data-aos-offset="0"
+              data-aos-delay={index * 50}
+              data-aos-easing={'ease'}
+            >
               <Work {...workHistory} />
             </div>
           );
