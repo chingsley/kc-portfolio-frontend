@@ -1,6 +1,6 @@
 import React from 'react';
 import style from 'styled-components';
-import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
+import ProfileProjectsListing from '../components/ProfileProjectListing';
 
 const Section = style.section`
 padding: 2rem;
@@ -17,7 +17,7 @@ function ProjectsPage() {
   return (
     <Section className="">
       <div className="profile__section">
-        <ProfileProjectsListing2 justifyContent="space-between" />
+        <ProfileProjectsListing justifyContent="space-between" />
       </div>
     </Section>
   );

@@ -29,7 +29,7 @@ export const projects = [
     websiteLink: 'https://nn-ship-maintenance.herokuapp.com/#/',
     description:
       'A web application with which the Nigeria Navy can manage her ships. Features include user management, ship management, service management, maintenance requests, etc. Ship officers can request for services for their ships, and the appropriate teams will be notified via mail once the request is due to take place.',
-    shortDescription: `A ship management system for the Nigeria Navy that automatically notifies ship officers about due maintenance requests`,
+    shortDescription: `A ship management system for the Nigeria Navy.`,
     rank: 5,
   },
   {
