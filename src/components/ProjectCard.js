@@ -11,7 +11,7 @@ const CardWrapper = styled.div`
       box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.164);
       border-radius: 3px;
       overflow: hidden;
-      width: ${props.widthInRem}rem;
+      // width: ${props.widthInRem}rem;
       height: ${props.heightInRem}rem;
       position: relative;
 
@@ -106,14 +106,6 @@ const CardWrapper = styled.div`
           text-overflow: initial;
           white-space: normal;
         }
-        .card__default-img-title {
-          // z-index: -1;
-        }
-      }
-    }
-    @media only screen and (max-width: 768px) {
-      .card {
-        width: 15rem;
       }
     }
   `}

@@ -7,8 +7,8 @@ import ProfileAbout from '../components/ProfileAbout';
 import ProfileSkills from '../components/ProfileSkills';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 // import ProfileEducation from '../components/ProfileEducation';
-import ProfileWorkHistory from '../components/ProfileWorkHistory2';
-import ProfileProjectsListing2 from '../components/ProfileProjectListing2';
+import ProfileWorkHistory from '../components/ProfileWorkHistory';
+import ProfileProjectsListing from '../components/ProfileProjectListing';
 import SvgSquareRings from '../svg/SvgSquareRings';
 import SvgDots from '../svg/SvgDots';
 import { color } from '../utils/variables';
@@ -103,7 +103,7 @@ class ProfilePage extends Component {
               <span className="profile__section__svg-top-right">
                 <SvgDots />
               </span>
-              <ProfileProjectsListing2 />
+              <ProfileProjectsListing />
             </div>
           </div>
         </Profile>

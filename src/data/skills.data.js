@@ -26,6 +26,7 @@ export const skills = [
     name: 'Mysql',
     level: 92,
   },
+
   {
     id: 5,
     name: 'SQL',
@@ -50,5 +51,10 @@ export const skills = [
     id: 9,
     name: 'Data Science',
     level: 45,
+  },
+  {
+    id: 10,
+    name: 'MongoDB',
+    level: 91,
   },
 ];

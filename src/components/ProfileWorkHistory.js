@@ -1,30 +1,33 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import Aos from 'aos';
+import styled, { css } from 'styled-components';
 import ProfileSectionHeader from './ProfileSectionHeader';
-import Collapsible from './Collapsible';
 import { workHistories } from '../data/work.data';
+import Work from './Work';
 
 // will contain the organization, the timeline, the role and the job description
 const Section = styled.section`
-  // border: 1px solid red;
-  // .works {
-  //   // border: 1px solid blue;
-  //   justify-content: space-between;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   &__work {
-  //     // border: 1px solid yellow;
-  //     width: 49%;
-  //   }
-  // }
-  .role {
-    font-weight: 400;
-    font-size: 1.2rem;
-  }
+  ${(props) => {
+    return css`
+      // border: 1px solid red;
+      .works {
+        // border: 1px solid #009432;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+        &__work {
+          // border: 1px solid #1b1464;
+          padding-top: 1rem;
+          background-color: rgba(74, 153, 211, 0.1);
+          border-radius: 5px;
+        }
+      }
+    `;
+  }}
 `;
 
-function ProfileEducation() {
+function ProfileWorkHistory() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -33,23 +36,16 @@ function ProfileEducation() {
       <ProfileSectionHeader title="Experience" subtitle="Work Experience" />
       <div className="works">
         {workHistories.map((workHistory, index) => {
-          const { subject, role, details, from, to } = workHistory;
-          const aosDelay = index % 2 === 0 ? 'fade-down' : 'fade-down';
           return (
             <div
               key={index}
               className="works__work"
-              data-aos={aosDelay}
-              data-aos-delay={100 + index * 50}
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-delay={index * 50}
+              data-aos-easing={'ease'}
             >
-              <Collapsible
-                subject={subject}
-                period={from + ' - ' + to}
-                expandAsDefault={false}
-              >
-                <h4 className="role">{role}</h4>
-                {details}
-              </Collapsible>
+              <Work {...workHistory} />
             </div>
           );
         })}
@@ -58,4 +54,4 @@ function ProfileEducation() {
   );
 }
 
-export default ProfileEducation;
+export default ProfileWorkHistory;
