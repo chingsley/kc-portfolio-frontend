@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
 import styled, { css } from 'styled-components';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import ProjectCard from './ProjectCard';
 import { projects } from '../data/projects.data';
-import { string } from 'prop-types';
 
 const Section = styled.section`
   ${(props) => {
@@ -12,21 +12,15 @@ const Section = styled.section`
 
       .projects {
         // border: 1px solid darkred;
-        display: flex;
-        justify-content: ${props.justifyContent};
-        flex-wrap: wrap;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
         &__card {
-          margin-right: 1rem;
-          margin-top: 1rem;
-          &:not(:first-child) {
-            // border: 1px solid black;
-          }
-        }
-      }
-      @media only screen and (max-width: 768px) {
-        .projects {
-          justify-content: center;
+          // border: 1px solid red;
+          overflow: hidden;
+          border-radius: 1rem;
+          box-shadow: 2px 2px 25px rgb(0 0 0 / 16%);
         }
       }
     `;
@@ -34,6 +28,9 @@ const Section = styled.section`
 `;
 
 function ProfileProjectListing(props) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Section {...props}>
       <ProfileSectionHeader
@@ -54,30 +51,28 @@ function ProfileProjectListing(props) {
               websiteLink,
             } = project;
             return (
-              <ProjectCard
-                key={id}
+              <div
                 className="projects__card"
-                title={name}
-                userRole={role}
-                imageSrc={image}
-                websiteLink={websiteLink}
-                shortDescription={shortDescription}
-                project={project}
-              />
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay={index * 50}
+                data-aos-easing={'ease'}
+              >
+                <ProjectCard
+                  key={id}
+                  title={name}
+                  userRole={role}
+                  imageSrc={image}
+                  websiteLink={websiteLink}
+                  shortDescription={shortDescription}
+                  project={project}
+                />
+              </div>
             );
           })}
       </div>
     </Section>
   );
 }
-
-ProfileProjectListing.propTypes = {
-  justifyContent: string,
-};
-
-ProfileProjectListing.defaultProps = {
-  // justifyContent: 'space-between',
-  justifyContent: 'center',
-};
 
 export default ProfileProjectListing;

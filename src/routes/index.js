@@ -2,11 +2,11 @@ import React from 'react';
 import AuthPage from '../pages/AuthPage';
 // import { Redirect } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage'; // if I remove this, the AOS animation stops working!!! Find out why.
 import NotFoundPage from '../pages/NotFoundPage';
 import ProjectsPage from '../pages/ProjectsPage';
 import ProfilePage from '../pages/ProfilePage';
 import ContactsPage from '../pages/ContactsPage';
+import HomePage from '../pages/HomePage'; // if I remove this, the AOS animation stops working!!! Find out why.
 
 const AppRoutes = () => (
   <div className="app-main">
