@@ -33,7 +33,7 @@ function LoginForm() {
   const { setRequest, loading, successMsg, setSuccessMsg } = useFetch();
   const [formData, setFormData] = useState({
     emailOrUsername: '',
-    password: 'Testing*123',
+    password: '',
   });
   const handleInputChange = (e) => {
     setSuccessMsg(null);
