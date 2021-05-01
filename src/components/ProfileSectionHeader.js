@@ -7,6 +7,7 @@ const ProfilePageSectionHeader = styled.div`
   margin-bottom: 5rem;
 
   .mini-title {
+    // border: 1px solid red;
     margin-bottom: 15px;
     display: block;
     font-size: 10px;
@@ -16,6 +17,8 @@ const ProfilePageSectionHeader = styled.div`
     letter-spacing: 5px;
   }
   .main-title {
+    // border: 1px solid red;
+    color: rgba(74, 153, 211, 1);
     margin: 0;
     font-size: 18px;
     font-weight: 700;

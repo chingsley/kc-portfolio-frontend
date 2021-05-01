@@ -5,8 +5,6 @@ import placeholderImg from '../assets/placeholder_1.png';
 
 const Div = styled.div`
   ${(props) => {
-    console.log('placehloderImg = ', placeholderImg);
-    console.log('props = ', props);
     return css`
       // border: 1px solid #ee5a24;
       text-align: center;

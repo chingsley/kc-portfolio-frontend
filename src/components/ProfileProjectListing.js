@@ -52,6 +52,7 @@ function ProfileProjectListing(props) {
             } = project;
             return (
               <div
+                key={project.id}
                 className="projects__card"
                 data-aos="fade-up"
                 data-aos-offset="0"

@@ -248,7 +248,7 @@ function ProfileMain2() {
                     .typeString(`KINGSLEY ENEJA`)
                     .pauseFor(500)
                     .callFunction(() => {
-                      console.log('String typed out!');
+                      // console.log('String typed out!');
                       setShowMainBtns(true);
                     })
                     // .pauseFor(1500)

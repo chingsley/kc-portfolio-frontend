@@ -22,7 +22,7 @@ export const validatePasswordResetToken = (resetToken, history) => async (
       });
     })
     .catch((error) => {
-      console.log(error.response);
+      // console.log(error.response);
       let payload = '';
       let errorMsg;
       if (error.response?.data?.errorCode === 'PRT003') {

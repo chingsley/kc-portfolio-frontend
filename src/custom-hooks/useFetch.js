@@ -13,7 +13,6 @@ export const useFetch = () => {
     try {
       if (request) {
         setLoading(true);
-        console.log('request =', request);
         const { method, body, headers = {}, endpoint } = request;
         const response = await Request[method](endpoint, {
           body,

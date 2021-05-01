@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import 'react-sweet-progress/lib/style.css';
 import ProfileSectionHeader from './ProfileSectionHeader';
 import { skills } from '../data/skills.data';
-import Skill from './Skill';
+import Skill from './Skill2';
 import { color } from '../utils/variables';
 
 const Section = styled.section`

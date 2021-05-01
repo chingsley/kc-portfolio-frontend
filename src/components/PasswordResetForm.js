@@ -19,7 +19,7 @@ class PasswordResetForm extends React.Component {
       return customToast.error('The two passwords do not match');
     }
     this.props.changePassword({ password, resetToken }, this.props.history);
-    console.log(this.state, this.props.match.params.resetToken);
+    // console.log(this.state, this.props.match.params.resetToken);
   };
   render() {
     return (
