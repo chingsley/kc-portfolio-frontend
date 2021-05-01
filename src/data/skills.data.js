@@ -3,8 +3,13 @@
 export const skills = [
   {
     id: 1,
-    name: 'nodejs',
+    name: 'nodejs (ExressJs)',
     level: 88,
+  },
+  {
+    id: 1,
+    name: 'NextJs',
+    level: 86,
   },
   {
     id: 2,
