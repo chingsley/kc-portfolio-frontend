@@ -1,9 +1,3 @@
-const path = require('path');
-console.log(
-  process.cwd(),
-  path.join(__dirname, '../assets/beta_banking.png'),
-  path.resolve(__dirname, '../assets', 'beta_banking.png')
-);
 export const projects = [
   {
     id: 1,

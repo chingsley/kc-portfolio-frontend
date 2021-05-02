@@ -12,7 +12,6 @@ export const registerUser = (formData, history) => async (dispatch) => {
       body: formData,
       headers: { contentType: 'multipart/form-data' },
     });
-    console.log(data);
     customToast.success(data.message);
     saveToken(data.data.token);
     dispatch({ type: REGISTRATION_SUCCESS, payload: data.data });
