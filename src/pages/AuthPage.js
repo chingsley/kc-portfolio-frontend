@@ -154,7 +154,6 @@ class AuthPage extends React.Component {
       },
     } = this.props;
     if (pathname.match(/password\/reset\/*/)) {
-      console.log(this.props);
       this.props.validatePasswordResetToken(resetToken, this.props.history);
     }
   }

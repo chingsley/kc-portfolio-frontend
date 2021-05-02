@@ -95,7 +95,8 @@ const Div = styled.div`
         height: 14rem;
         &__name {
           // border: 1px solid #706fd3;
-          color: #102a42;
+          // color: #102a42;
+          color: #183153;
           margin: 0;
           padding: 0;
           margin-bottom: 0.8rem;
@@ -239,7 +240,7 @@ function ProfileMain2() {
                     .typeString(`KINGSLEY ENEJA`)
                     .pauseFor(500)
                     .callFunction(() => {
-                      console.log('String typed out!');
+                      // console.log('String typed out!');
                       setShowMainBtns(true);
                     })
                     // .pauseFor(1500)

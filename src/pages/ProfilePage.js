@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import style from 'styled-components';
 import ProfileMain4 from '../components/ProfileMain4';
 import ProfileAbout from '../components/ProfileAbout';
-import ProfileSkills from '../components/ProfileSkills';
+import ProfileSkills from '../components/ProfileSkills2';
 import { makeTopNavTransparent, makeTopNavOpaque } from '../store/actions';
 // import ProfileEducation from '../components/ProfileEducation';
 import ProfileWorkHistory from '../components/ProfileWorkHistory';

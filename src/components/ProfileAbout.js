@@ -117,7 +117,6 @@ function ProfileAbout() {
     }
   }
   useEffect(() => {
-    console.log(view, dataAos[view], window.innerWidth);
     Aos.init({ duration: 1000, easing: '' });
     window.addEventListener('resize', changeView);
     return (_) => {
