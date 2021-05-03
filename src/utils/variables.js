@@ -5,5 +5,8 @@ export const color = {
   black: 'black',
   grey: '#F1F1F1',
   lightGrey: '#fafbfc',
+  primary: '#4a99d3',
+  darkGrey: '#F1F1F1',
   tlightBlue: 'rgba(74, 153, 211, 0.1)', // tlightBlue = transaparent lightblue
+  navyBlue: '#033c67',
 };
