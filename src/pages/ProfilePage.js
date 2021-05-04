@@ -56,6 +56,7 @@ const Profile = style.div`
     }
     &__section-skills {
       // background: rgba(74, 153, 211, 0.1);
+      background-color: ${color.darkGrey};
     }
     &__section-workhistory {
       background-color: ${color.lightGrey};

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import Aos from 'aos';
 import 'react-sweet-progress/lib/style.css';
 import { categories } from '../data/skills2.data';
+import { color } from '../utils/variables';
 const { backend, frontend, design, testingAndMonitoring } = categories;
 
 const StyledSkill = styled.div`
@@ -21,14 +22,17 @@ const StyledSkill = styled.div`
           width: 215px;
           height: 215px;
           border-radius: 50%;
-          background-color: rgba(74, 153, 211, 0.1);
-          border-top: 4px solid rgba(74, 153, 211, 0.1);
-          border-right: 4px solid rgba(74, 153, 211, 0.1);
-          // border-bottom: 4px solid rgba(74, 153, 211, 0.1);
+          background-image: linear-gradient(
+            360deg,
+            rgba(74, 153, 211, 0.1) 0%,
+            rgba(74, 153, 211, 0.1),
+            50%,
+            ${color.lightGrey} 50%
+          );
         }
         &__title {
           // border: 2px solid green;
-          color: #4a99d3;
+          color: ${color.navyBlue};
           font-size: 16px;
           text-transform: uppercase;
           margin-top: 1rem;
@@ -39,16 +43,16 @@ const StyledSkill = styled.div`
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
+
         &__tool {
           // border: 1px solid blue;
           padding: 5px 7px;
-          // background: rgba(74, 153, 211, 0.2);
+          // background: rgba(74, 153, 211, 0.1);
           // background-color: #fafbfc;
-          border: 2px solid rgba(74, 153, 211, 0.1);
+          border: 1px solid rgba(74, 153, 211, 0.2);
           margin: 5px;
           border-radius: 5px;
           font-size: 14px;
-          // color: #4a99d3;
         }
       }
       .fas {
@@ -56,7 +60,8 @@ const StyledSkill = styled.div`
         font-size: 4rem;
         font-weight: 30px;
         margin: auto;
-        color: #4a99d3;
+        // color: #4a99d3;
+        color: ${color.navyBlue};
       }
     `;
   }}

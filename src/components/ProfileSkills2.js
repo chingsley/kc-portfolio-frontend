@@ -22,7 +22,8 @@ const Section = styled.section`
         &__skill {
           // border: 1px solid red;
           border-radius: 5px;
-          background-color: #fafbfc;
+          // background-color: #fafbfc;
+          // background: rgba(74, 153, 211, 0.2);
           border-bottom: 2px solid #4a99d3;
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;

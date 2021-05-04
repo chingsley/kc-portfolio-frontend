@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { string } from 'prop-types';
+import { color } from '../utils/variables';
 
 const ProfilePageSectionHeader = styled.div`
   // border: 1px solid red;
@@ -18,7 +19,8 @@ const ProfilePageSectionHeader = styled.div`
   }
   .main-title {
     // border: 1px solid red;
-    color: rgba(74, 153, 211, 1);
+    // color: rgba(74, 153, 211, 1);
+    color: ${color.navyBlue};
     margin: 0;
     font-size: 18px;
     font-weight: 700;
