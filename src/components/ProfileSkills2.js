@@ -16,7 +16,7 @@ const Section = styled.section`
         min-height: 10rem;
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         overflow: auto;
 
         &__skill {
