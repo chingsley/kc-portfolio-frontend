@@ -97,6 +97,7 @@ const Div = styled.div`
           // border: 1px solid #706fd3;
           // color: #102a42;
           color: #183153;
+          // background-color: #a3b2be;
           margin: 0;
           padding: 0;
           margin-bottom: 0.8rem;
