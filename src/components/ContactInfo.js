@@ -65,7 +65,7 @@ function ContactInfo() {
         </div>
 
         <div>
-          13 Adeniji Street, The View Apartment, Atlantic View estate, New Road
+          33 Azuodita Street, The View Apartment, Atlantic View estate, New Road
           Lekki, Lagos Nigeria
         </div>
       </div>
@@ -73,7 +73,7 @@ function ContactInfo() {
         <div className="contact-details__icon">
           <PhoneIcon />
         </div>
-        +234 0810 903 7816
+        {'+234(0)8109037816'}
       </div>
       <div className="contact-details">
         <div className="contact-details__icon">

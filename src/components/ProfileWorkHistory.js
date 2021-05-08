@@ -14,7 +14,7 @@ const Section = styled.section`
         // border: 1px solid #009432;
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
         &__work {
           // border: 1px solid #1b1464;
