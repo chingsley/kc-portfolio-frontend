@@ -34,7 +34,7 @@ ${(props) => {
 class LoginForm extends React.Component {
   state = {
     emailOrUsername: '',
-    password: 'Testing*123',
+    password: '',
   };
 
   handleInputChange = (e) => {
