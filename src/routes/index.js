@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthPage from '../pages/AuthPage';
+import AuthPage from '../pages/AuthPage2';
 // import { Redirect } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from '../pages/NotFoundPage';
