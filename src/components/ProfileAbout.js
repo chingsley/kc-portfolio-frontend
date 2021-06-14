@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Aos from 'aos';
 import ProfileSectionHeader from './ProfileSectionHeader';
+// import QuoteCarousel from './QuoteCarousel';
+import Slider from './Carousel/Slider';
 import { color } from '../utils/variables';
 
 const Section = styled.section`
@@ -35,20 +37,11 @@ const Section = styled.section`
         }
       }
       &__right {
+        // border: 1px solid black;
         background: rgba(74, 153, 211, 0.1);
         border-right: 2px solid #4A99D3;
-        padding: 2rem;
-        &__quote-container {
-          // border: 1px solid red;
-          display: flex;
-          height: 100%;
-          justify-content: center;
-          align-items: center;
-          &__content {
-            margin: 0;
-            padding: 0;
-          }
-        }
+        // padding: 2rem;
+        padding: 0;
       }
     }
   }
@@ -147,10 +140,10 @@ function ProfileAbout() {
           </div>
           <div
             className="pp-about__parent__right"
-            data-aos-delay="1000"
-            data-aos="fade-right"
+            // data-aos-delay="1000"
+            // data-aos="fade-right"
           >
-            <strong className="pp-about__parent__right__quote-header">
+            {/* <strong className="pp-about__parent__right__quote-header">
               Favorite quote
             </strong>
             <div className="pp-about__parent__right__quote-container">
@@ -159,7 +152,8 @@ function ProfileAbout() {
                 almost as fast and much easier to understand.” – Douglas W.
                 Joness
               </p>
-            </div>
+            </div> */}
+            <Slider />
           </div>
         </div>
       </div>

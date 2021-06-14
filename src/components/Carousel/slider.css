@@ -1,0 +1,126 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+:root {
+  --heights: 50vh;
+  --widths: 100%;
+}
+
+.slider-container {
+  height: 100%;
+}
+
+.quotes-and-dots {
+  /* border: 1px solid blue; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slider-content {
+  /* border: 1px solid red; */
+  flex-grow: 1;
+}
+
+.active {
+  /* border: 1px solid black; */
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+.inactive {
+  display: none;
+}
+
+.blockquote {
+  /* border: 1px solid blue; */
+  font-size: 1.4em;
+  font-family: Open Sans;
+  font-style: italic;
+  line-height: 1.6;
+  position: relative;
+  /* padding-left: 1rem; */
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.blockquote:before {
+  font-family: Arial;
+  content: '\201C';
+  color: #4a99d3;
+  font-size: 4em;
+  position: absolute;
+  left: -35px;
+  top: -30px;
+}
+
+.blockquote::after {
+  content: '';
+}
+.author {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.slider-dots {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.dot {
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  margin: 0 3px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  background-color: rgba(211, 132, 74, 0.2);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active-dot,
+.dot:hover {
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* background-color: #4a99d3; */
+  background-color: rgba(211, 132, 74, 1);
+}
+
+.prev,
+.next {
+  /* border: 1px solid greenyellow; */
+  cursor: pointer;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1rem;
+  margin-top: -3rem;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+}
+
+.prev:hover,
+.next:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease-in;
+}
+
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
