@@ -6,13 +6,14 @@ import SliderContent from './SliderContent';
 import './slider.css';
 
 const indexOfLastItem = quotes.length - 1;
+const SLIDER_DURATION = 10 * 1000; // 10 SECONDS
 
 function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex(activeIndex >= indexOfLastItem ? 0 : activeIndex + 1);
-    }, 5000);
+    }, SLIDER_DURATION);
     return () => clearInterval(interval);
   }, [activeIndex]);
   return (
