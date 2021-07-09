@@ -1,5 +1,14 @@
 export const workHistories = [
   {
+    subject: 'Getir, Turkey',
+    companyName: 'Getir, Turkey',
+    from: '2021-05-06',
+    to: 'Present',
+    role: 'Senior Backend Engineer',
+    details: 'Senior Backend Engineer.',
+    companyLogoUrl: require('../assets/getir_logo.png'),
+  },
+  {
     subject: 'Access Bank PLC',
     companyName: 'Access Bank PLC',
     from: '2020-12-19',
