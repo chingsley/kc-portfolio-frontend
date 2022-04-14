@@ -28,15 +28,6 @@ export const workHistories = [
     companyLogoUrl: require('../assets/access_logo_3.png'),
   },
   {
-    subject: 'Erregen Technology',
-    companyName: 'Erregen Technology',
-    from: '2020-10-04',
-    to: 'Present',
-    role: 'Solutions Architect and Backend Engineer',
-    details: `At Erregen I worked on several projects such as: a Ship Mangement Application for the Nigerian Navy, a Health Insurance Application for the Nigerian Millitary`,
-    companyLogoUrl: require('../assets/erregen.jpeg'),
-  },
-  {
     subject: 'Andela',
     companyName: 'Andela',
     from: '2018-12-11',
@@ -55,5 +46,14 @@ export const workHistories = [
     role: 'Software Engineer',
     details: `6 months technical training in National Space Research and Development Agency. I worked with machine language, and C for programming micro controllers.`,
     companyLogoUrl: require('../assets/nasrda_logo.png'),
+  },
+  {
+    subject: 'Erregen Technology',
+    companyName: 'Erregen Technology',
+    from: '2020-10-04',
+    to: 'Present',
+    role: 'Solutions Architect and Backend Engineer',
+    details: `At Erregen I worked on several projects such as: a Ship Mangement Application for the Nigerian Navy, a Health Insurance Application for the Nigerian Millitary`,
+    companyLogoUrl: require('../assets/erregen.jpeg'),
   },
 ];
