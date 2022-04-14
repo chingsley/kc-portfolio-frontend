@@ -13,6 +13,7 @@ export const skills = [
     tools: [
       'Node',
       'Express',
+      'Hapi',
       'NextJS',
       'PostgreSQL',
       'Express',
@@ -23,7 +24,7 @@ export const skills = [
       'MSSQL',
       'MYSQL',
       'Python (Flask)',
-      'Python (Django)',
+      'Ruby on Rails',
     ],
   },
   {
@@ -40,7 +41,6 @@ export const skills = [
       'Typescript',
       'Jquery',
       'React',
-      'React Native',
       'Redux',
     ],
   },
@@ -64,6 +64,7 @@ export const skills = [
       'Jasmine',
       'Jest',
       'Enzyme',
+      'Capybara',
     ],
   },
 ];
