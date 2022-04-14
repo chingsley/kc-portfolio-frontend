@@ -9,6 +9,15 @@ export const workHistories = [
     companyLogoUrl: require('../assets/getir_logo.png'),
   },
   {
+    subject: 'Lighthouse Labs',
+    companyName: 'Lighthouse Labs, Canada',
+    from: '2021-05-06',
+    to: 'Present',
+    role: 'Web Development Mentor',
+    details: 'I work as a software development mentor, providing techinical and emotinal support to students in the bootcamp program.',
+    companyLogoUrl: require('../assets/lighthouse_logo.png'),
+  },
+  {
     subject: 'Access Bank PLC',
     companyName: 'Access Bank PLC',
     from: '2020-12-19',
