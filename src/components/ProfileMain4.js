@@ -8,6 +8,7 @@ import SocialMediaIcons from './SocialMediaIcons';
 import bgImgMain from '../assets/bgimg-main.jpeg';
 import { color } from '../utils/variables';
 import { randInt } from '../utils';
+import LazyLoadImg from './LazyLoadImg';
 
 const Div = styled.div`
   .pp-main {
@@ -208,7 +209,7 @@ function ProfileMain2() {
         </span>
         <div className="pp-main__left">
           <div className="pp-main__left__img-div">
-            <img
+            <LazyLoadImg
               src={profileImg}
               alt="profile"
               className="pp-main__left__img-div__img"
