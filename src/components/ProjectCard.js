@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { number, object } from 'prop-types';
 import placeholderImg from '../assets/Rectangle.png';
 import { ModalContext } from '../context/ModalContext';
+import LazyLoadImg from './LazyLoadImg';
 
 const CardWrapper = styled.div`
   ${(props) => css`
@@ -126,7 +127,7 @@ function ProjectCard(props) {
   return (
     <CardWrapper {...props}>
       <div className="card">
-        <img src={image} alt="show-tower-homepage" className="card__img" />
+        <LazyLoadImg src={image} alt="show-tower-homepage" className="card__img" />
         {!props.imageSrc && (
           <h2 className="card__default-img-title">{title}</h2>
         )}
